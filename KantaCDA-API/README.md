@@ -4,4 +4,4 @@ Rajapinta on alunperin toteutettu osana [Kelainta](http://www.kelain.fi) resepti
 
 Toteutuksen XML-käsittely perustuu [JAXB:iin](https://jaxb.java.net/).
 
-KantaCDA-API on lisensoitu [ASL v2.0](LICENSE) -lisenssillä.
+KantaCDA-API on lisensoitu [ASL v2.0](../LICENSE) -lisenssillä.

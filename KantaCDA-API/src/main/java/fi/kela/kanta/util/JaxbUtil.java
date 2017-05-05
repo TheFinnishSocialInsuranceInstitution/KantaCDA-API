@@ -51,7 +51,7 @@ public class JaxbUtil {
     }
 
     public String marshalloi(Object o, String schemaLocation) throws JAXBException {
-        LOGGER.entry();
+        LOGGER.traceEntry();
 
         long start = 0;
         if ( LOGGER.isDebugEnabled() ) {
@@ -80,11 +80,11 @@ public class JaxbUtil {
             LOGGER.debug("Unmarshalling took " + (end - start) + " ms.");
         }
 
-        return LOGGER.exit(s);
+        return LOGGER.traceExit(s);
     }
 
     public POCDMT000040ClinicalDocument unmarshaller(String xml) throws JAXBException {
-        LOGGER.entry();
+        LOGGER.traceEntry();
 
         long start = 0;
         if ( LOGGER.isDebugEnabled() ) {
@@ -107,7 +107,7 @@ public class JaxbUtil {
             LOGGER.debug("Unmarshalling took " + (end - start) + " ms.");
         }
 
-        return LOGGER.exit(result);
+        return LOGGER.traceExit(result);
     }
 
 }

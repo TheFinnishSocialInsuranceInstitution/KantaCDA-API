@@ -41,8 +41,8 @@ public class KantaCDAUtilTest {
 
     @Test
     public void testOnkoValidiHetu() {
-    	for (final String validiHetu : validitHetut) {
-          	assertTrue(onkoValidiHetu(validiHetu));
+        for (final String validiHetu : validitHetut) {
+            assertTrue(onkoValidiHetu(validiHetu));
         }
         assertFalse(onkoValidiHetu(null));
         assertFalse(onkoValidiHetu(""));

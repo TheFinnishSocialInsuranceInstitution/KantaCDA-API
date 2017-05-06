@@ -53,7 +53,7 @@ public class ReseptinUusimisValidoija extends LaakemaaraysValidoija {
 	if (null == getUusi().getMaarayspaiva()) {
 	    throw new IllegalArgumentException("Uusitun lääkemääräyksen 'määräyspäivä' ei saa olla null.");
 	}
-	if (StringUtils.isEmpty(getUusi().getOid())) {
+	if (StringUtils.isBlank(getUusi().getOid())) {
 	    throw new IllegalArgumentException("Uusitun lääkemääräyksen 'oid' pitää löytyä.");
 	}
 	if (null == getUusi().getMaarayspaiva()) {
@@ -75,7 +75,7 @@ public class ReseptinUusimisValidoija extends LaakemaaraysValidoija {
 	if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {
 	    throw new IllegalArgumentException("Alkuperäisen lääkemääräyksen 'määräyspäivä' ei saa olla null.");
 	}
-	if (StringUtils.isEmpty(getAlkuperainenLaakemaarays().getOid())) {
+	if (StringUtils.isBlank(getAlkuperainenLaakemaarays().getOid())) {
 	    throw new IllegalArgumentException("Alkuperäisen lääkemääräyksen 'oid' pitää löytyä.");
 	}
 	if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {

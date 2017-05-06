@@ -158,7 +158,7 @@ public class ReseptinUusimisKasaaja extends ReseptiKasaaja {
     private void paivataUusimisTiedot() {
 
         // TODO: Onko tietojen kopiointi kasaajassa järkevää?
-        if ( uusi != null && StringUtils.isEmpty(uusi.getOid()) ) {
+        if ( uusi != null && StringUtils.isBlank(uusi.getOid()) ) {
             // korjaus.setOid(getDocumentId(laakemaarays));
             String oid = getDocumentId(uusi);
             uusi.setOid(oid);
@@ -337,10 +337,10 @@ public class ReseptinUusimisKasaaja extends ReseptiKasaaja {
         String relatedOid, relatedSetId;
         // uusiminen
         ((ReseptinUusimisValidoija) validoija).validoiAlkuperainenLaakemaarays();
-        if ( StringUtils.isEmpty(uusimispyynnonOid) ) {
+        if ( StringUtils.isBlank(uusimispyynnonOid) ) {
             throw new IllegalArgumentException("Uusimispyynnön oid pitää antaa.");
         }
-        else if ( StringUtils.isEmpty(uusimispyynnonSetId) ) {
+        else if ( StringUtils.isBlank(uusimispyynnonSetId) ) {
             throw new IllegalArgumentException("Uusimispyynnön setId pitää antaa.");
         }
         relatedOid = uusimispyynnonOid;

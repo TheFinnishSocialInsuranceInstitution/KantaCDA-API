@@ -71,7 +71,7 @@ public class ReseptinMitatointiKasaaja extends ReseptiKasaaja {
      *            LaakemaaraysTO josta tiedot poimitaan.
      */
     private void paivitaMitatointi(LaakemaarayksenMitatointiTO mitatointi, LaakemaaraysTO alkuperainenLaakemaarays) {
-        if ( null == alkuperainenLaakemaarays ) {
+        if ( alkuperainenLaakemaarays == null ) {
             return;
         }
         if ( StringUtils.isEmpty(mitatointi.getOid()) ) {
@@ -82,165 +82,165 @@ public class ReseptinMitatointiKasaaja extends ReseptiKasaaja {
         mitatointi.setVersio(alkuperainenLaakemaarays.getVersio());
         mitatointi.setAlkuperainenCdaTyyppi(alkuperainenLaakemaarays.getCdaTyyppi());
 
-        if ( null == mitatointi.getMaarayspaiva() ) {
+        if ( mitatointi.getMaarayspaiva() == null ) {
             mitatointi.setMaarayspaiva(alkuperainenLaakemaarays.getMaarayspaiva());
         }
 
-        if ( null == mitatointi.getLaakemaarayksenVoimassaolonLoppuaika() ) {
+        if ( mitatointi.getLaakemaarayksenVoimassaolonLoppuaika() == null ) {
             mitatointi.setLaakemaarayksenVoimassaolonLoppuaika(
                     alkuperainenLaakemaarays.getLaakemaarayksenVoimassaolonLoppuaika());
             mitatointi.setLaakemaarayksenVoimassaolonLoppuaika(
                     alkuperainenLaakemaarays.getLaakemaarayksenVoimassaolonLoppuaika());
         }
-        if ( null == mitatointi.getReseptintyyppi() ) {
+        if ( mitatointi.getReseptintyyppi() == null ) {
             mitatointi.setReseptintyyppi(String.valueOf(ReseptisanomanTyyppi.LAAKEMAARAYKSEN_MITATOINTI.getTyyppi()));
         }
-        if ( null == mitatointi.getPakkauksienLukumaara() ) {
+        if ( mitatointi.getPakkauksienLukumaara() == null ) {
             mitatointi.setPakkauksienLukumaara(alkuperainenLaakemaarays.getPakkauksienLukumaara());
         }
-        if ( null == mitatointi.getLaakkeenKokonaismaaraValue() ) {
+        if ( mitatointi.getLaakkeenKokonaismaaraValue() == null ) {
             mitatointi.setLaakkeenKokonaismaaraValue(alkuperainenLaakemaarays.getLaakkeenKokonaismaaraValue());
         }
-        if ( null == mitatointi.getLaakkeenKokonaismaaraUnit() ) {
+        if ( mitatointi.getLaakkeenKokonaismaaraUnit() == null ) {
             mitatointi.setLaakkeenKokonaismaaraUnit(alkuperainenLaakemaarays.getLaakkeenKokonaismaaraUnit());
         }
-        if ( null == mitatointi.getAjalleMaaratynReseptinAlkuaika() ) {
+        if ( mitatointi.getAjalleMaaratynReseptinAlkuaika() == null ) {
             mitatointi.setAjalleMaaratynReseptinAlkuaika(alkuperainenLaakemaarays.getAjalleMaaratynReseptinAlkuaika());
         }
-        if ( null == mitatointi.getAjalleMaaratynReseptinAikamaaraValue() ) {
+        if ( mitatointi.getAjalleMaaratynReseptinAikamaaraValue() == null ) {
             mitatointi.setAjalleMaaratynReseptinAikamaaraValue(
                     alkuperainenLaakemaarays.getAjalleMaaratynReseptinAikamaaraValue());
             mitatointi.setAjalleMaaratynReseptinAikamaaraValue(
                     alkuperainenLaakemaarays.getAjalleMaaratynReseptinAikamaaraValue());
         }
-        if ( null == mitatointi.getAjalleMaaratynReseptinAikamaaraUnit() ) {
+        if ( mitatointi.getAjalleMaaratynReseptinAikamaaraUnit() == null ) {
             mitatointi.setAjalleMaaratynReseptinAikamaaraUnit(
                     alkuperainenLaakemaarays.getAjalleMaaratynReseptinAikamaaraUnit());
         }
-        if ( null == mitatointi.getIterointiTeksti() ) {
+        if ( mitatointi.getIterointiTeksti() == null ) {
             mitatointi.setIterointiTeksti(alkuperainenLaakemaarays.getIterointiTeksti());
         }
-        if ( null == mitatointi.getIterointienMaara() ) {
+        if ( mitatointi.getIterointienMaara() == null ) {
             mitatointi.setIterointienMaara(alkuperainenLaakemaarays.getIterointienMaara());
         }
-        if ( null == mitatointi.getIterointienValiValue() ) {
+        if ( mitatointi.getIterointienValiValue() == null ) {
             mitatointi.setIterointienValiValue(alkuperainenLaakemaarays.getIterointienValiValue());
         }
-        if ( null == mitatointi.getIterointienValiUnit() ) {
+        if ( mitatointi.getIterointienValiUnit() == null ) {
             mitatointi.setIterointienValiUnit(alkuperainenLaakemaarays.getIterointienValiUnit());
         }
-        if ( null == mitatointi.getValmiste() ) {
+        if ( mitatointi.getValmiste() == null ) {
             mitatointi.setValmiste(alkuperainenLaakemaarays.getValmiste());
         }
-        if ( null == mitatointi.getApteekissaValmistettavaLaake() ) {
+        if ( mitatointi.getApteekissaValmistettavaLaake() == null ) {
             mitatointi.setApteekissaValmistettavaLaake(alkuperainenLaakemaarays.getApteekissaValmistettavaLaake());
         }
-        if ( null == mitatointi.getLaaketietokannanUlkopuolinenValmiste() ) {
+        if ( mitatointi.getLaaketietokannanUlkopuolinenValmiste() == null ) {
             mitatointi.setLaaketietokannanUlkopuolinenValmiste(
                     alkuperainenLaakemaarays.getLaaketietokannanUlkopuolinenValmiste());
             mitatointi.setLaaketietokannanUlkopuolinenValmiste(
                     alkuperainenLaakemaarays.getLaaketietokannanUlkopuolinenValmiste());
         }
-        if ( null == mitatointi.getTyonantaja() ) {
+        if ( mitatointi.getTyonantaja() == null ) {
             mitatointi.setTyonantaja(alkuperainenLaakemaarays.getTyonantaja());
         }
-        if ( null == mitatointi.getVakuutuslaitos() ) {
+        if ( mitatointi.getVakuutuslaitos() == null ) {
             mitatointi.setVakuutuslaitos(alkuperainenLaakemaarays.getVakuutuslaitos());
         }
-        if ( null == mitatointi.getAmmattihenkilo() ) {
+        if ( mitatointi.getAmmattihenkilo() == null ) {
             mitatointi.setAmmattihenkilo(alkuperainenLaakemaarays.getAmmattihenkilo());
         }
-        if ( null == mitatointi.getPotilas() ) {
+        if ( mitatointi.getPotilas() == null ) {
             mitatointi.setPotilas(alkuperainenLaakemaarays.getPotilas());
         }
-        if ( null == mitatointi.isApteekissaValmistettavaLaake() ) {
+        if ( mitatointi.isApteekissaValmistettavaLaake() == null ) {
             mitatointi.setApteekissaValmistettavaLaake(alkuperainenLaakemaarays.isApteekissaValmistettavaLaake());
         }
-        if ( null == mitatointi.isAnnosteluPelkastaanTekstimuodossa() ) {
+        if ( mitatointi.isAnnosteluPelkastaanTekstimuodossa() == null ) {
             mitatointi.setAnnosteluPelkastaanTekstimuodossa(
                     alkuperainenLaakemaarays.isAnnosteluPelkastaanTekstimuodossa());
         }
-        if ( null == mitatointi.getAnnostusohje() ) {
+        if ( mitatointi.getAnnostusohje() == null ) {
             mitatointi.setAnnostusohje(alkuperainenLaakemaarays.getAnnostusohje());
         }
-        if ( null == mitatointi.isSICmerkinta() ) {
+        if ( mitatointi.isSICmerkinta() == null ) {
             mitatointi.setSICmerkinta(alkuperainenLaakemaarays.isSICmerkinta());
         }
-        if ( null == mitatointi.isLaakevaihtokielto() ) {
+        if ( mitatointi.isLaakevaihtokielto() == null ) {
             mitatointi.setLaakevaihtokielto(alkuperainenLaakemaarays.isLaakevaihtokielto());
         }
-        if ( null == mitatointi.getKayttotarkoitusTeksti() ) {
+        if ( mitatointi.getKayttotarkoitusTeksti() == null ) {
             mitatointi.setKayttotarkoitusTeksti(alkuperainenLaakemaarays.getKayttotarkoitusTeksti());
         }
-        if ( null == mitatointi.getAlle12VuotiaanPainoValue() ) {
+        if ( mitatointi.getAlle12VuotiaanPainoValue() == null ) {
             mitatointi.setAlle12VuotiaanPainoValue(alkuperainenLaakemaarays.getAlle12VuotiaanPainoValue());
         }
-        if ( null == mitatointi.getAlle12VuotiaanPainoUnit() ) {
+        if ( mitatointi.getAlle12VuotiaanPainoUnit() == null ) {
             mitatointi.setAlle12VuotiaanPainoUnit(alkuperainenLaakemaarays.getAlle12VuotiaanPainoUnit());
         }
-        if ( null == mitatointi.isAnnosjakelu() ) {
+        if ( mitatointi.isAnnosjakelu() == null ) {
             mitatointi.setAnnosjakelu(alkuperainenLaakemaarays.isAnnosjakelu());
         }
-        if ( null == mitatointi.getAnnosjakeluTeksti() ) {
+        if ( mitatointi.getAnnosjakeluTeksti() == null ) {
             mitatointi.setAnnosjakeluTeksti(alkuperainenLaakemaarays.getAnnosjakeluTeksti());
         }
         if ( mitatointi.getHoitolajit().isEmpty() ) {
             mitatointi.getHoitolajit().addAll(alkuperainenLaakemaarays.getHoitolajit());
         }
-        if ( null == mitatointi.getViestiApteekille() ) {
+        if ( mitatointi.getViestiApteekille() == null ) {
             mitatointi.setViestiApteekille(alkuperainenLaakemaarays.getViestiApteekille());
         }
-        if ( null == mitatointi.getErillisselvitys() ) {
+        if ( mitatointi.getErillisselvitys() == null ) {
             mitatointi.setErillisselvitys(alkuperainenLaakemaarays.getErillisselvitys());
         }
-        if ( null == mitatointi.getErillisselvitysteksti() ) {
+        if ( mitatointi.getErillisselvitysteksti() == null ) {
             mitatointi.setErillisselvitysteksti(alkuperainenLaakemaarays.getErillisselvitysteksti());
         }
-        if ( null == mitatointi.getPotilaanTunnistaminen() ) {
+        if ( mitatointi.getPotilaanTunnistaminen() == null ) {
             mitatointi.setPotilaanTunnistaminen(alkuperainenLaakemaarays.getPotilaanTunnistaminen());
         }
-        if ( null == mitatointi.getPotilaanTunnistaminenTeksti() ) {
+        if ( mitatointi.getPotilaanTunnistaminenTeksti() == null ) {
             mitatointi.setPotilaanTunnistaminenTeksti(alkuperainenLaakemaarays.getPotilaanTunnistaminenTeksti());
         }
-        if ( null == mitatointi.getPKVlaakemaarays() ) {
+        if ( mitatointi.getPKVlaakemaarays() == null ) {
             mitatointi.setPKVlaakemaarays(alkuperainenLaakemaarays.getPKVlaakemaarays());
         }
-        if ( null == mitatointi.isPysyvaislaakitys() ) {
+        if ( mitatointi.isPysyvaislaakitys() == null ) {
             mitatointi.setPysyvaislaakitys(alkuperainenLaakemaarays.isPysyvaislaakitys());
         }
-        if ( null == mitatointi.isKyseessaLaakkeenkaytonAloitus() ) {
+        if ( mitatointi.isKyseessaLaakkeenkaytonAloitus() == null ) {
             mitatointi.setKyseessaLaakkeenkaytonAloitus(alkuperainenLaakemaarays.isKyseessaLaakkeenkaytonAloitus());
         }
-        if ( null == mitatointi.isHuume() ) {
+        if ( mitatointi.isHuume() == null ) {
             mitatointi.setHuume(alkuperainenLaakemaarays.isHuume());
         }
-        if ( null == mitatointi.getReseptinLaji() ) {
+        if ( mitatointi.getReseptinLaji() == null ) {
             mitatointi.setReseptinLaji(alkuperainenLaakemaarays.getReseptinLaji());
         }
-        if ( null == mitatointi.isUudistamiskielto() ) {
+        if ( mitatointi.isUudistamiskielto() == null ) {
             mitatointi.setUudistamiskielto(alkuperainenLaakemaarays.isUudistamiskielto());
         }
-        if ( null == mitatointi.getUusimiskiellonSyy() ) {
+        if ( mitatointi.getUusimiskiellonSyy() == null ) {
             mitatointi.setUusimiskiellonSyy(alkuperainenLaakemaarays.getUusimiskiellonSyy());
         }
-        if ( null == mitatointi.getUusimiskiellonPerustelu() ) {
+        if ( mitatointi.getUusimiskiellonPerustelu() == null ) {
             mitatointi.setUusimiskiellonPerustelu(alkuperainenLaakemaarays.getUusimiskiellonPerustelu());
         }
-        if ( null == mitatointi.getLaaketietokannanVersio() ) {
+        if ( mitatointi.getLaaketietokannanVersio() == null ) {
             mitatointi.setLaaketietokannanVersio(alkuperainenLaakemaarays.getLaaketietokannanVersio());
         }
-        if ( null == mitatointi.getApteekissaTallennettuLaakemaarays() ) {
+        if ( mitatointi.getApteekissaTallennettuLaakemaarays() == null ) {
             mitatointi.setApteekissaTallennettuLaakemaarays(
                     alkuperainenLaakemaarays.getApteekissaTallennettuLaakemaarays());
         }
-        if ( null == mitatointi.getTartuntatauti() ) {
+        if ( mitatointi.getTartuntatauti() == null ) {
             mitatointi.setTartuntatauti(alkuperainenLaakemaarays.getTartuntatauti());
         }
-        if ( null == mitatointi.getApteekissaTallennettuLaakemaaraysPerustelu() ) {
+        if ( mitatointi.getApteekissaTallennettuLaakemaaraysPerustelu() == null ) {
             mitatointi.setApteekissaTallennettuLaakemaaraysPerustelu(
                     alkuperainenLaakemaarays.getApteekissaTallennettuLaakemaaraysPerustelu());
         }
-        if ( null == mitatointi.getApteekissaTallennettuLaakemaaraysMuuSyy() ) {
+        if ( mitatointi.getApteekissaTallennettuLaakemaaraysMuuSyy() == null ) {
             mitatointi.setApteekissaTallennettuLaakemaaraysMuuSyy(
                     alkuperainenLaakemaarays.getApteekissaTallennettuLaakemaaraysMuuSyy());
         }

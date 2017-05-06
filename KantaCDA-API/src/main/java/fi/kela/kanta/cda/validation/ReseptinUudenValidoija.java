@@ -41,10 +41,10 @@ public class ReseptinUudenValidoija extends LaakemaaraysValidoija {
         if ( KantaCDAUtil.onkoNullTaiTyhja(getAlkuperainenLaakemaarays().getReseptintyyppi()) ) {
             throw new IllegalArgumentException("Reseptin tyyppi cannot be null or empty.");
         }
-        if ( null == getAlkuperainenLaakemaarays().getValmiste() ) {
+        if ( getAlkuperainenLaakemaarays().getValmiste() == null ) {
             throw new IllegalArgumentException("Valmiste cannot be null.");
         }
-        if ( null == getAlkuperainenLaakemaarays().getValmiste().getYksilointitiedot() ) {
+        if ( getAlkuperainenLaakemaarays().getValmiste().getYksilointitiedot() == null ) {
             throw new IllegalArgumentException("Valmiste yksilöintitiedot cannot be null.");
         }
         if ( KantaCDAUtil.onkoNullTaiTyhja(
@@ -75,7 +75,7 @@ public class ReseptinUudenValidoija extends LaakemaaraysValidoija {
                     .onkoNullTaiTyhja(getAlkuperainenLaakemaarays().getAjalleMaaratynReseptinAikamaaraUnit()) ) {
                 throw new IllegalArgumentException("Ajalle määrätyn aikamäärän unit cannot be null or empty.");
             }
-            if ( null == getAlkuperainenLaakemaarays().getAjalleMaaratynReseptinAlkuaika() ) {
+            if ( getAlkuperainenLaakemaarays().getAjalleMaaratynReseptinAlkuaika() == null ) {
                 throw new IllegalArgumentException("Ajalle määrätyn alkuaika cannot be null.");
             }
         }

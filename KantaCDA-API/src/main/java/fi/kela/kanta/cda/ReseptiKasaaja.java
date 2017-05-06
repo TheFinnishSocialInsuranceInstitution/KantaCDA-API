@@ -1040,7 +1040,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
      */
     private Collection<? extends POCDMT000040EntryRelationship> luoSailytysastia(LaakemaaraysTO laakemaarays) {
         Collection<POCDMT000040EntryRelationship> retval = new ArrayList<POCDMT000040EntryRelationship>();
-        if ( null == laakemaarays.getValmiste() || null == laakemaarays.getValmiste().getYksilointitiedot()
+        if ( laakemaarays.getValmiste() == null || laakemaarays.getValmiste().getYksilointitiedot() == null
                 || onkoNullTaiTyhja(laakemaarays.getValmiste().getYksilointitiedot().getSailytysastia()) ) {
             return retval;
         }
@@ -1094,7 +1094,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
      */
     private Collection<? extends POCDMT000040Participant2> luoMyyntiluvanHaltija(LaakemaaraysTO laakemaarays) {
         Collection<POCDMT000040Participant2> list = new ArrayList<POCDMT000040Participant2>();
-        if ( null == laakemaarays.getValmiste() || null == laakemaarays.getValmiste().getYksilointitiedot()
+        if ( laakemaarays.getValmiste() == null || laakemaarays.getValmiste().getYksilointitiedot() == null
                 || onkoNullTaiTyhja(laakemaarays.getValmiste().getYksilointitiedot().getMyyntiluvanHaltija()) ) {
             return list;
         }
@@ -1159,7 +1159,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
      */
     private Collection<POCDMT000040EntryRelationship> luoIterointi(LaakemaaraysTO laakemaarays) {
         Collection<POCDMT000040EntryRelationship> list = new ArrayList<POCDMT000040EntryRelationship>();
-        if ( null == laakemaarays.getIterointienMaara() || laakemaarays.getIterointienMaara() <= 0
+        if ( laakemaarays.getIterointienMaara() == null || laakemaarays.getIterointienMaara() <= 0
                 || onkoNullTaiTyhja(laakemaarays.getIterointiTeksti()) ) {
             return list;
         }
@@ -1276,8 +1276,8 @@ public abstract class ReseptiKasaaja extends Kasaaja {
      *         muuten null
      */
     private POCDMT000040Product luoVNRKoodi(LaakemaaraysTO laakemaarays) {
-        if ( null == laakemaarays.getValmiste() || null == laakemaarays.getValmiste().getYksilointitiedot()
-                || null == laakemaarays.getValmiste().getYksilointitiedot().getValmisteenLaji()
+        if ( laakemaarays.getValmiste() == null || laakemaarays.getValmiste().getYksilointitiedot() == null
+                || laakemaarays.getValmiste().getYksilointitiedot().getValmisteenLaji() == null
                 || !onkoLaaketietokannanValmiste(laakemaarays) ) {
             return null;
         }
@@ -1368,7 +1368,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
      * @return IVLPQ elementti jos laakemaarayksen valmisteen yksilointitetojen vahvuus annettu muuten null
      */
     private IVLPQ luoLaakeaineenVahvuus(LaakemaaraysTO laakemaarays) {
-        if ( null == laakemaarays.getValmiste() || null == laakemaarays.getValmiste().getYksilointitiedot()
+        if ( laakemaarays.getValmiste() == null || laakemaarays.getValmiste().getYksilointitiedot() == null
                 || onkoNullTaiTyhja(laakemaarays.getValmiste().getYksilointitiedot().getVahvuus()) ) {
             return null;
         }
@@ -1495,7 +1495,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
      */
     private Collection<? extends POCDMT000040EntryRelationship> luoPakkauksenLaite(LaakemaaraysTO laakemaarays) {
         Collection<POCDMT000040EntryRelationship> retval = new ArrayList<POCDMT000040EntryRelationship>();
-        if ( null == laakemaarays.getValmiste() || null == laakemaarays.getValmiste().getYksilointitiedot()
+        if ( laakemaarays.getValmiste() == null || laakemaarays.getValmiste().getYksilointitiedot() == null
                 || onkoNullTaiTyhja(laakemaarays.getValmiste().getYksilointitiedot().getPakkauslaite()) ) {
             return retval;
         }

@@ -25,7 +25,7 @@ public abstract class Validoija {
 	abstract public void validoi();
 	
 	protected void validoiAmmattihenkilo(AmmattihenkiloTO ammattihenkilo) {
-		if (null == ammattihenkilo) {
+		if (ammattihenkilo == null) {
 		    throw new IllegalArgumentException("Ammattihenkilo cannot be null.");
 		}
 		if (KantaCDAUtil.onkoNullTaiTyhja(ammattihenkilo.getRooli())) {
@@ -41,7 +41,7 @@ public abstract class Validoija {
 		if (KantaCDAUtil.onkoNullTaiTyhja(ammattihenkilo.getAmmattioikeus())) {
 		    throw new IllegalArgumentException("Ammattioikeus cannot be null or empty.");
 		}
-		if (null == ammattihenkilo.getKokonimi()) {
+		if (ammattihenkilo.getKokonimi() == null) {
 		    throw new IllegalArgumentException("Kokonimi cannot be null.");
 		}
 		if (KantaCDAUtil.onkoNullTaiTyhja(ammattihenkilo.getKokonimi().getKokoNimi())) {
@@ -60,7 +60,7 @@ public abstract class Validoija {
      * @param failOnTel onko organisaatiolla oltava puhelinumero
      */
     protected void validoiOrganisaatio(OrganisaatioTO organisaatio, boolean organisaatioEP, boolean failOnTel) {
-    	if (null == organisaatio) {
+    	if (organisaatio == null) {
     		if (!organisaatioEP) {
     			throw new IllegalArgumentException("Organisaatio cannot be null.");
     		} else {
@@ -76,7 +76,7 @@ public abstract class Validoija {
     	if (KantaCDAUtil.onkoNullTaiTyhja(organisaatio.getPuhelinnumero()) && failOnTel) {
     	    throw new IllegalArgumentException("Orgnisaatio puhelinnumero cannot be null or empty.");
     	}
-    	if (null == organisaatio.getOsoite()) {
+    	if (organisaatio.getOsoite() == null) {
     	    throw new IllegalArgumentException("Organisaatio osoite cannot be null.");
     	}
     	if (KantaCDAUtil.onkoNullTaiTyhja(organisaatio.getOsoite().getKatuosoite())) {
@@ -92,10 +92,10 @@ public abstract class Validoija {
 
 
     public void validoiHenkilotiedot(HenkilotiedotTO henkilotiedot) {
-	if (null == henkilotiedot) {
+	if (henkilotiedot == null) {
 	    throw new IllegalArgumentException("Henkilotiedot cannot be null.");
 	}
-	if (null == henkilotiedot.getNimi()) {
+	if (henkilotiedot.getNimi() == null) {
 	    throw new IllegalArgumentException("Nimi cannot be null.");
 	}
 	if (KantaCDAUtil.onkoNullTaiTyhja(henkilotiedot.getSyntymaaika())) {

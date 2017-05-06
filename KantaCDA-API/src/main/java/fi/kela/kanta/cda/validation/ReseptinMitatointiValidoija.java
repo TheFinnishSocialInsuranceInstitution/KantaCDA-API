@@ -43,10 +43,10 @@ public class ReseptinMitatointiValidoija extends LaakemaaraysValidoija {
 	}
 	
 	protected void validoiMitatointi() {
-		if (null == getMitatointi()) {
+		if (getMitatointi() == null) {
 		    throw new IllegalArgumentException("Laakemaarayksen mitatointi cannot be null.");
 		}
-		if (null == getMitatointi().getMitatoija()) {
+		if (getMitatointi().getMitatoija() == null) {
 		    throw new IllegalArgumentException("Laakemaarayksen mitatointi cannot be null.");
 		}
 		if (KantaCDAUtil.onkoNullTaiTyhja(getMitatointi().getMitatoinninSyyKoodi())) {
@@ -64,7 +64,7 @@ public class ReseptinMitatointiValidoija extends LaakemaaraysValidoija {
      * @param laakemaarays LaakemaaraysTO joka validoidaan
      */
     private void validoiAlkuperainenLaakemaarays() {
-	if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {
+	if (getAlkuperainenLaakemaarays().getMaarayspaiva() == null) {
 	    throw new IllegalArgumentException("Alkuperaisen laakemaarayksen maarayspaiva cannot be null.");
 	}
     }

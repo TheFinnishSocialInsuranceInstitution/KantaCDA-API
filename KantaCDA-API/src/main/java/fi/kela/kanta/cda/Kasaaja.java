@@ -792,7 +792,7 @@ public abstract class Kasaaja {
      *            CD elementti josta tietoja kopiodaan
      */
     protected void copyCodeElement(CD kohde, CD lahde) {
-        if ( null == lahde ) {
+        if ( lahde == null ) {
             return;
         }
         if ( !onkoNullTaiTyhja(lahde.getCode()) ) {
@@ -813,7 +813,7 @@ public abstract class Kasaaja {
     }
 
     protected boolean onkoNullTaiTyhja(String merkkijono) {
-        return null == merkkijono || merkkijono.isEmpty();
+        return merkkijono == null || merkkijono.isEmpty();
     }
 
     /**

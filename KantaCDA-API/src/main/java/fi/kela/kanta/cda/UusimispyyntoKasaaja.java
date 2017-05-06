@@ -302,7 +302,7 @@ public class UusimispyyntoKasaaja extends ReseptiKasaaja {
         POCDMT000040EntryRelationship viesti = luoEntryRelationshipObservationCodeRakenne(
                 KantaCDAConstants.Laakityslista.UUSIMISPYYNNON_KIRJAAJAN_ANTAMA_VIESTI);
         ST viestiValue = of.createST();
-        if ( null == uusimispyynto.getUusija() ) {
+        if ( uusimispyynto.getUusija() == null ) {
             viestiValue.getContent().add("Potilas itse");
         }
         else {
@@ -538,7 +538,7 @@ public class UusimispyyntoKasaaja extends ReseptiKasaaja {
      */
     private POCDMT000040Author luoAuthor(UusimispyyntoTO uusimispyynto) {
         POCDMT000040Author author = of.createPOCDMT000040Author();
-        if ( null == uusimispyynto.getUusija() ) {
+        if ( uusimispyynto.getUusija() == null ) {
             // TEsti
             POCDMT000040ClinicalDocument doc = of.createPOCDMT000040ClinicalDocument();
             addAuthor(doc);
@@ -588,7 +588,7 @@ public class UusimispyyntoKasaaja extends ReseptiKasaaja {
      * @return POCDMT000040PatientRole elementti jos löytyi, muuten null
      */
     private POCDMT000040PatientRole getRecordTargetPatientRole(POCDMT000040ClinicalDocument doc) {
-        if ( null == doc || doc.getRecordTargets().isEmpty() ) {
+        if ( doc == null || doc.getRecordTargets().isEmpty() ) {
             return null;
         }
         for (POCDMT000040RecordTarget recordTarget : doc.getRecordTargets()) {

@@ -169,143 +169,143 @@ public class ReseptinUusimisKasaaja extends ReseptiKasaaja {
             return;
         }
 
-        if ( null == uusi.getMaarayspaiva() ) {
+        if ( uusi.getMaarayspaiva() == null ) {
             uusi.setMaarayspaiva(alkuperainen.getMaarayspaiva());
         }
 
-        if ( null == uusi.getReseptintyyppi() ) {
+        if ( uusi.getReseptintyyppi() == null ) {
             uusi.setReseptintyyppi(alkuperainen.getReseptintyyppi());
         }
-        if ( null == uusi.getPakkauksienLukumaara() ) {
+        if ( uusi.getPakkauksienLukumaara() == null ) {
             uusi.setPakkauksienLukumaara(alkuperainen.getPakkauksienLukumaara());
         }
-        if ( null == uusi.getLaakkeenKokonaismaaraValue() ) {
+        if ( uusi.getLaakkeenKokonaismaaraValue() == null ) {
             uusi.setLaakkeenKokonaismaaraValue(alkuperainen.getLaakkeenKokonaismaaraValue());
         }
-        if ( null == uusi.getLaakkeenKokonaismaaraUnit() ) {
+        if ( uusi.getLaakkeenKokonaismaaraUnit() == null ) {
             uusi.setLaakkeenKokonaismaaraUnit(alkuperainen.getLaakkeenKokonaismaaraUnit());
         }
-        if ( null == uusi.getAjalleMaaratynReseptinAlkuaika() ) {
+        if ( uusi.getAjalleMaaratynReseptinAlkuaika() == null ) {
             uusi.setAjalleMaaratynReseptinAlkuaika(alkuperainen.getAjalleMaaratynReseptinAlkuaika());
         }
-        if ( null == uusi.getAjalleMaaratynReseptinAikamaaraValue() ) {
+        if ( uusi.getAjalleMaaratynReseptinAikamaaraValue() == null ) {
             uusi.setAjalleMaaratynReseptinAikamaaraValue(alkuperainen.getAjalleMaaratynReseptinAikamaaraValue());
         }
-        if ( null == uusi.getAjalleMaaratynReseptinAikamaaraUnit() ) {
+        if ( uusi.getAjalleMaaratynReseptinAikamaaraUnit() == null ) {
             uusi.setAjalleMaaratynReseptinAikamaaraUnit(alkuperainen.getAjalleMaaratynReseptinAikamaaraUnit());
         }
-        if ( null == uusi.getIterointiTeksti() ) {
+        if ( uusi.getIterointiTeksti() == null ) {
             uusi.setIterointiTeksti(alkuperainen.getIterointiTeksti());
         }
-        if ( null == uusi.getIterointienMaara() ) {
+        if ( uusi.getIterointienMaara() == null ) {
             uusi.setIterointienMaara(alkuperainen.getIterointienMaara());
         }
-        if ( null == uusi.getIterointienValiValue() ) {
+        if ( uusi.getIterointienValiValue() == null ) {
             uusi.setIterointienValiValue(alkuperainen.getIterointienValiValue());
         }
-        if ( null == uusi.getIterointienValiUnit() ) {
+        if ( uusi.getIterointienValiUnit() == null ) {
             uusi.setIterointienValiUnit(alkuperainen.getIterointienValiUnit());
         }
-        if ( null == uusi.getValmiste() ) {
+        if ( uusi.getValmiste() == null ) {
             uusi.setValmiste(alkuperainen.getValmiste());
         }
-        if ( null == uusi.getApteekissaValmistettavaLaake() ) {
+        if ( uusi.getApteekissaValmistettavaLaake() == null ) {
             uusi.setApteekissaValmistettavaLaake(alkuperainen.getApteekissaValmistettavaLaake());
         }
-        if ( null == uusi.getLaaketietokannanUlkopuolinenValmiste() ) {
+        if ( uusi.getLaaketietokannanUlkopuolinenValmiste() == null ) {
             uusi.setLaaketietokannanUlkopuolinenValmiste(alkuperainen.getLaaketietokannanUlkopuolinenValmiste());
         }
-        if ( null == uusi.getTyonantaja() ) {
+        if ( uusi.getTyonantaja() == null ) {
             uusi.setTyonantaja(alkuperainen.getTyonantaja());
         }
-        if ( null == uusi.getVakuutuslaitos() ) {
+        if ( uusi.getVakuutuslaitos() == null ) {
             uusi.setVakuutuslaitos(alkuperainen.getVakuutuslaitos());
         }
-        if ( null == uusi.getAmmattihenkilo() ) {
+        if ( uusi.getAmmattihenkilo() == null ) {
             uusi.setAmmattihenkilo(alkuperainen.getAmmattihenkilo());
         }
-        if ( null == uusi.getPotilas() ) {
+        if ( uusi.getPotilas() == null ) {
             uusi.setPotilas(alkuperainen.getPotilas());
         }
-        if ( null == uusi.isApteekissaValmistettavaLaake() ) {
+        if ( uusi.isApteekissaValmistettavaLaake() == null ) {
             uusi.setApteekissaValmistettavaLaake(alkuperainen.isApteekissaValmistettavaLaake());
         }
-        if ( null == uusi.isAnnosteluPelkastaanTekstimuodossa() ) {
+        if ( uusi.isAnnosteluPelkastaanTekstimuodossa() == null ) {
             uusi.setAnnosteluPelkastaanTekstimuodossa(alkuperainen.isAnnosteluPelkastaanTekstimuodossa());
         }
-        if ( null == uusi.getAnnostusohje() ) {
+        if ( uusi.getAnnostusohje() == null ) {
             uusi.setAnnostusohje(alkuperainen.getAnnostusohje());
         }
-        if ( null == uusi.isSICmerkinta() ) {
+        if ( uusi.isSICmerkinta() == null ) {
             uusi.setSICmerkinta(alkuperainen.isSICmerkinta());
         }
-        if ( null == uusi.isLaakevaihtokielto() ) {
+        if ( uusi.isLaakevaihtokielto() == null ) {
             uusi.setLaakevaihtokielto(alkuperainen.isLaakevaihtokielto());
         }
-        if ( null == uusi.getKayttotarkoitusTeksti() ) {
+        if ( uusi.getKayttotarkoitusTeksti() == null ) {
             uusi.setKayttotarkoitusTeksti(alkuperainen.getKayttotarkoitusTeksti());
         }
-        if ( null == uusi.getAlle12VuotiaanPainoValue() ) {
+        if ( uusi.getAlle12VuotiaanPainoValue() == null ) {
             uusi.setAlle12VuotiaanPainoValue(alkuperainen.getAlle12VuotiaanPainoValue());
         }
-        if ( null == uusi.getAlle12VuotiaanPainoUnit() ) {
+        if ( uusi.getAlle12VuotiaanPainoUnit() == null ) {
             uusi.setAlle12VuotiaanPainoUnit(alkuperainen.getAlle12VuotiaanPainoUnit());
         }
-        if ( null == uusi.isAnnosjakelu() ) {
+        if ( uusi.isAnnosjakelu() == null ) {
             uusi.setAnnosjakelu(alkuperainen.isAnnosjakelu());
         }
-        if ( null == uusi.getAnnosjakeluTeksti() ) {
+        if ( uusi.getAnnosjakeluTeksti() == null ) {
             uusi.setAnnosjakeluTeksti(alkuperainen.getAnnosjakeluTeksti());
         }
         if ( uusi.getHoitolajit().isEmpty() ) {
             uusi.getHoitolajit().addAll(alkuperainen.getHoitolajit());
         }
-        if ( null == uusi.getViestiApteekille() ) {
+        if ( uusi.getViestiApteekille() == null ) {
             uusi.setViestiApteekille(alkuperainen.getViestiApteekille());
         }
-        if ( null == uusi.getErillisselvitys() ) {
+        if ( uusi.getErillisselvitys() == null ) {
             uusi.setErillisselvitys(alkuperainen.getErillisselvitys());
         }
-        if ( null == uusi.getErillisselvitysteksti() ) {
+        if ( uusi.getErillisselvitysteksti() == null ) {
             uusi.setErillisselvitysteksti(alkuperainen.getErillisselvitysteksti());
         }
-        if ( null == uusi.getPotilaanTunnistaminen() ) {
+        if ( uusi.getPotilaanTunnistaminen() == null ) {
             uusi.setPotilaanTunnistaminen(alkuperainen.getPotilaanTunnistaminen());
         }
-        if ( null == uusi.getPotilaanTunnistaminenTeksti() ) {
+        if ( uusi.getPotilaanTunnistaminenTeksti() == null ) {
             uusi.setPotilaanTunnistaminenTeksti(alkuperainen.getPotilaanTunnistaminenTeksti());
         }
-        if ( null == uusi.getPKVlaakemaarays() ) {
+        if ( uusi.getPKVlaakemaarays() == null ) {
             uusi.setPKVlaakemaarays(alkuperainen.getPKVlaakemaarays());
         }
-        if ( null == uusi.isPysyvaislaakitys() ) {
+        if ( uusi.isPysyvaislaakitys() == null ) {
             uusi.setPysyvaislaakitys(alkuperainen.isPysyvaislaakitys());
         }
-        if ( null == uusi.isKyseessaLaakkeenkaytonAloitus() ) {
+        if ( uusi.isKyseessaLaakkeenkaytonAloitus() == null ) {
             uusi.setKyseessaLaakkeenkaytonAloitus(alkuperainen.isKyseessaLaakkeenkaytonAloitus());
         }
-        if ( null == uusi.isHuume() ) {
+        if ( uusi.isHuume() == null ) {
             uusi.setHuume(alkuperainen.isHuume());
         }
-        if ( null == uusi.getReseptinLaji() ) {
+        if ( uusi.getReseptinLaji() == null ) {
             uusi.setReseptinLaji(alkuperainen.getReseptinLaji());
         }
-        if ( null == uusi.isUudistamiskielto() ) {
+        if ( uusi.isUudistamiskielto() == null ) {
             uusi.setUudistamiskielto(alkuperainen.isUudistamiskielto());
         }
-        if ( null == uusi.getUusimiskiellonSyy() ) {
+        if ( uusi.getUusimiskiellonSyy() == null ) {
             uusi.setUusimiskiellonSyy(alkuperainen.getUusimiskiellonSyy());
         }
-        if ( null == uusi.getUusimiskiellonPerustelu() ) {
+        if ( uusi.getUusimiskiellonPerustelu() == null ) {
             uusi.setUusimiskiellonPerustelu(alkuperainen.getUusimiskiellonPerustelu());
         }
-        if ( null == uusi.getLaaketietokannanVersio() ) {
+        if ( uusi.getLaaketietokannanVersio() == null ) {
             uusi.setLaaketietokannanVersio(alkuperainen.getLaaketietokannanVersio());
         }
-        if ( null == uusi.getApteekissaTallennettuLaakemaarays() ) {
+        if ( uusi.getApteekissaTallennettuLaakemaarays() == null ) {
             uusi.setApteekissaTallennettuLaakemaarays(alkuperainen.getApteekissaTallennettuLaakemaarays());
         }
-        if ( null == uusi.getTartuntatauti() ) {
+        if ( uusi.getTartuntatauti() == null ) {
             uusi.setTartuntatauti(alkuperainen.getTartuntatauti());
         }
     }

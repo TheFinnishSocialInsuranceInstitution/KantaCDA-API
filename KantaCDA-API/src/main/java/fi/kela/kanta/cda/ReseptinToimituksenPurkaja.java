@@ -63,7 +63,7 @@ public class ReseptinToimituksenPurkaja extends ReseptiPurkaja {
      * @throws PurkuException
      */
     public LaakemaarayksenToimitusTO puraLaakemaarayksenToimitus(String cda) throws PurkuException {
-        if ( null == cda ) {
+        if ( cda == null ) {
             return null;
         }
         try {
@@ -90,7 +90,7 @@ public class ReseptinToimituksenPurkaja extends ReseptiPurkaja {
      */
     private void puraRelatedDocument(POCDMT000040ClinicalDocument clinicalDocument,
             LaakemaarayksenToimitusTO toimitus) {
-        if ( null == clinicalDocument ) {
+        if ( clinicalDocument == null ) {
             return;
         }
         for (POCDMT000040RelatedDocument relatedDocument : clinicalDocument.getRelatedDocuments()) {
@@ -367,7 +367,7 @@ public class ReseptinToimituksenPurkaja extends ReseptiPurkaja {
      * @param laakemaarays
      */
     private void puraToimitettuMaara(POCDMT000040Observation observation, LaakemaaraysTO laakemaarays) {
-        if ( !(laakemaarays instanceof LaakemaarayksenToimitusTO) || null == observation ) {
+        if ( !(laakemaarays instanceof LaakemaarayksenToimitusTO) || observation == null ) {
             return;
         }
         LaakemaarayksenToimitusTO toimitus = (LaakemaarayksenToimitusTO) laakemaarays;
@@ -396,7 +396,7 @@ public class ReseptinToimituksenPurkaja extends ReseptiPurkaja {
      * @param laakemaarays
      */
     private void puraJaljellaOlevaMaara(POCDMT000040Observation observation, LaakemaaraysTO laakemaarays) {
-        if ( !(laakemaarays instanceof LaakemaarayksenToimitusTO) || null == observation ) {
+        if ( !(laakemaarays instanceof LaakemaarayksenToimitusTO) || observation == null ) {
             return;
         }
         LaakemaarayksenToimitusTO toimitus = (LaakemaarayksenToimitusTO) laakemaarays;
@@ -448,7 +448,7 @@ public class ReseptinToimituksenPurkaja extends ReseptiPurkaja {
      */
     @Override
     protected void puraAsiakirjakohtaisetKokoJaMaaraTiedot(POCDMT000040Supply supply, LaakemaaraysTO laakemaarays) {
-        if ( null == supply || !(laakemaarays instanceof LaakemaarayksenToimitusTO) ) {
+        if ( supply == null || !(laakemaarays instanceof LaakemaarayksenToimitusTO) ) {
             return;
         }
         LaakemaarayksenToimitusTO toimitus = (LaakemaarayksenToimitusTO) laakemaarays;

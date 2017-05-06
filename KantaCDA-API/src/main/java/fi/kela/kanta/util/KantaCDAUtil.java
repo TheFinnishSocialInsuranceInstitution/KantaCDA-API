@@ -113,6 +113,6 @@ public class KantaCDAUtil {
     }
 
     public static boolean onkoNullTaiTyhja(String merkkijono) {
-        return null == merkkijono || merkkijono.isEmpty();
+        return merkkijono == null || merkkijono.isEmpty();
     }
 }

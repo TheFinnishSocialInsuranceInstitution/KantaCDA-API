@@ -48,10 +48,10 @@ public class ReseptinKorjausValidoija extends LaakemaaraysValidoija {
 	
 	public void validoiKorjaus() {
 
-		if (null == getKorjaus()) {
+		if (getKorjaus() == null) {
 		    throw new IllegalArgumentException(VIRHE_KORJAUS_NULL);
 		}
-		if (null == getKorjaus().getKorjaaja()) {
+		if (getKorjaus().getKorjaaja() == null) {
 		    throw new IllegalArgumentException(VIRHE_KORJAAJA_NULL);
 		}
 		if (KantaCDAUtil.onkoNullTaiTyhja(getKorjaus().getKorjauksenSyyKoodi())) {
@@ -69,10 +69,10 @@ public class ReseptinKorjausValidoija extends LaakemaaraysValidoija {
      * @param laakemaarays LaakemaaraysTO joka validoidaan
      */
     public void validoiAlkuperainenLaakemaarays() {
-    	if (null == getAlkuperainenLaakemaarays()) {
+    	if (getAlkuperainenLaakemaarays() == null) {
     		throw new IllegalArgumentException(VIRHE_ALKUPERAINEN_LAAKEMAARAYS_NULL);
     	}
-		if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {
+		if (getAlkuperainenLaakemaarays().getMaarayspaiva() == null) {
 		    throw new IllegalArgumentException(VIRHE_ALKUPERAISEN_LAAKEMAARAYKSEN_MAARAYSPAIVA_NULL);
 		}
 		if (StringUtils.isEmpty(getAlkuperainenLaakemaarays().getOid())) {

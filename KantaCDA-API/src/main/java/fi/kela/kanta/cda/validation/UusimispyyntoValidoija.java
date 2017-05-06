@@ -61,7 +61,7 @@ public class UusimispyyntoValidoija extends Validoija {
 	}
 	
 	protected void validoiUusimispyynnonMaaraja() {
-		if (null == getUusimispyynto().getMaaraajanKokonimi()) {
+		if (getUusimispyynto().getMaaraajanKokonimi() == null) {
 			throw new IllegalArgumentException("Määrääjän nimi ei saa olla null.");
 		}
 		if (KantaCDAUtil.onkoNullTaiTyhja(getUusimispyynto().getMaaraajanKokonimi().getEtunimi())) {
@@ -76,7 +76,7 @@ public class UusimispyyntoValidoija extends Validoija {
 	}
 	
 	protected void validoiUusimispyyntoTO() {
-		if(null == getUusimispyynto()) {
+		if(getUusimispyynto() == null) {
 			throw new IllegalArgumentException("Uusimispyynto ei saa olla null.");
 		}
 		validoiUusimispyynnonVastaanottaja();

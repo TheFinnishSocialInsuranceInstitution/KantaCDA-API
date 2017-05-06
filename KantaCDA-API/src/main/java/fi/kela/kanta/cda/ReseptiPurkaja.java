@@ -184,18 +184,18 @@ public class ReseptiPurkaja extends Purkaja {
      * @throws PurkuException
      */
     private List<POCDMT000040Entry> haeEntryt(POCDMT000040ClinicalDocument clinicalDocument) throws PurkuException {
-        if ( null == clinicalDocument || null == clinicalDocument.getComponent()
-                || null == clinicalDocument.getComponent().getStructuredBody()
+        if ( clinicalDocument == null || clinicalDocument.getComponent() == null
+                || clinicalDocument.getComponent().getStructuredBody() == null
                 || clinicalDocument.getComponent().getStructuredBody().getComponents().isEmpty()
-                || null == clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
+                || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection() == null
                 || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
                         .getComponents().isEmpty()
-                || null == clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
-                        .getComponents().get(0).getSection()
+                || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
+                        .getComponents().get(0).getSection() == null
                 || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
                         .getComponents().get(0).getSection().getComponents().isEmpty()
-                || null == clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
-                        .getComponents().get(0).getSection().getComponents().get(0).getSection() ) {
+                || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
+                        .getComponents().get(0).getSection().getComponents().get(0).getSection() == null ) {
             throw new PurkuException("component/structuredBody/component/section/component/section/component/section/");
         }
         return clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection().getComponents()
@@ -213,7 +213,7 @@ public class ReseptiPurkaja extends Purkaja {
      */
     protected void puraLaakevalmisteenJaPakkauksenTiedot(POCDMT000040Component4 component, LaakemaaraysTO laakemaarays)
             throws PurkuException {
-        if ( null == component || null == component.getSubstanceAdministration() ) {
+        if ( component == null || component.getSubstanceAdministration() == null ) {
             return;
         }
         String aptValmistusOhje = null;
@@ -244,7 +244,7 @@ public class ReseptiPurkaja extends Purkaja {
         }
 
         if ( laakemaarays.isApteekissaValmistettavaLaake() ) {
-            if ( null == laakemaarays.getApteekissaValmistettavaLaake() ) {
+            if ( laakemaarays.getApteekissaValmistettavaLaake() == null ) {
                 laakemaarays.setApteekissaValmistettavaLaake(new ApteekissaValmistettavaLaakeTO());
             }
             laakemaarays.getApteekissaValmistettavaLaake().setValmistusohje(aptValmistusOhje);
@@ -293,7 +293,7 @@ public class ReseptiPurkaja extends Purkaja {
      *            POCDMT00040Supply josta tietoja haetaan
      */
     private void puraParticipantTiedot(POCDMT000040Supply supply, LaakemaaraysTO laakemaarays) {
-        if ( null == supply ) {
+        if ( supply == null ) {
             return;
         }
 
@@ -323,7 +323,7 @@ public class ReseptiPurkaja extends Purkaja {
      */
     private void puraTuoteTiedot(POCDMT000040Supply supply, LaakemaaraysTO laakemaarays) {
         // VNR-koodi
-        if ( null == supply || null == supply.getProduct() ) {
+        if ( supply == null || supply.getProduct() == null ) {
             return;
         }
 
@@ -404,7 +404,7 @@ public class ReseptiPurkaja extends Purkaja {
     private void puraReseptinTyyppijaMaaraTiedot(POCDMT000040Supply supply, LaakemaaraysTO laakemaarays)
             throws PurkuException {
         puraAsiakirjakohtaisetKokoJaMaaraTiedot(supply, laakemaarays);
-        if ( null == supply || null == supply.getCode() ) {
+        if ( supply == null || supply.getCode() == null ) {
             return;
         }
         laakemaarays.setReseptintyyppi(supply.getCode().getCode());
@@ -619,7 +619,7 @@ public class ReseptiPurkaja extends Purkaja {
      *            LaakemaaraysTO jonka valmisteen yksilöintitietohin tiedot sijoitetaan
      */
     private void puraLaakeaineenVahvuus(IVLPQ doseQuantity, LaakemaaraysTO laakemaarays) {
-        if ( null == doseQuantity || doseQuantity.getTranslations().isEmpty() ) {
+        if ( doseQuantity == null || doseQuantity.getTranslations().isEmpty() ) {
             return;
         }
         String vahvuus = puraContent(doseQuantity.getTranslations().get(0).getOriginalText());
@@ -636,12 +636,12 @@ public class ReseptiPurkaja extends Purkaja {
      * @param laakemaarays
      */
     private void puraValmiste(POCDMT000040Consumable consumable, LaakemaaraysTO laakemaarays) {
-        if ( null == consumable || null == consumable.getManufacturedProduct() ) {
+        if ( consumable == null || consumable.getManufacturedProduct() == null ) {
             return;
         }
 
         if ( null != consumable.getManufacturedProduct().getManufacturedLabeledDrug() ) {
-            if ( null == laakemaarays.getLaaketietokannanVersio() ) { // Jos versiotieto on asetettu jo aiemmin, ei
+            if ( laakemaarays.getLaaketietokannanVersio() == null ) { // Jos versiotieto on asetettu jo aiemmin, ei
                 // ylikirjoiteta sitä
                 laakemaarays.setLaaketietokannanVersio(consumable.getManufacturedProduct().getManufacturedLabeledDrug()
                         .getCode().getCodeSystemVersion());
@@ -673,7 +673,7 @@ public class ReseptiPurkaja extends Purkaja {
         for (POCDMT000040Component4 component : components) {
             CE code = component.getSubstanceAdministration().getConsumable().getManufacturedProduct()
                     .getManufacturedLabeledDrug().getCode();
-            if ( null == laakemaarays.getLaaketietokannanVersio() ) { // Jos versiotieto on asetettu jo aiemmin, ei
+            if ( laakemaarays.getLaaketietokannanVersio() == null ) { // Jos versiotieto on asetettu jo aiemmin, ei
                 // ylikirjoiteta sitä
                 laakemaarays.setLaaketietokannanVersio(code.getCodeSystemVersion());
             }
@@ -1071,7 +1071,7 @@ public class ReseptiPurkaja extends Purkaja {
      */
     protected void alustaYksilointitiedot(LaakemaaraysTO laakemaarays) {
         alustaValmiste(laakemaarays);
-        if ( null == laakemaarays.getValmiste().getYksilointitiedot() ) {
+        if ( laakemaarays.getValmiste().getYksilointitiedot() == null ) {
             laakemaarays.getValmiste().setYksilointitiedot(new ValmisteenYksilointitiedotTO());
         }
     }
@@ -1084,7 +1084,7 @@ public class ReseptiPurkaja extends Purkaja {
      *            LaakemaaraysTO jonka valmiste alustetaan
      */
     private void alustaValmiste(LaakemaaraysTO laakemaarays) {
-        if ( null == laakemaarays.getValmiste() ) {
+        if ( laakemaarays.getValmiste() == null ) {
             laakemaarays.setValmiste(new ValmisteTO());
         }
     }
@@ -1097,7 +1097,7 @@ public class ReseptiPurkaja extends Purkaja {
      *            LaakemaaraysTO jonka apteekissavelmistettava laake alustetaan
      */
     private void alustaApteekissaValmistettavaLaake(LaakemaaraysTO laakemaarays) {
-        if ( null == laakemaarays.getApteekissaValmistettavaLaake() ) {
+        if ( laakemaarays.getApteekissaValmistettavaLaake() == null ) {
             laakemaarays.setApteekissaValmistettavaLaake(new ApteekissaValmistettavaLaakeTO());
         }
     }
@@ -1368,16 +1368,16 @@ public class ReseptiPurkaja extends Purkaja {
      */
     private List<String> haeLaatijanJaKorjaajanNayttomuoto(POCDMT000040ClinicalDocument clinicalDocument) {
         List<String> nayttomuoto = new ArrayList<String>();
-        if ( null == clinicalDocument || null == clinicalDocument.getComponent()
-                || null == clinicalDocument.getComponent().getStructuredBody()
+        if ( clinicalDocument == null || clinicalDocument.getComponent() == null
+                || clinicalDocument.getComponent().getStructuredBody() == null
                 || clinicalDocument.getComponent().getStructuredBody().getComponents().isEmpty()
-                || null == clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
+                || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection() == null
                 || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
                         .getComponents().isEmpty()
-                || null == clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
-                        .getComponents().get(0).getSection()
-                || null == clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
-                        .getComponents().get(0).getSection().getText() ) {
+                || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
+                        .getComponents().get(0).getSection() == null
+                || clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection()
+                        .getComponents().get(0).getSection().getText() == null ) {
             return nayttomuoto;
         }
         puraText(clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getSection().getComponents()

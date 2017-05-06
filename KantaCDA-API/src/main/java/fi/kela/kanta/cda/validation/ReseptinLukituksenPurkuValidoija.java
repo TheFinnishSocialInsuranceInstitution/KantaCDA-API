@@ -48,10 +48,10 @@ public class ReseptinLukituksenPurkuValidoija extends LaakemaaraysValidoija {
      * @param alkuperainenLaakemaarays LaakemaaraysTO alkuperäinen lääkeämäräys
      */
     protected void validoiAlkuperainenLaakemaarays() {
-	if (null == getAlkuperainenLaakemaarays()) {
+	if (getAlkuperainenLaakemaarays() == null) {
 	    throw new IllegalArgumentException("alkuperainen laakemaarays cannot be null.");
 	}
-	if (null == getAlkuperainenLaakemaarays().getPotilas()) {
+	if (getAlkuperainenLaakemaarays().getPotilas() == null) {
 	    throw new IllegalArgumentException("alkuperaisen laakemaarayksen potilas cannot be null.");
 	}
 	if (KantaCDAUtil.onkoNullTaiTyhja(getAlkuperainenLaakemaarays().getPotilas().getHetu())) {
@@ -69,10 +69,10 @@ public class ReseptinLukituksenPurkuValidoija extends LaakemaaraysValidoija {
 	if (KantaCDAUtil.onkoNullTaiTyhja(getAlkuperainenLaakemaarays().getSetId())) {
 	    throw new IllegalArgumentException("alkuperaisen laakemaarayksen setId cannot be empty or null.");
 	}
-	if (null == getAlkuperainenLaakemaarays().getAmmattihenkilo()) {
+	if (getAlkuperainenLaakemaarays().getAmmattihenkilo() == null) {
 	    throw new IllegalArgumentException("alkuperaisen laakemaarayksen ammattihenkilo cannot be null.");
 	}
-	if (null == getAlkuperainenLaakemaarays().getAmmattihenkilo().getKokonimi()) {
+	if (getAlkuperainenLaakemaarays().getAmmattihenkilo().getKokonimi() == null) {
 	    throw new IllegalArgumentException("alkuperaisen laakemaarayksen ammattihenkilon kokonimi cannot be null.");
 	}
 	if (KantaCDAUtil.onkoNullTaiTyhja(getAlkuperainenLaakemaarays().getAmmattihenkilo().getKokonimi().getKokoNimi())) {
@@ -81,13 +81,13 @@ public class ReseptinLukituksenPurkuValidoija extends LaakemaaraysValidoija {
     }
     
     protected void validoiLukituksenPurku() {
-    	if (null == getLukituksenPurku()) {
+    	if (getLukituksenPurku() == null) {
     	    throw new IllegalArgumentException("lukituksen purku cannot be null.");
     	}
-    	if (null == getLukituksenPurku().getPurkaja()) {
+    	if (getLukituksenPurku().getPurkaja() == null) {
     	    throw new IllegalArgumentException("lukituksen purkaja cannot be null.");
     	}
-    	if (null == getLukituksenPurku().getPurkaja().getOrganisaatio()) {
+    	if (getLukituksenPurku().getPurkaja().getOrganisaatio() == null) {
     	    throw new IllegalArgumentException("lukituksen purkajan organisaatio cannot be null.");
     	}
     	if (KantaCDAUtil.onkoNullTaiTyhja(getLukituksenPurku().getLukitussanomanOid())) {

@@ -38,7 +38,7 @@ public class UusimispyyntoPurkaja extends ReseptiPurkaja {
     }
 
     public UusimispyyntoTO puraUusimispyynto(String cda) throws PurkuException {
-        if ( null == cda ) {
+        if ( cda == null ) {
             return null;
         }
         try {

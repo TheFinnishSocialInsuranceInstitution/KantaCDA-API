@@ -322,7 +322,7 @@ public abstract class Purkaja {
      * @return boolean true jos merkkijono on null tai tyhja, muuten false
      */
     protected boolean onkoNullTaiTyhja(String merkkijono) {
-        return null == merkkijono || merkkijono.isEmpty();
+        return merkkijono == null || merkkijono.isEmpty();
     }
 
     /**
@@ -356,7 +356,7 @@ public abstract class Purkaja {
      *            KokoNimiTO johon nimitiedot laitetaan.
      */
     private void puraNimitieto(ENXP value, KokoNimiTO kokoNimi) {
-        if ( null == value || value.getContent().isEmpty() ) {
+        if ( value == null || value.getContent().isEmpty() ) {
             return;
         }
         String nimi = (String) value.getContent().get(0);
@@ -485,8 +485,8 @@ public abstract class Purkaja {
      */
     private List<POCDMT000040InfrastructureRootTemplateId> haeStructuredBodyTemplateIs(
             POCDMT000040ClinicalDocument clinicalDocument) {
-        if ( null == clinicalDocument || null == clinicalDocument.getComponent()
-                || null == clinicalDocument.getComponent().getStructuredBody()
+        if ( clinicalDocument == null || clinicalDocument.getComponent() == null
+                || clinicalDocument.getComponent().getStructuredBody() == null
                 || clinicalDocument.getComponent().getStructuredBody().getComponents().isEmpty() || clinicalDocument
                         .getComponent().getStructuredBody().getComponents().get(0).getTemplateIds().isEmpty() ) {
             return new ArrayList<POCDMT000040InfrastructureRootTemplateId>();

@@ -47,16 +47,16 @@ public class ReseptinUusimisValidoija extends LaakemaaraysValidoija {
      */
     protected void validoiLaakemaaraysUusiminen() {
 
-	if (null == getUusi()) {
+	if (getUusi() == null) {
 	    throw new IllegalArgumentException("Uusittu lääkemääräys ei saa olla null.");
 	}
-	if (null == getUusi().getMaarayspaiva()) {
+	if (getUusi().getMaarayspaiva() == null) {
 	    throw new IllegalArgumentException("Uusitun lääkemääräyksen 'määräyspäivä' ei saa olla null.");
 	}
 	if (StringUtils.isEmpty(getUusi().getOid())) {
 	    throw new IllegalArgumentException("Uusitun lääkemääräyksen 'oid' pitää löytyä.");
 	}
-	if (null == getUusi().getMaarayspaiva()) {
+	if (getUusi().getMaarayspaiva() == null) {
 	    throw new IllegalArgumentException("Uusitun lääkemääräyksen 'setid' pitää löytyä.");
 	}
 	validoiHenkilotiedot(getUusi().getPotilas());
@@ -69,16 +69,16 @@ public class ReseptinUusimisValidoija extends LaakemaaraysValidoija {
      */
     public void validoiAlkuperainenLaakemaarays() {
 
-	if (null == getAlkuperainenLaakemaarays()) {
+	if (getAlkuperainenLaakemaarays() == null) {
 	    throw new IllegalArgumentException("Alkuperäinen lääkemääräys ei saa olla null.");
 	}
-	if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {
+	if (getAlkuperainenLaakemaarays().getMaarayspaiva() == null) {
 	    throw new IllegalArgumentException("Alkuperäisen lääkemääräyksen 'määräyspäivä' ei saa olla null.");
 	}
 	if (StringUtils.isEmpty(getAlkuperainenLaakemaarays().getOid())) {
 	    throw new IllegalArgumentException("Alkuperäisen lääkemääräyksen 'oid' pitää löytyä.");
 	}
-	if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {
+	if (getAlkuperainenLaakemaarays().getMaarayspaiva() == null) {
 	    throw new IllegalArgumentException("Alkuperäisen lääkemääräyksen 'setid' pitää löytyä.");
 	}
     }

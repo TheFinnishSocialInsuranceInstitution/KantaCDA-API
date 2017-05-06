@@ -53,7 +53,7 @@ public class ReseptinLukituksenPurkaja extends ReseptiPurkaja {
      * @throws PurkuException
      */
     public LaakemaarayksenLukitusTO puraReseptinLukitus(String cda) throws PurkuException {
-        if ( null == cda ) {
+        if ( cda == null ) {
             return null;
         }
         try {
@@ -77,7 +77,7 @@ public class ReseptinLukituksenPurkaja extends ReseptiPurkaja {
      * @param toimitus
      */
     private void puraRelatedDocument(POCDMT000040ClinicalDocument clinicalDocument, LaakemaarayksenLukitusTO lukitus) {
-        if ( null == clinicalDocument ) {
+        if ( clinicalDocument == null ) {
             return;
         }
         for (POCDMT000040RelatedDocument relatedDocument : clinicalDocument.getRelatedDocuments()) {

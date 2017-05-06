@@ -19,7 +19,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
-import java.lang.Character;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
@@ -96,7 +95,7 @@ public class KantaCDAUtil {
             }
             final InputStreamReader reader = new InputStreamReader(input, "UTF-8");
             final Properties properties = new Properties();
-            properties.load(input);
+            properties.load(reader);
             return properties;
         }
     }

@@ -66,21 +66,18 @@ public class AsiakirjaVersioUtil {
      * @return KantaCDAConstants.AsiakirjaVersioYhteensopivuus
      */
     public AsiakirjaVersioYhteensopivuus getAsiakirjaVersionYhteensopivuus(String versio) {
-        AsiakirjaVersio jarjestelmaVersio = asiakirjaVersiot.get(getJarjestelmaAsiakirjaVersio());
-        AsiakirjaVersio vers = asiakirjaVersiot.get(versio);
+        final AsiakirjaVersio jarjestelmaVersio = asiakirjaVersiot.get(getJarjestelmaAsiakirjaVersio());
+        final AsiakirjaVersio vers = asiakirjaVersiot.get(versio);
         if ( jarjestelmaVersio == null || vers == null ) {
             return AsiakirjaVersioYhteensopivuus.EI_TUETTU;
         }
-        int tulos = vers.getJarjNro().compareTo(jarjestelmaVersio.getJarjNro());
-        switch (tulos) {
-        case -1:
-            return AsiakirjaVersioYhteensopivuus.TAAKSEPAIN;
-        case 0:
+        final int tulos = Integer.compare(vers.getJarjNro(), jarjestelmaVersio.getJarjNro());
+        if (tulos == 0) {
             return AsiakirjaVersioYhteensopivuus.JARJESTELMA_VERSIO;
-        case 1:
+        } else if (tulos > 0) {
             return AsiakirjaVersioYhteensopivuus.ETEENPAIN;
-        default:
-            return AsiakirjaVersioYhteensopivuus.EI_TUETTU;
+        } else {
+            return AsiakirjaVersioYhteensopivuus.TAAKSEPAIN;
         }
     }
 
@@ -118,7 +115,7 @@ public class AsiakirjaVersioUtil {
 
     private class AsiakirjaVersio {
         private String oid;
-        private Integer jarjNro;
+        private int jarjNro;
         private boolean jarjestelmaVersio;
 
         public AsiakirjaVersio(String oid, int jarjNro, boolean jarjestelmaVersio) {
@@ -135,7 +132,7 @@ public class AsiakirjaVersioUtil {
             this.oid = oid;
         }
 
-        public Integer getJarjNro() {
+        public int getJarjNro() {
             return jarjNro;
         }
 

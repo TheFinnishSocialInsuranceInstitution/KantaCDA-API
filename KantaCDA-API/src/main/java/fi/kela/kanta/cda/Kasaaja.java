@@ -139,7 +139,7 @@ public abstract class Kasaaja {
 
     protected synchronized String getId(LeimakentatTO<?> leimakentat) {
 
-        if ( StringUtils.isEmpty(lastOid) ) {
+        if ( StringUtils.isBlank(lastOid) ) {
             lastOid = generator.createNewOidManualSequence(getDocumentId(leimakentat), getSequence());
         }
         return lastOid;
@@ -167,7 +167,7 @@ public abstract class Kasaaja {
 
     protected String getDocumentId(final LeimakentatTO<?> leimakentat) {
 
-        if ( StringUtils.isEmpty(documentId) ) {
+        if ( StringUtils.isBlank(documentId) ) {
             documentId = generator.createNewDocumentOid(leimakentat.getCDAOidBase());
         }
         return documentId;
@@ -478,7 +478,7 @@ public abstract class Kasaaja {
             CD value = new CD();
             fetchAttributes(Kasaaja.LM_UUSIMISPYYNTO, value);
             relatedDocument.getParentDocument().setCode(value);
-            if ( !StringUtils.isEmpty(setid) ) {
+            if ( StringUtils.isNotBlank(setid) ) {
                 relatedDocument.getParentDocument().setSetId(of.createII());
                 relatedDocument.getParentDocument().getSetId().setRoot(setid);
             }

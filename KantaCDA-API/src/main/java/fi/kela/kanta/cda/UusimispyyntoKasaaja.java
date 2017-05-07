@@ -641,7 +641,7 @@ public class UusimispyyntoKasaaja extends ReseptiKasaaja {
         fetchAttributes(propertycode, relatedDocument.getParentDocument().getCode());
         clinicalDocument.getRelatedDocuments().add(relatedDocument);
 
-        if ( !StringUtils.isEmpty(setid) ) {
+        if ( StringUtils.isNotBlank(setid) ) {
             relatedDocument.getParentDocument().setSetId(of.createII());
             relatedDocument.getParentDocument().getSetId().setRoot(setid);
         }

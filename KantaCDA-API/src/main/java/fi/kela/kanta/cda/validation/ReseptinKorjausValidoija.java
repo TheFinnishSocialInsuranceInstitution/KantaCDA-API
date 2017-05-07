@@ -75,10 +75,10 @@ public class ReseptinKorjausValidoija extends LaakemaaraysValidoija {
 		if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {
 		    throw new IllegalArgumentException(VIRHE_ALKUPERAISEN_LAAKEMAARAYKSEN_MAARAYSPAIVA_NULL);
 		}
-		if (StringUtils.isEmpty(getAlkuperainenLaakemaarays().getOid())) {
+		if (StringUtils.isBlank(getAlkuperainenLaakemaarays().getOid())) {
 		    throw new IllegalArgumentException(VIRHE_ALKUPERAISEN_LAAKEMAARAYKSEN_OID_NULL);
 		}
-		if (StringUtils.isEmpty(getAlkuperainenLaakemaarays().getSetId())) {
+		if (StringUtils.isBlank(getAlkuperainenLaakemaarays().getSetId())) {
 		    throw new IllegalArgumentException(VIRHE_ALKUPERAISEN_LAAKEMAARAYKSEN_SETID_NULL);
 		}
     }

@@ -73,7 +73,6 @@ public class VirheellisetTiedotException extends Exception {
     public Map<String, String> getVirheet() {
         return virheet;
     }
-
     /**
      * @return <code>True</code> jos tässä poikkeuksessa on listattu virheitä.
      */
@@ -85,7 +84,11 @@ public class VirheellisetTiedotException extends Exception {
     public String getMessage() {
 
         StringBuilder sb = new StringBuilder();
-        if ( !StringUtils.isEmpty(getObjektinNimi()) ) {
+        /* TODO: commons-lang StringUtils used. Plexus StringUtils uses trim(), this does not.
+         * Which is correct? If commons-lang is used, it should be added to pom.xml and
+         * migrated to commons-lang3. Also is plexus then anymore needed?
+         */
+        if ( StringUtils.isNotEmpty(getObjektinNimi()) ) {
             Object[] args = { this.getObjektinNimi() };
             sb.append(String.format(VirheellisetTiedotException.list_start_with_name, args));
         }

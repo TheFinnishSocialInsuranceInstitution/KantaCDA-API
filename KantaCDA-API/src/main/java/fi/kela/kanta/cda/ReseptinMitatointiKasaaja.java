@@ -74,7 +74,7 @@ public class ReseptinMitatointiKasaaja extends ReseptiKasaaja {
         if ( null == alkuperainenLaakemaarays ) {
             return;
         }
-        if ( StringUtils.isEmpty(mitatointi.getOid()) ) {
+        if ( StringUtils.isBlank(mitatointi.getOid()) ) {
             mitatointi.setOid(getDocumentId(mitatointi));
         }
         mitatointi.setAlkuperainenOid(alkuperainenLaakemaarays.getOid());

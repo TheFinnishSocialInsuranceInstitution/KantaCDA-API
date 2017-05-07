@@ -15,12 +15,12 @@
  ******************************************************************************/
 package fi.kela.kanta.util;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,82 +37,85 @@ public class KantaCDAUtil {
 
     private static final Logger LOGGER = LogManager.getLogger(KantaCDAUtil.class);
 
+    /* http://www.stat.fi/meta/kas/hetu.html */
+    private static final Pattern HETU_PATTERN = Pattern.compile("^[0-3][0-9][0-1][0-9]{3}.[0-9]{3}.$");
+
+    private static final int SUKUPUOLI_TUNTEMATON = 0;
+    private static final int SUKUPUOLI_MIES = 1;
+    private static final int SUKUPUOLI_NAINEN = 2;
+
     /**
-     * muodostaa syntymäajan hetun perusteella
-     * 
-     * @param hetu
-     * @return syntymäaika
+     * Validoi pintapuolisesti hetun.
      */
-    public static String hetuToBirthTime(String hetu) {
-        if ( onkoNullTaiTyhja(hetu) || hetu.length() != 11 ) {
+    protected static boolean onkoValidiHetu(final String hetu) {
+        return !onkoNullTaiTyhja(hetu) && HETU_PATTERN.matcher(hetu).matches();
+    }
+
+    /**
+     * Muunna hetun vuosisata välimerkki vuosisadaksi
+     */
+    protected static String vuosisata(final char valimerkki) {
+       switch (valimerkki) {
+            case '+': return "18";
+            case '-': return "19";
+            case 'A': // fall through
+            case 'a': return "20";
+            default: return "21";
+        }
+    }
+
+    /**
+     * Muodostaa syntymäajan hetun perusteella
+     */
+    public static String hetuToBirthTime(final String hetu) {
+        if ( !onkoValidiHetu(hetu) ) {
             return null;
         }
-        String century = "??";
-        if ( hetu.charAt(6) == '+' ) {
-            century = "18";
-        }
-        else if ( hetu.charAt(6) == '-' ) {
-            century = "19";
-        }
-        else if ( hetu.charAt(6) == 'A' || hetu.charAt(6) == 'a' ) {
-            century = "20";
-        }
-        else {
-            century = "21";
-        }
-        return century + hetu.substring(4, 6) + hetu.substring(2, 4) + hetu.substring(0, 2);
+        final String vuosisata = vuosisata(hetu.charAt(6));
+        return vuosisata + hetu.substring(4, 6) + hetu.substring(2, 4) + hetu.substring(0, 2);
     }
 
     /**
-     * @param hetu
-     * @return
+     * Muodosta sukupuoli hetusta säännöllä: pariton = mies, parillinen = nainen
      */
-    public static int hetuToGender(String hetu) {
-        if ( !onkoNullTaiTyhja(hetu) && hetu.length() == 11 ) {
-            return (Integer.parseInt(hetu.substring(9, 10)) & 0x01) == 1 ? 1 : 2;
+    public static int hetuToGender(final String hetu) {
+        if ( onkoValidiHetu(hetu) ) {
+            return Character.getNumericValue(hetu.charAt(9)) % 2 == 1
+                ? SUKUPUOLI_MIES : SUKUPUOLI_NAINEN;
         }
-        return 0;
+        return SUKUPUOLI_TUNTEMATON;
     }
 
-    public static Properties loadProperties(String propertyFile) throws IOException {
-        InputStream input = null;
-        Properties properties = new Properties();
-        try {
-            input = KantaCDAUtil.class.getClassLoader().getResourceAsStream(propertyFile);
-            properties.load(new InputStreamReader(input, "UTF-8"));
-        }
-        catch (FileNotFoundException fnfe) {
-            LOGGER.error(propertyFile + " FILE NOT FOUND! :" + fnfe.getMessage());
-            throw fnfe;
-        }
-        finally {
-            if ( input != null ) {
-                input.close();
+    public static Properties loadProperties(final String propertyFile) throws IOException {
+        try (InputStream input =
+                KantaCDAUtil.class.getClassLoader().getResourceAsStream(propertyFile)) {
+            if (input == null) {
+                LOGGER.error("Unable to read property file " + propertyFile);
+                throw new IOException("Unable read property file");
             }
+            final InputStreamReader reader = new InputStreamReader(input, "UTF-8");
+            final Properties properties = new Properties();
+            properties.load(reader);
+            return properties;
         }
-        return properties;
     }
 
-    public static String poistaKontrolliMerkit(String teksti) {
-        if ( teksti != null ) {
+    public static String poistaKontrolliMerkit(final String teksti) {
+        if ( !onkoNullTaiTyhja(teksti) ) {
             return teksti.replaceAll(KantaCDAUtil.CONTROL_PATTERN, "");
         }
         return null;
     }
 
     /**
-     * Muuntaa desimaaliluvun merkkijonoksi ja poistaa desimaalit, jotka eivät ole merkitseviä. Esim. 4.0 --> 4.
-     * 
-     * @param luku
-     * @return
+     * Muuntaa desimaaliluvun merkkijonoksi ja poistaa desimaalit, jotka eivät ole merkitseviä.
+     * Esim. 4.0 --> 4
      */
-    public static String doubleToString(double luku) {
-        BigDecimal bd = BigDecimal.valueOf(luku);
-        String bdS = bd.toPlainString();
-        return bdS.indexOf(".") < 0 ? bdS : bdS.replaceAll("0*$", "").replaceAll("\\.$", "");
+    public static String doubleToString(final double luku) {
+        return BigDecimal.valueOf(luku).stripTrailingZeros().toPlainString();
     }
 
-    public static boolean onkoNullTaiTyhja(String merkkijono) {
+    public static boolean onkoNullTaiTyhja(final String merkkijono) {
         return null == merkkijono || merkkijono.isEmpty();
     }
 }

@@ -56,16 +56,14 @@ public class ReseptinUusimisValidoija extends LaakemaaraysValidoija {
 	if (StringUtils.isEmpty(getUusi().getOid())) {
 	    throw new IllegalArgumentException("Uusitun lääkemääräyksen 'oid' pitää löytyä.");
 	}
-	if (null == getUusi().getMaarayspaiva()) {
+	if (null == getUusi().getSetId()) {
 	    throw new IllegalArgumentException("Uusitun lääkemääräyksen 'setid' pitää löytyä.");
 	}
 	validoiHenkilotiedot(getUusi().getPotilas());
     }
 
     /**
-     * Validoi alkuperäisen LaakemaraysTOn
-     *
-     * @param laakemaarays LaakemaaraysTO joka validoidaan
+     * Validoi alkuperäisen LaakemaaraysTOn
      */
     public void validoiAlkuperainenLaakemaarays() {
 
@@ -78,7 +76,7 @@ public class ReseptinUusimisValidoija extends LaakemaaraysValidoija {
 	if (StringUtils.isEmpty(getAlkuperainenLaakemaarays().getOid())) {
 	    throw new IllegalArgumentException("Alkuperäisen lääkemääräyksen 'oid' pitää löytyä.");
 	}
-	if (null == getAlkuperainenLaakemaarays().getMaarayspaiva()) {
+	if (null == getAlkuperainenLaakemaarays().getSetId()) {
 	    throw new IllegalArgumentException("Alkuperäisen lääkemääräyksen 'setid' pitää löytyä.");
 	}
     }

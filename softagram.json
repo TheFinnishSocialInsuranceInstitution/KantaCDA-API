@@ -1,0 +1,9 @@
+[
+  [
+    "DepRule",
+    [".../extensions", ".../framework"],
+    "-!->",
+    ".../test",
+    { "description": "extensions must not use any test code" }
+  ]
+]

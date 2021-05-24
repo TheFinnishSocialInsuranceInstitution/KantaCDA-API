@@ -29,7 +29,7 @@ import fi.kela.kanta.cda.validation.Validoija;
 
 public abstract class ArkistoKasaaja extends Kasaaja {
 
-	protected static final String template_id = "templateId";
+    protected static final String template_id = "templateId";
     protected static final String code = "%s.code";
     protected static final String title = "%s.title";
     protected static final String code_title = "%s.code.title";
@@ -41,7 +41,7 @@ public abstract class ArkistoKasaaja extends Kasaaja {
 	
 	public ArkistoKasaaja(Properties properties) {
 		super(properties);
-		// TODO Auto-generated constructor stub
+		// Add some text here
 	}
 	
 	protected void validoiAsiakirja() {

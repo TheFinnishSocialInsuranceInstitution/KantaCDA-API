@@ -1,9 +1,9 @@
 [
   [
     "DepRule",
-    [".../extensions", ".../framework"],
+    [".../cda"],
     "-!->",
-    ".../test",
-    { "description": "extensions must not use any test code" }
+    ".../validation",
+    { "description": "cda can not use validation" }
   ]
 ]

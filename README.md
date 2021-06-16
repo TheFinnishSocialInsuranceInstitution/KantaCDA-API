@@ -1,3 +1,5 @@
+HUOM. tämän repositoryn pull requesteja ei käsitellä, vaan repon tarkoitus on ainoastaan jakaa KantaCDA-API kehittäjien käytettäväksi.
+
 KantaCDA-API tarjoaa sovelluksille java-rajapinnan CDA-asiakirjojen (http://www.kanta.fi/fi/web/ammattilaisille/hl7) parsintaan, tietojen lukemiseen, muokkaamiseen ja tuottamiseen.
 
 Rajapinta on alunperin toteutettu osana [Kelainta](http://www.kelain.fi) reseptiasiakirjojen käsittelyyn.

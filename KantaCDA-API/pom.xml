@@ -1,23 +1,15 @@
-<!--
-  Copyright 2020 Kansaneläkelaitos
-  
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-  use this file except in compliance with the License.  You may obtain a copy
-  of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-  License for the specific language governing permissions and limitations under
-  the License.
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<!-- REV2: Open sourcena julkaistussa kirjastossa parent ei voi osoittaa 
+		pom.xml:ään jota ei ole julkaistu -->
+	<parent>
+		<groupId>fi.kanta.maven</groupId>
+		<artifactId>pom-jee6-java7</artifactId>
+		<version>4.0.1</version>
+	</parent>
 	<groupId>fi.kela.kanta</groupId>
 	<artifactId>KantaCDA-API</artifactId>
-	<version>1.1.24</version>
+	<version>1.1.25-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>KantaCDA-API</name>
 	<url>http://sites.kanta.fi/${project.groupId}/${project.artifactId}/${project.version}/</url>
@@ -30,6 +22,8 @@
 	</properties>
 
 	<dependencies>
+		<!-- REV: log4j-api tulee todennäköisesti log4j-coren kautta, joten erillinen 
+			julistus turha -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -58,6 +52,14 @@
 			<version>1.10</version>
 		</dependency>
 		
+		<!-- REV: Kommentoidut dependencyt pois -->
+		
+		<!-- Dependencyt bean validationin käyttöön -->
+		<!-- <dependency> -->
+		<!-- <groupId>javax.validation</groupId> -->
+		<!-- <artifactId>validation-api</artifactId> -->
+		<!-- <version>1.1.0.Final</version> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
@@ -173,4 +175,23 @@
 			</build>
 		</profile>
 	</profiles>
+
+	<!-- REV2: Käyttäjätunnus pois -->
+	<developers>
+		<developer>
+			<id>w000tvl</id>
+			<name>Teemu Lempiäinen</name>
+			<email>teemu.lempiainen@kela.fi</email>
+			<roles>
+				<role>Sovelluskehittäjä</role>
+			</roles>
+		</developer>
+	</developers>
+	<!-- REV2: Jazz:n osoite pois, muutenkin vaihdettava osoittamaan open source 
+		repoon... -->
+	<scm>
+		<connection>scm:git:ssh://git@bitbucket-alm.kela.fi/rese/kantacda-api.git</connection>
+		<developerConnection>scm:git:ssh://git@bitbucket-alm.kela.fi/rese/kantacda-api.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 </project>

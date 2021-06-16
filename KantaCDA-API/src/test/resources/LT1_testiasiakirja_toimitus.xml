@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 24.4.2009  * Ensimmäinen versio -->
+<!-- 31.8.2011 Päivitetty versio -->
+<!-- 3.10.2014 Päivitetty versioon 1.2.246.777.11.2014.29 (header) ja 1.2.246.777.11.2014.30 (body) -->
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hl7fi="urn:hl7finland" xsi:schemaLocation="urn:hl7-org:v3 ../CDA_Fi.xsd">
+	<!-- Asiakirjan aluekoodi (pakollinen) -->
+	<realmCode code="FI"/>
+	<!-- Asiakirjan tyyppi (pakollinen) -->
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<!-- Asiakirjan määrittelyt -->
+	<templateId root="1.2.246.777.11.2014.29"/>
+	<!-- Toimituksen tunniste OID -->
+	<id root="1.2.246.10.2323232.93.2014.2250"/>
+	<!-- Reseptisanoman tyyppi -->
+	<code code="10" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi" displayName="Lääkemääräyksen toimitus"/>
+	<title>Lääkemääräyksen toimitus</title>
+	<!-- Toimituksen luontiajankohta, aika kuvataan sekunnin tarkkuudella -->
+	<effectiveTime value="20140424094012"/>
+	<!-- Luottamuksellisuus  -->
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="KanTa-palvelut - Asiakirjan luottamuksellisuus" displayName="Terveydenhuollon salassapidettävä"/>
+	<!-- Toimituksen kieli -->
+	<languageCode code="fi"/>
+	<!-- Alkuperäisen lääketoimituksen tunniste OID -->
+	<setId root="1.2.246.10.2323232.93.2014.2250"/>
+	<!-- Toimituksen versionumero -->
+	<versionNumber value="1"/>
+	<!-- Potilaan tiedot -->
+	<recordTarget>
+		<patientRole>
+			<!-- Potilaan henkilötunnus -->
+			<id extension="030875-999Y" root="1.2.246.21"/>
+			<patient>
+				<!-- Potilaan nimi -->
+				<name>
+					<!--Potilaan etunimet-->
+					<given>Pekka</given>
+					<given>Pietari</given>
+					<!-- Potilaan kutsumanimi-->
+					<given qualifier="CL">Pekka</given>
+					<family>Potilas</family>
+				</name>
+				<!-- Potilaan sukupuoli, koodiston arvot : 1=mies, 2=nainen, 0=tuntematon -->
+				<administrativeGenderCode code="1" codeSystem="1.2.246.537.5.1.1997" codeSystemName="AR/YDIN - Sukupuoli" displayName="mies"/>
+				<!-- Potilaan syntymäaika -->
+				<birthTime value="19750803"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<!-- Lääketoimituksen laatija, farmaseutti -->
+	<author>
+		<!-- Ammattihenkilön rooli -->
+		<functionCode code="LTE" codeSystem="1.2.246.537.5.40006.2003" codeSystemName="eArkisto - tekninen CDA R2 henkilötarkennin" displayName="Lääketoimituksen tehnyt henkilö"/>
+		<!-- Lääketoimituksen laatijan kirjautumisaika (ei pakollinen)-->
+		<time value="20140424090015"/>
+		<assignedAuthor>
+			<!-- Toimituksen laatijan rekisteröintinumero (eli ns. terhikkitunnus) -->
+			<id extension="12312312312" root="1.2.246.537.26"/>
+			<code>
+				<translation>
+					<!-- Toimituksen laatijan ammattioikeus-->
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+						<value code="005" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu farmaseutti"/>
+					</qualifier>
+				</translation>
+			</code>
+			<!-- Toimituksen laatijan nimi -->
+			<assignedPerson>
+				<name>
+					<given>Siru</given>
+					<family>Pullonen</family>
+					<suffix qualifier="AC">laillistettu farmaseutti</suffix>
+				</name>
+			</assignedPerson>
+			<!-- Toimituksen tehneen apteekin tiedot -->
+			<representedOrganization>
+				<id root="1.2.246.10.2323232.34"/>
+				<name>Testi Apteekki</name>
+				<!-- puhelinnumero: erottelu välilyönnillä on kielletty. Organisaation puhelinnumero välitetään telecom-elementillä, jossa use-attribuutin arvo on "DIR" (suora numero) tai ”PUB” (vaihteen numero) -->
+				<telecom value="tel:020456456" use="DIR"/>
+				<addr>
+					<streetAddressLine>Apteekkitie 1</streetAddressLine>
+					<postalCode>50600</postalCode>
+					<city>Turku</city>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- Rekisterinpitäjä -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.246.10.2462460.19.1"/>
+				<name>Kansaneläkelaitos</name>
+				<addr use="PST">
+					<postBox>PL 450</postBox>
+					<city>Helsinki</city>
+					<postalCode>00101</postalCode>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- Viittaus lääkemääräykseen, johon lääketoimitus kohdistuu -->
+	<relatedDocument typeCode="APND">
+		<parentDocument>
+			<id root="1.2.246.10.1602257.93.2014.1001"/>
+			<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi" displayName="Lääkemääräys"/>
+			<setId root="1.2.246.10.1602257.93.2014.1001"/>
+		</parentDocument>
+	</relatedDocument>
+	<componentOf>
+		<encompassingEncounter>
+			<!-- Toimituspäivä, aika kuvataan sekunnin tarkkuudella -->
+			<effectiveTime value="20140424094012"/>
+			<!-- Toimituksen tehnyt apteekki -->
+			<location>
+				<healthCareFacility>
+					<id root="1.2.246.10.2323232.34"/>
+					<location>
+						<name>Testi Apteekki</name>
+						<addr>
+							<streetAddressLine>Apteekkitie 1</streetAddressLine>
+							<city>Turku</city>
+							<postalCode>50600</postalCode>
+						</addr>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<!--
+*****************************************************************************
+HL7 CDA R2 Local Header
+*****************************************************************************
+-->
+	<hl7fi:localHeader>
+		<hl7fi:declaredTime value="20140424094012"/>
+		<hl7fi:softwareSupport>Apteekkijärjestelmä XXX  v 1.12 xx</hl7fi:softwareSupport>
+		<!-- FI 18 hl7fi:signature - asiakirjan sähköiset allekirjoitustiedot -->
+		<!-- katso allekirjoitukseen liittyvät esimerkit XML allekirjoitukseen liittyvästä soveltamisoppaasta -->
+	</hl7fi:localHeader>
+	<!--End of local Header -->
+	<!--
+*****************************************************************************
+CDA Body
+*****************************************************************************
+-->
+	<component>
+		<structuredBody>
+			<component>
+				<templateId root="1.2.246.777.11.2014.30"/>
+				<section ID="OID1.2.246.10.2323232.93.2014.2250.1">
+					<id root="1.2.246.10.2323232.93.2014.2250.1"/>
+					<code code="10" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi" displayName="Lääkemääräyksen toimitus"/>
+					<title>Lääkemääräyksen toimitus</title>
+					<component>
+						<section ID="OID1.2.246.10.2323232.93.2014.2250.2">
+							<id root="1.2.246.10.2323232.93.2014.2250.2"/>
+							<text>
+								<paragraph>
+									<content>Testi Apteekki</content>
+								</paragraph>
+								<paragraph>
+									<content>20140424</content>
+								</paragraph>
+								<paragraph>
+									<content>Farmaseutti Siru Pullonen</content>
+								</paragraph>
+							</text>
+							<component>
+								<section ID="OID1.2.246.10.2323232.93.2014.2250.3">
+									<id root="1.2.246.10.2323232.93.2014.2250.3"/>
+									<text>
+										<paragraph>
+											<content>Kauppanimi: DIAPAM</content>
+										</paragraph>
+										<paragraph>
+											<content>Vahvuus: 10 mg</content>
+										</paragraph>
+										<paragraph>
+											<content>Lääkemuoto: tabletti</content>
+										</paragraph>
+										<paragraph>
+											<content>Toimitettu määrä: 21 fol</content>
+										</paragraph>
+										<paragraph>
+											<content>Jäljellä oleva määrä: 3X21 fol</content>
+										</paragraph>
+									</text>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="100" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevalmisteen ja pakkauksen tiedot toimitussanomassa"/>
+											<statusCode code="completed"/>
+											<component>
+												<substanceAdministration classCode="SBADM" moodCode="EVN">
+													<!-- Toimituspäivä, aika kuvataan sekunnin tarkkuudella -->
+													<effectiveTime value="20140424094012"/>
+													<!-- Toimitetun valmisteen vahvuus -->
+													<doseQuantity nullFlavor="NA">
+														<translation>
+															<originalText>10 mg</originalText>
+														</translation>
+													</doseQuantity>
+													<!-- Potilaan tiedot -->
+													<subject typeCode="SBJ">
+														<relatedSubject classCode="PAT">
+															<code code="030875-999Y" codeSystem="1.2.246.21"/>
+															<subject classCode="PSN">
+																<name>
+																	<!--Potilaan etunimet-->
+																	<given>Pekka</given>
+																	<given>Pietari</given>
+																	<!-- Potilaan kutsumanimi-->
+																	<given qualifier="CL">Pekka</given>
+																	<family>Potilas</family>
+																</name>
+																<birthTime value="19750803"/>
+															</subject>
+														</relatedSubject>
+													</subject>
+													<!-- Toimitetun valmisteen ATC-koodi ja ATC-koodin mukainen nimi sekä lääketietokannan versio-->
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+																<code code="N05BA01" codeSystem="1.2.246.537.6.32" codeSystemName="Fimea - ATC Luokitus" codeSystemVersion="2014.008" displayName="Diatsepaami"/>
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+													<!-- Lääkemääräyksen hakeneen ja toimituksen valmistelleen farmasian opiskelijan tiedot  -->
+													<performer>
+														<assignedEntity>
+															<!-- Farmasian opiskelijan rekisteröintinumero (eli ns. terhikkitunnus) -->
+															<id extension="22345567789" root="1.2.246.537.26"/>
+															<code>
+																<translation>
+																	<!-- Farmasian opiskelijan ammattioikeus-->
+																	<qualifier>
+																		<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+																		<value code="907" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="farmasian opiskelija"/>
+																	</qualifier>
+																</translation>
+															</code>
+															<!-- Farmasian opiskelijan nimi -->
+															<assignedPerson>
+																<name>
+																	<given>Olli</given>
+																	<family>Opiskelija</family>
+																	<suffix qualifier="AC">farmasian opiskelija</suffix>
+																</name>
+															</assignedPerson>
+														</assignedEntity>
+													</performer>
+													<!-- Toimituksen tarkistaneen farmaseutin / proviisorin tiedot-->
+													<author>
+														<time value="20140424090015"/>
+														<assignedAuthor>
+															<!-- Farmaseutin / proviisorin ID rekisteröintinumero (eli ns. terhikkitunnus) -->
+															<id extension="12312312312" root="1.2.246.537.26"/>
+															<code>
+																<translation>
+																	<!-- Farmaseutin / proviisorin ammattioikeus-->
+																	<qualifier>
+																		<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+																		<value code="005" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu farmaseutti"/>
+																	</qualifier>
+																</translation>
+															</code>
+															<!-- Farmaseutin /proviisorin nimi -->
+															<assignedPerson>
+																<name>
+																	<given>Siru</given>
+																	<family>Pullonen</family>
+																	<suffix qualifier="AC">laillistettu farmaseutti</suffix>
+																</name>
+															</assignedPerson>
+															<!-- Toimituksen tehneen apteekin tiedot -->
+															<representedOrganization>
+																<id root="1.2.246.10.2323232.34"/>
+																<name>Testi Apteekki</name>
+																<!-- puhelinnumero: erottelu välilyönnillä on kielletty. Organisaation puhelinnumero välitetään telecom-elementillä, jossa use-attribuutin arvo on "DIR" (suora numero) tai ”PUB” (vaihteen numero) -->
+																<telecom value="tel:020456456" use="DIR"/>
+																<addr>
+																	<streetAddressLine>Apteekkitie 1</streetAddressLine>
+																	<postalCode>50600</postalCode>
+																	<city>Turku</city>
+																</addr>
+															</representedOrganization>
+														</assignedAuthor>
+													</author>
+													<!-- Toimitettu määrä -->
+													<entryRelationship typeCode="COMP">
+														<observation classCode="OBS" moodCode="EVN">
+															<code code="102" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Toimitettu määrä"/>
+															<value unit="fol" value="21" xsi:type="PQ"/>
+														</observation>
+													</entryRelationship>
+													<!-- Jäljellä oleva määrä -->
+													<entryRelationship typeCode="COMP">
+														<observation classCode="OBS" moodCode="EVN">
+															<code code="103" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Jäljellä oleva määrä"/>
+															<value  unit="fol" xsi:type="PQ">
+																<translation>
+																	<originalText>3X21</originalText>
+																</translation>
+															</value>
+														</observation>
+													</entryRelationship>
+													<entryRelationship typeCode="COMP">
+														<supply classCode="SPLY" moodCode="EVN">
+															<!-- Toimitettujen pakkausten lukumäärä -->
+															<repeatNumber value="1"/>
+															<!-- Toimitettu pakkauskoko ja pakkauskoon yksikkö -->
+															<quantity unit="fol" value="21"/>
+															<!-- Toimitettu valmiste -->
+															<product>
+																<manufacturedProduct>
+																	<manufacturedLabeledDrug>
+																		<!-- Toimitetun valmisteen VNR-numero ja kauppanimi sekä lääketietokannan versio. Osapakkaustoimituksessa tuodaan sen lääkevalmisteen VNR-koodi, josta lääke on jaettu. -->
+																		<code code="469452" codeSystem="1.2.246.537.6.55" codeSystemName="VNR" codeSystemVersion="2014.008" displayName="DIAPAM"/>
+																		<!-- Lääkkeen lääketietokannan mukainen laji, poistuu käytöstä versiossa 1.2.246.777.11.2014.30 
+																			<translation>
+																				<qualifier>
+																					<name code="94" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääketietokannan mukainen laji"/>
+																					<value code="1" codeSystem="1.2.246.537.5.40126.2006" codeSystemName="Lääketietokannasta saatava valmisteen laji" displayName="Lääke"/>
+																				</qualifier>
+																			</translation>-->
+																	</manufacturedLabeledDrug>
+																</manufacturedProduct>
+															</product>
+															<!-- Toimitetun valmisteen myyntiluvan haltija -->
+															<participant typeCode="HLD">
+																<participantRole classCode="OWN">
+																	<playingEntity>
+																		<name>ORION OYJ</name>
+																	</playingEntity>
+																</participantRole>
+															</participant>
+															<!-- Toimitetun valmisteen lääkemuoto -->
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="24" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemuoto"/>
+																	<value xsi:type="ST">tabletti</value>
+																</observation>
+															</entryRelationship>
+															<!-- Osapakkaustieto, onko toimitettu jaettu pakkaus (kyllä/ei) -->
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="101" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Osapakkaus"/>
+																	<value value="true" xsi:type="BL"/>
+																</observation>
+															</entryRelationship>
+															<!-- Apteekissa valmistettavan lääkkeen osoitin (kyllä/ei)-->
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="124" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Apteekissa valmistettava lääke"/>
+																	<value value="false" xsi:type="BL"/>
+																</observation>
+															</entryRelationship>
+															<!-- Toimitetun valmisteen pakkauskoon kerroin -->
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="125" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Pakkauskoon kerroin"/>
+																	<value value="1" xsi:type="INT"/>
+																</observation>
+															</entryRelationship>
+															<!-- Toimitetun valmisteen pakkauskoko tekstimuotoisena -->
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="126" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Pakkauskoko tekstimuotoisena"/>
+																	<value xsi:type="ST">21 fol</value>
+																</observation>
+															</entryRelationship>
+															<!-- Valmisteen laji, uusi tieto versiossa 1.2.246.777.11.2014.30  -->
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="164" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Valmisteen laji"/>
+																	<value xsi:type="CD" code="1" codeSystem="1.2.246.537.6.604.2014" codeSystemName="THL - Valmisteen laji" displayName="Myyntiluvallinen lääkevalmiste"/>
+																</observation>
+															</entryRelationship>
+														</supply>
+													</entryRelationship>
+													<!-- Viittaukset -->
+													<!-- viittaus toimitukseen itseensä -->
+													<reference typeCode="SPRT">
+														<externalDocument>
+															<id root="1.2.246.10.2323232.93.2014.2250"/>
+															<code code="10" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi" displayName="Lääkemääräyksen toimitus"/>
+															<setId root="1.2.246.10.2323232.93.2014.2250"/>
+														</externalDocument>
+													</reference>
+													<!-- viittaus lääkemääräykseen, josta toimitus on tehty -->
+													<reference typeCode="REFR">
+														<externalDocument>
+															<id root="1.2.246.10.1602257.93.2014.1001"/>
+															<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi" displayName="Lääkemääräys"/>
+															<setId root="1.2.246.10.1602257.93.2014.1001"/>
+														</externalDocument>
+													</reference>
+												</substanceAdministration>
+											</component>
+										</organizer>
+									</entry>
+									<!-- Toimituksen muut tiedot -->
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="104" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Toimituksen muut tiedot"/>
+											<statusCode code="completed"/>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="91" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annosjakelu"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="105" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääke vaihdettu"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="108" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Toimituksen hinta"/>
+													<value currency="EUR" value="3.86" xsi:type="MO"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="109" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevaihtokielto tai syy, miksi on toimitettu hintaputken / viitehintaputken ulkopuolista valmistetta"/>
+													<text xsi:type="ST">aikaisempi toimitus</text>
+													<value code="M" codeSystem="1.2.246.537.5.40183.2009" codeSystemName="Sähköinen lääkemääräys - Lääkevaihtokielto tai lääkevaihdon syy" displayName="Muu syy" xsi:type="CE"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="110" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Omavastuuosuuksien lukumäärä"/>
+													<value value="1" xsi:type="INT"/>
+												</observation>
+											</component>
+									<component>
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="119" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="PKV-lääkemääräys"/>
+											<value code="Z" codeSystem="1.2.246.537.5.40118.2006" codeSystemName="Sähköinen lääkemääräys - Huumausaine / PKV lääkemääräys " displayName="PKV-lääke, psykotrooppinen aine" xsi:type="CE"/>
+										</observation>
+									</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="122" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Kokonaan toimitettu"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="132" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Huume"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="152" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Toimitustietotarran annostusohje"/>
+													<value xsi:type="ST">1 tabletti tarvittaessa 3 kertaa vuorokaudessa. Ahdistuneisuuden hoitoon.</value>
+												</observation>
+											</component>
+										</organizer>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

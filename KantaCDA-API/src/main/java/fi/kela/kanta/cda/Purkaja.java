@@ -1,24 +1,11 @@
-<!--
-  Copyright 2020 Kansaneläkelaitos
-  
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-  use this file except in compliance with the License.  You may obtain a copy
-  of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-  License for the specific language governing permissions and limitations under
-  the License.
--->
 package fi.kela.kanta.cda;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +14,8 @@ import java.util.Properties;
 import javax.xml.bind.JAXBElement;
 
 import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.lang.StringUtils;
+import org.apache.logging.log4j.util.Strings;
 import org.hl7.v3.AD;
 import org.hl7.v3.ANY;
 import org.hl7.v3.AdxpCity;
@@ -46,6 +35,7 @@ import org.hl7.v3.POCDMT000040ClinicalDocument;
 import org.hl7.v3.POCDMT000040InfrastructureRootTemplateId;
 import org.hl7.v3.POCDMT000040Organization;
 import org.hl7.v3.POCDMT000040Section;
+import org.hl7.v3.PQ;
 import org.hl7.v3.StrucDocContent;
 import org.hl7.v3.StrucDocParagraph;
 import org.hl7.v3.StrucDocText;
@@ -63,10 +53,12 @@ import fi.kela.kanta.util.AsiakirjaVersioUtil;
 import fi.kela.kanta.util.KantaCDAUtil;
 
 public abstract class Purkaja {
-    final private static String sdfKuvio = "yyyyMMddHHmmss";
+	private static final String sdfKuvio = "yyyyMMddHHmmss";
     private static final String TelPrefix = "tel:";
     private static final String EmailPrefix = "mailto:";
     private static final String resepti_properties = "resepti.properties";
+    private static final String KELLONAIKA_PATTERN = "HHmm";
+
 
     protected abstract String getCodeSystem();
 
@@ -306,7 +298,7 @@ public abstract class Purkaja {
                     return sdf.parse(lyhytAika);
                 }
                 catch (ParseException e) {
-                    throw new PurkuException(aika);
+                    throw new PurkuException("Päivämäärää ei saatu muodostettua: " + aika);
                 }
             }
         }
@@ -492,4 +484,49 @@ public abstract class Purkaja {
         }
         return clinicalDocument.getComponent().getStructuredBody().getComponents().get(0).getTemplateIds();
     }
+
+	protected Integer puraIntegerValue(PQ value) throws PurkuException {
+		Integer v = null;
+		if (value != null && Strings.isNotBlank(value.getValue())) {
+			try {
+				v = Integer.valueOf(value.getValue());
+			} catch (NumberFormatException e) {
+				throw new PurkuException("Unable to puraIntegerValue: " + value.getValue(), e);
+			}
+		}
+		return v;
+	}
+
+	protected Double puraDoubleValue(PQ value) throws PurkuException {
+		Double v = null;
+		if (value != null && Strings.isNotBlank(value.getValue())) {
+			try {
+				v = Double.valueOf(value.getValue());
+			} catch (NumberFormatException e) {
+				throw new PurkuException("Unable to puraDoubleValue: " + value.getValue(), e);
+			}
+		}
+		return v;
+	}
+	
+    /**
+     * Apumetodi kellonajan purkamiseen. Parsii annetun ajan, jos aika ei ole null, pituus4 merkkiä eikä sisällä 
+     * muuta kuin numeroita.
+     * Olettaa, että aika annetaan HHmm formaatissa. 
+     *
+     * @param aika String purettava aika
+     * @return LocalTime tai null, jos parametrina annettu null tai parametri liian lyhyt/pitkä tai ei numeroita sisältävä 
+     * merkkijono.
+     * 
+     * @throws PurkuException
+     */
+	protected LocalTime puraKellonaika(String aika)  {
+		if (aika != null && aika.length() == 4 && StringUtils.isNumeric(aika)) {
+			DateTimeFormatter  sdf = DateTimeFormatter.ofPattern(KELLONAIKA_PATTERN);
+			return LocalTime.parse(aika, sdf);
+		}
+
+		return null;
+	}
+
 }

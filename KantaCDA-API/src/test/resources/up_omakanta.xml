@@ -1,0 +1,160 @@
+
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:hl7fi="urn:hl7finland" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA_fi.xsd">
+	<realmCode code="FI"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.2.246.777.11.2015.11"/>
+	<id root="1.2.246.553.18.1.93.2017.2824171771015237528259"/>
+	<code code="8" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Uusimispyyntö"/>
+	<title>Uusimispyyntö</title>
+	<effectiveTime value="20170104145852"/>
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="KanTa-palvelut - Asiakirjan luottamuksellisuus" displayName="Terveydenhuollon salassapidettävä"/>
+	<languageCode code="fi"/>
+	<setId root="1.2.246.553.18.1.93.2017.2824171771015237528259"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="091072-971S" root="1.2.246.21"/>
+			<patient>
+				<name>
+					<given>Leevi</given>
+					<given>Mikael</given>
+					<family>YHTEISTESTI-KANTANEN</family>
+				</name>
+				<administrativeGenderCode code="1" codeSystem="1.2.246.537.5.1.1997" codeSystemName="AR/YDIN - Sukupuoli" displayName="Mies"/>
+				<birthTime value="19721009"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author nullFlavor="NA">
+		<time nullFlavor="NA"/>
+		<assignedAuthor>
+			<id nullFlavor="NA"/>
+			<representedOrganization>
+				<id root="1.2.246.553.18.1"/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.246.10.2462460.19.1"/>
+				<name>Kansaneläkelaitos</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient>
+		<intendedRecipient>
+			<receivedOrganization>
+				<id root="1.2.246.10.33445566.10.1.1"/>
+				<name>Kelan Effica</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<relatedDocument typeCode="APND">
+		<parentDocument>
+			<id root="1.2.246.537.25.1.30411.93.2017.104.151720"/>
+			<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys"/>
+			<setId root="1.2.246.537.25.1.30411.93.2017.104.151720"/>
+		</parentDocument>
+	</relatedDocument>
+	<componentOf>
+		<encompassingEncounter>
+			<effectiveTime value="20170104145852"/>
+			<location>
+				<healthCareFacility>
+					<id root="1.2.246.553.18.1"/>
+					<location>
+						<name>Omakanta</name>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<hl7fi:localHeader>
+		<hl7fi:softwareSupport moderator="Kansaneläkelaitos" product="Omakanta" version="2.0">Omakanta</hl7fi:softwareSupport>
+	</hl7fi:localHeader>
+	<component>
+		<structuredBody>
+			<component>
+				<templateId root="1.2.246.777.11.2015.12"/>
+				<section ID="OID1.2.246.553.18.1.93.2017.2824171771015237528259.100">
+					<id root="1.2.246.553.18.1.93.2017.2824171771015237528259.100"/>
+					<code code="8" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Uusimispyyntö"/>
+					<title>Uusimispyyntö</title>
+					<component>
+						<section ID="OID1.2.246.553.18.1.93.2017.2824171771015237528259.101">
+							<id root="1.2.246.553.18.1.93.2017.2824171771015237528259.101"/>
+							<component>
+								<section ID="OID1.2.246.553.18.1.93.2017.2824171771015237528259.102">
+									<id root="1.2.246.553.18.1.93.2017.2824171771015237528259.102"/>
+									<entry>
+										<act classCode="ACT" moodCode="RQO">
+											<code code="8" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Uusimispyyntö"/>
+											<subject typeCode="SBJ">
+												<relatedSubject classCode="PAT">
+													<code code="091072-971S" codeSystem="1.2.246.21"/>
+													<subject classCode="PSN">
+														<name>
+															<given>Leevi</given>
+															<given>Mikael</given>
+															<family>YHTEISTESTI-KANTANEN</family>
+														</name>
+														<birthTime value="19721009"/>
+													</subject>
+												</relatedSubject>
+											</subject>
+											<participant typeCode="DIR">
+												<participantRole classCode="ROL">
+													<scopingEntity classCode="ORG">
+														<id root="1.2.246.10.33445566.10.1.1"/>
+														<desc>Kelan Effica</desc>
+													</scopingEntity>
+												</participantRole>
+											</participant>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="113" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Uusimispyynnön kirjaajan antama viesti"/>
+													<value xsi:type="ST">Potilas itse</value>
+												</observation>
+											</entryRelationship>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="120" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Uusimispyynnön suostumustyyppi"/>
+													<value code="1" codeSystem="1.2.246.537.5.40119.2006" codeSystemName="Suostumustyypit" displayName="Suullinen suostumus" xsi:type="CE"/>
+												</observation>
+											</entryRelationship>
+										</act>
+									</entry>
+									<entry>
+										<substanceAdministration classCode="SBADM" moodCode="EVN">
+											<effectiveTime value="20170104141720"/>
+											<consumable>
+												<manufacturedProduct>
+													<manufacturedLabeledDrug>
+														<name>BEROCCA</name>
+													</manufacturedLabeledDrug>
+												</manufacturedProduct>
+											</consumable>
+											<author>
+												<time/>
+												<assignedAuthor>
+													<id extension="030411" root="1.2.246.537.25"/>
+													<assignedPerson>
+														<name>
+															<given>Nils</given>
+															<family>Ketonen</family>
+														</name>
+													</assignedPerson>
+												</assignedAuthor>
+											</author>
+										</substanceAdministration>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

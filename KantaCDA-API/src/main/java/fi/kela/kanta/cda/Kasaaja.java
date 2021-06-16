@@ -1,25 +1,12 @@
-<!--
-  Copyright 2020 Kansaneläkelaitos
-  
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-  use this file except in compliance with the License.  You may obtain a copy
-  of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-  License for the specific language governing permissions and limitations under
-  the License.
--->
 package fi.kela.kanta.cda;
 
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 import java.util.TimeZone;
 
+import org.apache.logging.log4j.util.Strings;
 import org.codehaus.plexus.util.StringUtils;
 import org.hl7.v3.AD;
 import org.hl7.v3.AdxpCity;
@@ -78,6 +65,8 @@ public abstract class Kasaaja {
     public static final String LM_PROPERTY_PREFIX = "LM";
     public static final String ARKISTO_PROPERTY_PREFIX = "ARK";
     public static final String LM_CONTENTS = "contentsCode";
+    private static final String KELLONAIKA_PATTERN = "HHmm";
+
     /**
      * Avain jota käytetään property-tiedostosta code arvojen hakuun. Esim. 'LM.uusimispyynto.code'.
      */
@@ -142,6 +131,17 @@ public abstract class Kasaaja {
         todaySDF.setTimeZone(TimeZone.getTimeZone(Kasaaja.TIME_ZONE));
         return todaySDF;
     }
+
+	protected final SimpleDateFormat getTimeFormatNoEtunollaa() {
+		String pattern = "H.mm";
+		SimpleDateFormat timeFormat = new SimpleDateFormat(pattern);
+		timeFormat.setTimeZone(TimeZone.getTimeZone(Kasaaja.TIME_ZONE));
+		return timeFormat;
+	}
+
+	protected final DateTimeFormatter getTimeFormat() {
+		return DateTimeFormatter.ofPattern(KELLONAIKA_PATTERN);
+	}
 
     protected synchronized String getId(LeimakentatTO<?> leimakentat) {
 
@@ -780,6 +780,13 @@ public abstract class Kasaaja {
             element.setRoot(root);
         }
     }
+
+	protected void fetchRootAttributes(String key, II element, String uniquePart) {
+		fetchAttributes(key, element);
+		if (Strings.isNotBlank(uniquePart)) {
+			element.setRoot(element.getRoot() + "." + uniquePart);
+		}
+	}
 
     protected boolean fetchAttributes(String key, CD element) {
         boolean retval = false;

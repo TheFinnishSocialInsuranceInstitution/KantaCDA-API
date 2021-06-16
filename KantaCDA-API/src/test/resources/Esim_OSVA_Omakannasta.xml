@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="CDA_Fi_header_2012-01-10.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hl7fi="urn:hl7finland" xsi:schemaLocation="urn:hl7-org:v3 ..\skeemat\cda\schema-xml-muotoilu\CDA_fi.xsd">
+	<!-- 
+********************************************************************
+OSVA_potilaskohtainen_ostopalvelun_valtuutus_20170215.xml pohjalta 
+Esimerkkipaketin esimerkistä muokattu esimerkki Omakannan tuottamasta potilaskohtaisesta ostopalvelun valtuutuksesta
+- suuri osa sisällöstä vakiosisältöä
+- muuttuvat osat merkitty tähdillä ***
+- kommentteja ei mukaan tuotettavaan asiakirjaan
+- HUOM. rakenteeseen tulee lisäyksiä valinnanvapaustietoja varten
+********************************************************************
+
+HL7 CDA R2 header tiedot
+********************************************************
+-->
+	<!-- 1. Asiakirjan aluekoodi -->
+	<realmCode code="FI"/>
+	<!-- 2. Asiakirjassa noudatettu tekninen standardiversio CDA R2 Ansi Standard 2005-04-21-->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- 3. Asiakirjassa noudatetut määritykset -->
+	<!--*** Kaikki määritykset voivat päivittyä, alla nykyiset arvot, muutokset mahdollisia ***-->
+	<!-- Määrittelykokoelma-->
+	<!--*** 2018.10.3?, varmistettava ***-->
+	<templateId root="1.2.246.777.5.1" extension="2018.10.3"/>
+	<!-- 3. Potilastiedon arkiston asiakirjojen kuvailutiedot, versio 2.40 2015-12-02- -->
+	<templateId root="1.2.246.777.11.2015.36"/>
+	<!-- Potilastiedon arkiston CDA R2 Header, versio 4.66 2015-12-02 -->
+	<templateId root="1.2.246.777.11.2015.38"/>
+	<!-- Potilastiedon arkiston Kertomus ja lomakkeet, versio 5.11 2015-12-02 -->
+	<templateId root="1.2.246.777.11.2015.30"/>
+	<!-- 4. Asiakirjan yksilöintitunnus -->
+	<!--*** Omakanta generoi ***-->
+	<id root="1.2.246.10.99999984.10.0.91.2009.58"/>
+	<!-- 5. Asiakirjan potilasrekisteritunnus -->
+	<code code="13" displayName="Arkistoasiakirjat" codeSystem="1.2.246.537.5.40150.2009" codeSystemName="KanTa-palvelut - Potilasasiakirjan rekisteritunnus"/>
+	<!-- 6. Asiakirjan otsikko -->
+	<title>Ostopalvelun valtuutus asiakirja</title>
+	<!-- 7. Asiakirjan luontiaika -->
+	<!--*** Omakanta generoi ***--> 
+	<effectiveTime value="20140513104421"/>
+	<!-- 8. Asiakirjan luottamuksellisuus -->
+	<confidentialityCode code="5" displayName="Terveydenhuollon salassapidettävä" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="KanTa-palvelut - Asiakirjan luottamuksellisuus"/>
+	<!-- 9. Asiakirjan kieli -->
+	<languageCode code="fi"/>
+	<!-- 10. Alkuperäisen asiakirjan yksilöintitunnus -->
+	<!--*** Versiosarjan ensimmäisen version OID, jos eka versio, sama kuin 4. ***-->
+	<setId root="1.2.246.10.99999984.10.0.91.2009.58"/>
+	<!-- 11. Asiakirjan versio -->
+	<!--*** OSVAa voi versioda, eli voi olla muu kuin 1 ***-->
+	<versionNumber value="1"/>
+	<!-- 13. Potilaan perustiedot -->
+	<recordTarget>
+		<!-- Potilas -->
+		<patientRole>
+			<!-- *** Potilaan henkilötunnus ***-->
+			<id extension="030875-999Y" root="1.2.246.21"/>
+			<!-- Potilaan muu tunnus -->
+			<patient>
+				<!-- Potilaan nimi -->
+				<name>
+					<!-- Potilaan kutsumanimi -->
+					<given qualifier="CL">Testi-Pekka</given>
+					<!-- *** Potilaan etunimi1 *** -->
+					<given>Teemu</given>
+					<!-- *** Potilaan etunimi2 *** -->
+					<given>Testi-Pekka</given>
+					<!-- Potilaan etunimi3 -->
+					<given>Sakari</given>
+					<!-- *** Potilaan sukunimi *** -->
+					<family>Potilas</family>
+				</name>
+				<!-- *** Potilaan syntymäaika *** -->
+				<birthTime value="19750803"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<!-- 14. Ammattihenkilö / laite -->
+	<author>
+		<!--  Aika on pakollinen skeemassa, laitettava tähän nullFlavor -->
+		<time nullFlavor="NA"/>
+		<assignedAuthor>
+			<!--  Ammattihenkilön perustunniste henkilötunnus-->
+			<id nullFlavor="NA"/>
+		</assignedAuthor>
+	</author>
+	<!-- 17. Asiakirjan rekisterinpitäjä -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!--*** Ostopalvelun järjestäjän rekisterinpitäjä, OID ja nimi ***-->
+				<id root="1.2.246.10.99999984.19.0"/>
+				<name>Testi tk</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- 26. Palvelutapahtuman käyntitiedot -->
+	<componentOf>
+		<encompassingEncounter>
+			<!-- 26.3 Palvelutapahtuman kokonaishoitoaika (käyhtetään vain palvelutapahtuma-asiakirjoissa, pakollinen skeemassa joten NA-->
+			<effectiveTime nullFlavor="NA"/>
+			<!-- 26.4 Palveluntuottaja -->
+			<responsibleParty>
+				<assignedEntity>
+					<id nullFlavor="NA"/>
+					<representedOrganization>
+						<!--*** palveluntuottaja: ostopalvelun järjestäjän toimintayksikkötason tieto. OID ja nimi ***-->
+						<id root="1.2.246.10.99999984.10.0"/>
+						<name>Testi tk</name>
+					</representedOrganization>
+				</assignedEntity>
+			</responsibleParty>
+		</encompassingEncounter>
+	</componentOf>
+	<!--
+********************************************************
+27 any HL7 CDA R2 Local Header
+********************************************************
+-->
+	<hl7fi:localHeader>
+		<!-- FI 2 hl7fi:tableOfContents - asiakirjan sisällysluettelo -->
+		<hl7fi:tableOfContents>
+			<hl7fi:contentsCode code="362" displayName="Ostopalvelun valtuutus asiakirja" codeSystem="1.2.246.537.6.12.2002" codeSystemName="AR/YDIN - Näkymät"/>
+		</hl7fi:tableOfContents>
+		<!-- FI 6 hl7fi:fileFormat - asiakirjan tiedostomuoto -->
+		<hl7fi:fileFormat code="1" displayName="CDA R2" codeSystem="1.2.246.537.5.40179.2008" codeSystemName="eArkisto - Asiakirjan tiedostomuoto"/>
+		<!-- FI 7 hl7fi:softwareSupport - asiakirjan tuottanut ohjelmisto  -->
+		<hl7fi:softwareSupport moderator="Kansaneläkelaitos" product="Omakanta" version="2.0">Omakanta</hl7fi:softwareSupport>
+		<!-- FI 9 hl7fi:documentType - asiakirjan tyyppi -->
+		<hl7fi:documentType code="3" displayName="Arkistoasiakirja" codeSystem="1.2.246.537.5.5001.2011" codeSystemName="eArkisto - Asiakirjatyyppi 2012"/>
+		<!-- FI 12 hl7fi:functionCode - asiakirjan tehtäväluokka (eAMS) -->
+		<hl7fi:functionCode code="06.00.02" displayName="Potilastietojen käytön ja luovutusten hallinta" codeSystem="1.2.246.537.6.300.2010"/>
+		<!-- FI 13 hl7fi:recordStatus - asiakirjan tila   -->
+		<hl7fi:recordStatus code="3" displayName="Arkistointivalmis" codeSystem="1.2.246.537.5.40154.2008" codeSystemName="eArkisto - Asiakirjan valmistumisen tila"/>
+		<!-- *** FI  22	hl7fi:custodianTypecode - asiakirjan rekisteripitäjän laji, ei välttämättä julkinen ***-->
+		<hl7fi:custodianTypeCode code="1" displayName="Julkinen" codeSystem="1.2.246.537.5.40172.2008" codeSystemName="eArkisto - Rekisteripitäjän laji"/>
+		<!-- FI  28	hl7fi:retentionPeriodClass - asiakirjan säilytysaikaluokka -->
+		<hl7fi:retentionPeriodClass code="2" displayName="12 vuotta potilaan kuolemasta tai 120 vuotta syntymästä" codeSystem="1.2.246.537.5.40158.2008" codeSystemName="eArkisto - Säilytysaikaluokka"/>
+	</hl7fi:localHeader>
+	<!--  End of local Header -->
+	<!-- 
+********************************************************
+  CDA Body
+********************************************************
+-->
+	<component>
+		<!-- xml ID sähköistä allekirjoitusta varten -->
+		<!--*** Omakanta generoi ***-->
+		<structuredBody ID="OID1.2.246.10.99999984.10.0.91.2009.58.2">
+			<!-- lomake -->
+			<component>
+				<section>
+					<!-- lomakkeen versio lomake OID ja päivityspäiväys vvvvkkpp -->
+					<!--*** käytetyn lomakemäärittelyn mukaan ***-->
+					<templateId root="1.2.246.537.6.12.2002.362.20140311"/>
+					<!-- lomakkeen (instanssin) yksilöintitunnus -->
+					<!--*** Omakanta generoi ***-->
+					<id root="1.2.246.10.99999984.10.0.91.2009.58"/>
+					<!-- näkymä eli lomaketunnus -->
+					<code code="362" displayName="Ostopalvelun valtuutus asiakirja" codeSystem="1.2.246.537.6.12.2002" codeSystemName="AR/YDIN - Näkymät"/>
+					<title>Ostopalvelun valtuutus asiakirja</title>
+					<component>
+						<section>
+							<code code="1" displayName="Asiakirjan tunniste" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Asiakirjan tunniste</title>
+							<component>
+								<section>
+									<code code="2" displayName="Asiakirjan yksilöivä tunniste" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Asiakirjan yksilöivä tunniste</title>
+									<!--*** Omakanta generoi ***-->
+									<text>1.2.246.10.99999984.10.0.91.2009.58</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Omakanta generoi ***-->
+											<value xsi:type="II" root="1.2.246.10.99999984.10.0.91.2009.58"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="3" displayName="Ostopalvelun tyyppi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Ostopalvelun tyyppi</title>
+							<component>
+								<section>
+									<code code="4" displayName="Ostopalvelun tyyppi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Ostopalvelun tyyppi</title>
+									<text>Potilaskohtainen ostopalvelu</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="CV" code="1" displayName="Potilaskohtainen ostopalvelu" codeSystem="1.2.246.537.6.1400.1" codeSystemName="eArkisto - Ostopalvelun tyyppi"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="5" displayName="Ostopalvelun valtuutuksen voimassaolo" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Ostopalvelun valtuutuksen voimassaolo</title>
+							<component>
+								<section>
+									<code code="6" displayName="Asiakirja voimassa" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Asiakirja voimassa</title>
+									<!--*** Omakanta tuottaa, alku- ja päättymispäivä annettava***-->
+									<text>13.5.2014 - 9.10.2014</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="IVL_TS">
+											<!--*** Omakanta tuottaa, alku- ja päättymispäivä annettava***-->
+												<low value="20140513"/>
+												<high value="20141009"/>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="7" displayName="Palvelun järjestäjä" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Palvelun järjestäjä</title>
+							<component>
+								<section>
+									<code code="8" displayName="Palvelun järjestäjä" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Palvelun järjestäjä</title>
+									<!--*** käyttäjälle osoitettu järjestäjä Omakannassa, OID ***-->
+									<text>1.2.246.10.99999984.10.0</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** käyttäjälle osoitettu järjestäjä Omakannassa, OID ***-->
+											<value xsi:type="II" root="1.2.246.10.99999984.10.0"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="9" displayName="Palvelun järjestäjän nimi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Palvelun järjestäjän nimi</title>
+									<!--*** käyttäjälle osoitettu järjestäjä Omakannassa, nimi ***-->
+									<text>Testi tk</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="10" displayName="Palvelun järjestäjän hoitovastuullinen palveluyksikkö" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Palvelun järjestäjän hoitovastuullinen palveluyksikkö</title>
+									<!--*** käyttäjälle osoitettu järjestäjä Omakannassa, palveluyksikön OID ***-->
+									<text>1.2.246.10.99999984.10.1</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** käyttäjälle osoitettu järjestäjä Omakannassa, palveluyksikön OID ***-->
+											<value xsi:type="II" root="1.2.246.10.99999984.10.1"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="11" displayName="Palvelun järjestäjän hoitovastuulinen palveluyksikön nimi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Palvelun järjestäjän hoitovastuulinen palveluyksikön nimi</title>
+									<!--*** käyttäjälle osoitettu järjestäjä Omakannassa, palveluyksikön nimi ***-->
+									<text>Testi tk pääterveysasema</text>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="12" displayName="Palvelun tuottaja" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Palvelun tuottaja</title>
+							<component>
+								<section>
+									<code code="13" displayName="Palvelun tuottaja" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Palvelun tuottaja</title>
+									<!--*** käyttäjän Omakannassa valistema ostopalvelun tuottaja, OID ***-->
+									<text>1.2.246.10.48484841.10.0</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** käyttäjän Omakannassa valistema ostopalvelun tuottaja, OID ***-->
+											<value xsi:type="II" root="1.2.246.10.48484841.10.0"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="14" displayName="Palvelun tuottajan nimi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Palvelun tuottajan nimi</title>
+									<!--*** käyttäjän Omakannassa valistema ostopalvelun tuottaja, nimi ***-->
+									<text>Testi yksityinen</text>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="15" displayName="Ostopalvelun tuottajan oikeus hakea asiakirjoja palvelun järjestäjän rekisteristä" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Ostopalvelun tuottajan oikeus hakea asiakirjoja palvelun järjestäjän rekisteristä</title>
+							<component>
+								<section>
+									<code code="16" displayName="Rekisterinpitäjä" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisterinpitäjä</title>
+									<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot. ***-->
+									<text>1.2.246.10.99999984.19.0</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot. ***-->
+											<value xsi:type="II" root="1.2.246.10.99999984.19.0"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="17" displayName="Rekisteri" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisteri</title>
+									<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot. ***-->
+									<text>Työterveyshuolto</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot. ***-->
+											<value xsi:type="CV" code="4" displayName="Työterveyshuolto" codeSystemName="potilasrekisteritunnus" codeSystem="1.2.246.537.5.40150.2009"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<!-- seuraavast tietokentät vain jos potilasrekisteritunnus on työterveyshuolto, esimerkin vuoksi ovat nyt mukana -->
+							<!--*** Tämä lohko jää pois jos rekisteri on muu kuin työterveyshuolto ***-->
+							<component>
+								<section>
+									<code code="18" displayName="Rekisterin tarkenne" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisterin tarkenne</title>
+									<!--*** Työterveyden rekisterin tarkenne, tunnus ***-->
+									<text>1234567-1</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Työterveyden rekisterin tarkenne, tunnus ***-->
+											<value xsi:type="II" root="1.2.246.10" extension="1234567-1"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="19" displayName="Rekisterin tarkentimen nimi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisterin tarkentimen nimi</title>
+									<!--*** Työterveyden rekisterin tarkenne, nimi ***-->
+									<text>Yritys Oy</text>
+								</section>
+							</component>
+						</section>
+					</component>
+					<component>
+						<section>
+							<code code="20" displayName="Ostopalvelun tuottajan oikeus tallentaa syntyneet asiakirjat palvelun järjestäjän rekisteriin" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Ostopalvelun tuottajan oikeus tallentaa syntyneet asiakirjat palvelun järjestäjän rekisteriin</title>
+							<component>
+								<section>
+									<code code="21" displayName="Rekisterinpitäjä" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisterinpitäjä</title>
+									<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot ***-->
+									<text>1.2.246.10.99999984.19.0</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot ***-->
+											<value xsi:type="II" root="1.2.246.10.99999984.19.0"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="22" displayName="Rekisteri" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisteri</title>
+									<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot ***-->
+									<text>Työterveyshuolto</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Omakannan tuottamassa aina tallennusoikeus. Käyttäjälle osoitetun järjestäjän ko. toiminnan rekisterinpitäjätiedot ***-->
+											<value xsi:type="CV" code="4" displayName="Työterveyshuolto" codeSystemName="potilasrekisteritunnus" codeSystem="1.2.246.537.5.40150.2009"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<!--*** Tämä lohko jää pois jos rekisteri on muu kuin työterveyshuolto ***-->
+							<component>
+								<section>
+									<code code="23" displayName="Rekisterin tarkenne" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisterin tarkenne</title>
+									<!--*** Työterveyden rekisterin tarkenne, tunnus ***-->
+									<text>1234567-1</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Työterveyden rekisterin tarkenne, tunnus ***-->
+											<value xsi:type="II" root="1.2.246.10" extension="1234567-1"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="24" displayName="Rekisterin tarkentimen nimi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Rekisterin tarkentimen nimi</title>
+									<!--*** Työterveyden rekisterin tarkenne, nimi***-->
+									<text>Yritys Oy</text>
+								</section>
+							</component>
+						</section>
+					</component>
+					<!--*** Ostopalvelutilanteessa jossa Omakanta tuottaa OSVAn, järjestäjä ei tarjoa palvelutapahtumaa vaan tuottaja arkistoi sen itse ***-->
+					<!--<component>
+						<section>
+							<code code="41" displayName="Palvelun järjestäjän arkistoima palvelutapahtuma" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Palvelun järjestäjän arkistoima palvelutapahtuma</title>
+							<component>
+								<section>
+									<code code="42" displayName="Palvelutapahtuman tunniste" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Palvelutapahtuman tunniste</title>
+									<text>1.2.246.10.99999984.10.0.14.2009.111009</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="II" root="1.2.246.10.99999984.10.0.14.2009.111009"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>-->
+					<!--*** Käyttäjä tai henkilö jonka puolesta asioidaan ***-->
+					<component>
+						<section>
+							<code code="25" displayName="Potilas" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Potilas</title>
+							<component>
+								<section>
+									<code code="26" displayName="Henkilötunnus" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Henkilötunnus</title>
+									<!--*** Potilaan hetu ***-->
+									<text>030875-999Y</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Potilaan hetu ***-->
+											<value xsi:type="II" root="1.2.246.21" extension="030875-999Y"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="27" displayName="Suku- ja etunimet" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Suku- ja etunimet</title>
+									<!--*** Potilaan nimi ***-->
+									<text>Potilas, Testi-Pekka</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="PN">
+												<!--*** Potilaan nimi ***-->
+												<family>Potilas</family>
+												<given>Testi-Pekka</given>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="28" displayName="Syntymäaika" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Syntymäaika</title>
+									<!--*** Potilaan syntymäaika ***-->
+									<text>3.8.1975</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Potilaan syntymäaika ***-->
+											<value xsi:type="TS" value="19750803"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+					<!--*** Tässä ostopalvelutilanteessa aina kaikki asiakirjat, ei pystytä rajaamaan aikavälillä tai palvelutapahtumalla, eikä esim- näkymäkohtaista rajausmahdollisuutta ole.***-->
+					<component>
+						<section>
+							<code code="29" displayName="Luovutettavat asiakirjat" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Luovutettavat asiakirjat</title>
+							<component>
+								<section>
+									<code code="30" displayName="Kaikki asiakirjat" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Kaikki asiakirjat</title>
+									<text>kyllä</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="BL" value="true"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<!--*** Tässä ostopalvelutilanteessa aina kaikki asiakirjat, ei pystytä rajaamaan aikavälillä tai palvelutapahtumalla, eikä esim- näkymäkohtaista rajausmahdollisuutta ole.'''-->
+							<!--<component>
+								<section>
+									<code code="31" displayName="Luovutettavan aineiston aikaväli" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Luovutettavan aineiston aikaväli</title>
+									<text>13.5.2014 - 9.10.2014</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="IVL_TS">
+												<low value="20140513"/>
+												<high value="20141009"/>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="32" displayName="Luovutettavat palvelutapahtumat" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Luovutettavat palvelutapahtumat</title>
+									<text>1.2.246.10.99999984.10.0.14.2009.111009</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="II" root="1.2.246.10.99999984.10.0.14.2009.111009"/>
+										</observation>
+									</entry>
+								</section>
+							</component>							
+							
+							<component>
+								<section>
+									<code code="32" displayName="Luovutettavat palvelutapahtumat" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>Luovutettavat palvelutapahtumat</title>
+									<text>1.2.246.10.99999984.10.0.14.2009.111009</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="II" root="1.2.246.10.99999984.10.0.14.2009.111009"/>
+										</observation>
+									</entry>
+								</section>
+							</component>-->
+						</section>
+					</component>
+					<!--*** Asiakirjan tallentaja -lohkoon o tulossa muutoksia, joissa huomioidaan tallentajana muukin kuin terveydenhuollon ammattihenkilö. Tiedot tarkentuvat, tässä luonnostason tiedot. ***-->
+					<component>
+						<section>
+							<code code="33" displayName="Asiakirjan tallentaja" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+							<title>Asiakirjan tallentaja</title>
+							<component>
+								<section>
+									<code code="34" displayName="ammattihenkilön tunniste" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>ammattihenkilön tunniste</title>
+									<!--*** potilaan/huoltajan hetu ***-->
+									<text>290165-980W</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** potilaan/huoltajan hetu ***-->
+											<value xsi:type="II" root="1.2.246.21" extension="290165-980W"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="35" displayName="ammattihenkilön nimi" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>ammattihenkilön nimi</title>
+									<!--*** potilaan/huoltajan nimi ***-->
+									<text>Hiille, Tes-Arvi</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="PN">
+											<!--*** potilaan/huoltajan nimi ***-->
+												<family>Hiille</family>
+												<given qualifier="CL">Tes-Arvi</given>
+											</value>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<!--*** Tähän mahdollisesti Omakannan tiedot tai rakenne jää kokonaan pois ***-->
+							<component>
+								<section>
+									<code code="36" displayName="ammattihenkilön palveluyksikkö" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>ammattihenkilön palveluyksikkö</title>
+									<text>Testi tk pääterveysasema </text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<value xsi:type="II" root="1.2.246.10.99999984.10.1"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<code code="37" displayName="asiakirjan tekemisen ajankohta" codeSystem="1.2.246.537.6.12.2002.362" codeSystemName="eArkisto/Lomake - Ostopalvelun valtuutus"/>
+									<title>asiakirjan tekemisen ajankohta</title>
+									<!--*** Omakanta tuottaa ***-->
+									<text>13.5.2014 10:44</text>
+									<entry>
+										<observation classCode="COND" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<!--*** Omakanta tuottaa ***-->
+											<value xsi:type="TS" value="201405131044"/>
+										</observation>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

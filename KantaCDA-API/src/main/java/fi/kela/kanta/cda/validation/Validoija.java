@@ -1,7 +1,11 @@
 package fi.kela.kanta.cda.validation;
 
+import java.util.List;
+
 import fi.kela.kanta.to.AmmattihenkiloTO;
+import fi.kela.kanta.to.AnnosTO;
 import fi.kela.kanta.to.HenkilotiedotTO;
+import fi.kela.kanta.to.LaakemaaraysTO;
 import fi.kela.kanta.to.OrganisaatioTO;
 import fi.kela.kanta.util.KantaCDAUtil;
 
@@ -93,5 +97,87 @@ public abstract class Validoija {
 	    throw new IllegalArgumentException("Nimi cannot be null or empty.");
 	}
     }
-
+    
+    protected void validoiAnnostelukaudenKesto(LaakemaaraysTO laakemaarays) {
+		if(laakemaarays.getAnnostelukaudenPituus() != null && laakemaarays.getAnnostelukaudenLoppupvm() != null) {
+			throw new IllegalArgumentException("Annostelukauden pituus and Annostelukauden päättymisaika cannot exist at the same time.");
+		}
+    }
+    
+    protected void validoiRakenteinenAnnostus(LaakemaaraysTO laakemaarays) {
+    	if(laakemaarays == null) {
+    	    throw new IllegalArgumentException("Laakemaarays cannot be null.");
+    	}
+    	if(!laakemaarays.isAnnosteluPelkastaanTekstimuodossa()) {
+    		validoiAnnos(laakemaarays.getAnnokset());
+    		// TODO: rakenteisen annostuksen muu validointi
+    		validoiAnnostelukaudenKesto(laakemaarays);
+    	}
+    }
+    protected void validoiAnnos(List<AnnosTO> annosList) {
+    	if(annosList.isEmpty()) {
+    	    throw new IllegalArgumentException("Annos cannot be null or empty.");
+    	}
+    	for(AnnosTO annos : annosList) {
+    		if(annos.getHighAnnos() != null || annos.getLowAnnos() != null) {
+    			if(annos.getLowAnnos() == null) {
+    	    	    throw new IllegalArgumentException("Dosequantity is missing low value when high value is given.");
+    			}
+    			if(annos.getHighAnnos() == null) {
+    	    	    throw new IllegalArgumentException("Dosequantity is missing high value when low value is given.");
+    			}
+    			if(annos.getFysYksikko() != null || annos.getHighFysAnnos() != null || annos.getLowFysAnnos() != null 
+    					|| annos.getVakioFysAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Annos and fysikaalinen annos cannot exits at the same time.");
+    			}
+    			if(annos.getAnnosyksikko() == null) {
+    	    	    throw new IllegalArgumentException("Annos is missing unit");
+    			}
+    		}
+    		if(annos.getVakioAnnos() != null) {
+    			if(annos.getFysYksikko() != null || annos.getHighFysAnnos() != null || annos.getLowFysAnnos() != null 
+    					|| annos.getVakioFysAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Annos and fysikaalinen annos cannot exits at the same time.");
+    			}
+    			if(annos.getAnnosyksikko() == null) {
+    	    	    throw new IllegalArgumentException("Annos is missing unit");
+    			}
+    			if(annos.getHighAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Dosequantity cannot have both high and center values.");
+    			}
+    			if(annos.getLowAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Dosequantity cannot have both low and center values.");
+    			}
+    		}
+    		if(annos.getHighFysAnnos() != null || annos.getLowFysAnnos() != null) {
+    			if(annos.getLowFysAnnos() == null) {
+    	    	    throw new IllegalArgumentException("Fysikaalinen annos is missing low value");
+    			}
+    			if(annos.getHighFysAnnos() == null) {
+    				throw new IllegalArgumentException("Fysikaalinen annos is missing high value");
+    			}
+    			if(annos.getFysYksikko() == null) {
+    	    	    throw new IllegalArgumentException("Fysikaalinen annos is missing unit");
+    			}
+    			if(annos.getAnnosyksikko() != null || annos.getHighAnnos() != null || annos.getLowAnnos() != null 
+    					|| annos.getVakioAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Annos and fysikaalinen annos cannot exits at the same time.");
+    			}
+    		}
+    		if(annos.getVakioFysAnnos() != null) {
+    			if(annos.getFysYksikko() == null) {
+    	    	    throw new IllegalArgumentException("Fysikaalinen annos is missing unit");
+    			}
+    			if(annos.getHighFysAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Fysikaalinen annos cannot have both high and center values.");
+    			}
+    			if(annos.getLowFysAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Fysikaalinen annos cannot have both low and center values.");
+    			}
+    			if(annos.getAnnosyksikko() != null || annos.getHighAnnos() != null || annos.getLowAnnos() != null) {
+    	    	    throw new IllegalArgumentException("Annos and fysikaalinen annos cannot exits at the same time.");
+    			}
+    		}
+    	}
+    }
 }

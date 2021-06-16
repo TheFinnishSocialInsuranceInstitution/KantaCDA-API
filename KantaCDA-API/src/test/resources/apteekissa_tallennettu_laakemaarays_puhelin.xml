@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:hl7fi="urn:hl7finland"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 CDA_Fi.xsd">
+	<realmCode code="FI" />
+	<typeId extension="POCD_HD00040" root="2.16.840.1.113883.1.3" />
+	<templateId root="1.2.246.777.11.2016.2" />
+	<id root="1.2.246.10.11473059.93.2009.13059642055024695" />
+	<code code="1" codeSystem="1.2.246.537.5.40105.2006"
+		codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys" />
+	<title>Lääkemääräys</title>
+	<effectiveTime value="20160905101402" />
+	<confidentialityCode code="5"
+		codeSystem="1.2.246.777.5.99902.2006" codeSystemName="Luottamuksellisuus"
+		displayName="Salassapidettävä" />
+	<languageCode code="fi" />
+	<setId root="1.2.246.10.11473059.93.2009.13059642055024695" />
+	<versionNumber value="1" />
+	<recordTarget>
+		<patientRole>
+			<id extension="160345-0277" root="1.2.246.21" />
+			<patient>
+				<name>
+					<given>Pentti</given>
+					<given>Ilmari</given>
+					<family>Nenunen</family>
+				</name>
+				<administrativeGenderCode code="1"
+					codeSystem="1.2.246.537.5.1" />
+				<birthTime value="19450316" />
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<functionCode code="LAL" codeSystem="1.2.246.537.5.40006.2003"
+			codeSystemName="Lääkärin funktio" displayName="Lääkityksen aloittanut lääkäri" />
+		<time />
+		<assignedAuthor>
+			<id extension="100693" root="1.2.246.537.25" />
+			<code code="20G" codeSystem="1.2.246.537.6.24.2003"
+				codeSystemName="Hilmo - Terveydenhuollon erikoisalat" displayName="Astrologia">
+				<translation>
+					<qualifier>
+						<name code="1.2" codeSystem="1.2.246.537.6.12.999.2003"
+							displayName="Virkanimike" />
+						<value>
+							<originalText>Tohtori</originalText>
+						</value>
+					</qualifier>
+					<qualifier>
+						<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003"
+							displayName="Oppiarvo" />
+						<value>
+							<originalText>Med Dr</originalText>
+						</value>
+					</qualifier>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126"
+							codeSystemName="Lääkityslista" displayName="Ammattioikeus" />
+						<value code="034" codeSystem="1.2.246.537.6.140.2008"
+							codeSystemName="Valvira - Ammattioikeudet" displayName="Laillistettu erikoislääkäri" />
+					</qualifier>
+				</translation>
+			</code>
+			<assignedPerson>
+				<name>
+					<given>Vilhelmiina Adelmiina</given>
+					<family>Heinänenä</family>
+					<suffix>Tohtori</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.10.1602257.10.0" />
+				<name>Lääkärikeskus Oy</name>
+				<telecom value="tel:050123123123123" />
+				<addr>
+					<streetAddressLine>Hatanpäänvaltatie 1</streetAddressLine>
+					<postalCode>12340</postalCode>
+					<city>Testikaupunki</city>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<author>
+		<functionCode code="KIR" codeSystem="1.2.246.537.5.40006.2003"
+			codeSystemName="Ammattihenkilön rooli" displayName="Merkinnän kirjaaja" />
+		<time value="20150724090015" />
+		<assignedAuthor>
+			<id extension="12312312312" root="1.2.246.537.26" />
+			<code>
+				<translation>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126"
+							codeSystemName="Lääkityslista" displayName="Ammattioikeus" />
+						<value code="005" codeSystem="1.2.246.537.6.140.2008"
+							codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu farmaseutti" />
+					</qualifier>
+				</translation>
+			</code>
+			<assignedPerson>
+				<name>
+					<given>Siru</given>
+					<family>Pullonen</family>
+					<suffix>laillistettu farmaseutti</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.10.2323232.35" />
+				<name>Testi Apteekki</name>
+				<telecom value="(02)2437540" />
+				<addr>
+					<streetAddressLine>Kaurakatu 1</streetAddressLine>
+					<postalCode>20720</postalCode>
+					<city>Turku</city>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.246.10.2462460.19.1" />
+				<name>Kansaneläkelaitos</name>
+				<addr use="PST">
+					<postBox>PL 450</postBox>
+					<city>Helsinki</city>
+					<postalCode>00101</postalCode>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<componentOf>
+		<encompassingEncounter>
+			<id root="1.2.246.10.11470639.93.2009.10639418555581493" />
+			<effectiveTime operator="A" value="20160905101402" />
+			<location>
+				<healthCareFacility>
+					<id root="1.2.246.10.1602257.10.1" />
+					<location>
+						<name>Vesanto</name>
+						<addr>
+							<streetAddressLine>Hatanpäänvaltatie 1</streetAddressLine>
+							<postalCode>12340</postalCode>
+							<city>Testikaupunki</city>
+							<country>Finland</country>
+						</addr>
+					</location>
+					<serviceProviderOrganization>
+						<id root="1.2.246.10.1602257.10.0" />
+						<name>Lääkärikeskus Oy</name>
+						<addr>
+							<streetAddressLine>Hatanpäänvaltatie 1</streetAddressLine>
+							<postalCode>12340</postalCode>
+							<city>Testikaupunki</city>
+						</addr>
+					</serviceProviderOrganization>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<hl7fi:localHeader>
+		<hl7fi:declaredTime value="20160905101402" />
+		<hl7fi:softwareSupport>MD Miranda v 1.12 xx</hl7fi:softwareSupport>
+		<hl7fi:signatureCollection>
+			<hl7fi:signature
+				ID="OID1.2.246.10.11473059.93.2009.13059642055024695.20160905.101403466">
+				<hl7fi:signatureDescription code="4"
+					codeSystem="1.2.246.537.5.40127.2006" codeSystemName="Sähköisen allekirjoituksen tyyppi"
+					displayName="Järjestelmäallekirjoitus / KanTa" />
+				<hl7fi:signatureTimestamp ID="ID2016.09.05.10.14.03.0466">2016-09-05T10:14:03+03:00
+				</hl7fi:signatureTimestamp>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+					Id="MPS_ee78fb8a5d84-2bd83052-fa4b-4d84-b5e7-1d8eae3ea1bf-e5c571bbf307">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod
+							Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<ds:Reference URI="">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+								<ds:Transform Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116">
+									<ds:XPath xmlns:hl7="urn:hl7-org:v3">ancestor-or-self::hl7:structuredBody
+									</ds:XPath>
+								</ds:Transform>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<ds:DigestValue>3Fof0NArx5r2M8PyW5pQycLyvpg=</ds:DigestValue>
+						</ds:Reference>
+						<ds:Reference URI="#ID2016.09.05.10.14.03.0466">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<ds:DigestValue>yhmTEJ3ptexS/si2jEADOOjkQHE=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>kDuiy1ah3yPZ550MOHtilFAwBIhTM+cB0CpZeZ3EmXeswyp5WT/b495fxPd5P3ZJbkSApJ5NvLt0oF33olHHjI6C+UcOZMQBA8GMchYgXc3+tT3kn5XF7+INpteIUa3y4AAp0zWrN2t/OX5WImSLkJViafsKIL6phDcGGpxPDZ8judfmgDooiu+gKoqXAG223gAP6vjvTqHitMRqM1oZXxbXIeQVcvze7Xan7AGmthHmx+FKtUpoYRSGj5rXN35AdlhX8bcmjJploKHkZGsT2XBGTGZVy++m1yDFxVolw/8+cZcDOmtAHqZqP+NPgZ3Nx2IkY8xk2cmEpovpTw1Lb25Ley10Qz/23XSx6N8+b92vjhYzn0F7JaYrYHjjShDA1YlpbPTl2VACmGAdqLB6ycAHc8Kz4DQz61ifDTi6gFcHV8DhuFcgeLQAjIXGEprGJcgW/ynY9IR3LNN5G/MGjtLDCJERefK9ObYq02uFlXXXdPwG3j9s9h0fWTJeAC6knOv1Z5YOOHx5ocvXZLqX+MfZHDBdpkVe6TnBZfgLr5IxHKp38f/SsOrKKXmhf6M7hMcAaAS6bHF/CRq8wKfhcNWQ7aZGCTAHpvAYRVJHhfiecDKOstF/APLYcJNpwlpDV2Rnc1B6vANL65QhkFvsQhHejCCCx3NTXbwq9bJMBwQ=
+					</ds:SignatureValue>
+					<ds:KeyInfo>
+						<ds:X509Data>
+							<ds:X509Certificate>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
+							</ds:X509Certificate>
+						</ds:X509Data>
+					</ds:KeyInfo>
+				</ds:Signature>
+			</hl7fi:signature>
+		</hl7fi:signatureCollection>
+		<hl7fi:sender>
+			<hl7fi:senderCode code="1" codeSystem="1.2.246.10.1234567.18"
+				codeSystemName="Osapuolitunnukset organisaatiossa 1234567" />
+			<hl7fi:senderName>musti.xx.satshp.fi</hl7fi:senderName>
+		</hl7fi:sender>
+	</hl7fi:localHeader>
+	<component>
+		<structuredBody>
+			<component>
+				<templateId root="1.2.246.777.11.2007.18" />
+				<section ID="OID1.2.246.10.98765432.93.2007.2.1">
+					<id root="1.2.246.10.98765432.93.2007.2.1" />
+					<code code="1" codeSystem="1.2.246.537.5.40105.2006"
+						codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys" />
+					<title>Lääkemääräys</title>
+					<component>
+						<section ID="OID1.2.246.10.98765432.93.2007.2.2">
+							<id root="1.2.246.10.98765432.93.2007.2.2" />
+							<text>
+								<paragraph>
+									<content>Lääkärikeskus Oy</content>
+								</paragraph>
+								<paragraph>
+									<content />
+								</paragraph>
+								<paragraph>
+									<content>Tohtori Vilhelmiina Adelmiina Heinänenä</content>
+								</paragraph>
+							</text>
+							<component>
+								<section ID="OID1.2.246.10.98765432.93.2007.2.3">
+									<id root="1.2.246.10.98765432.93.2007.2.3" />
+									<text>
+										<paragraph>
+											<content>RENITEC COMP</content>
+										</paragraph>
+										<paragraph>
+											<content>1 tabletti aamuisin.</content>
+										</paragraph>
+										<paragraph>
+											<content>RENITEC COMP</content>
+										</paragraph>
+									</text>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="83" codeSystem="1.2.246.537.6.12.2002.126"
+												codeSystemName="Lääkityslista" displayName="Lääkevalmisteen ja pakkauksen tiedot" />
+											<statusCode code="completed " />
+											<component>
+												<substanceAdministration classCode="SBADM"
+													moodCode="EVN">
+													<effectiveTime value="20160905101402" />
+													<doseQuantity>
+														<translation>
+															<originalText>20/12,5 mg</originalText>
+														</translation>
+													</doseQuantity>
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+																<code code="C09BA02" codeSystem="1.2.246.537.6.32.2007"
+																	codeSystemName="Lääkelaitos - ATC Luokitus"
+																	codeSystemVersion="2007.023" displayName="Enalapriili ja diureetit" />
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+													<entryRelationship typeCode="COMP">
+														<supply classCode="SPLY" moodCode="EVN">
+															<code code="2" codeSystem="1.2.246.537.5.40100.2006"
+																codeSystemName="Määrätyn määrän esittämistapa"
+																displayName="Kokonaismäärä" />
+															<independentInd value="false" />
+															<quantity unit="fol" value="400" />
+															<subject typeCode="SBJ">
+																<relatedSubject classCode="PAT">
+																	<code code="160345-0277" codeSystem="1.2.246.21" />
+																	<subject classCode="PSN">
+																		<name>
+																			<given>Pentti</given>
+																			<given>Ilmari</given>
+																			<family>Nenunen</family>
+																		</name>
+																		<birthTime value="19450316" />
+																	</subject>
+																</relatedSubject>
+															</subject>
+															<product>
+																<manufacturedProduct>
+																	<manufacturedLabeledDrug>
+																		<code code="446393" codeSystem="1.2.246.537.6.55.2004"
+																			codeSystemName="VNR" codeSystemVersion="2007.023"
+																			displayName="RENITEC COMP">
+																			<translation>
+																				<qualifier>
+																					<name code="94" codeSystem="1.2.246.537.6.12.2002.126"
+																						codeSystemName="Lääkityslista" displayName="VNR-numeroon liittyvä laji" />
+																					<value code="1" codeSystem="1.2.246.537.5.40126.2006"
+																						codeSystemName="Lääketietokannasta saatava valmisteen laji"
+																						displayName="Lääke" />
+																				</qualifier>
+																			</translation>
+																		</code>
+																		<name />
+																	</manufacturedLabeledDrug>
+																</manufacturedProduct>
+															</product>
+															<author>
+																<time />
+																<assignedAuthor>
+																	<id extension="100693" root="1.2.246.537.25" />
+																	<code code="20G" codeSystem="1.2.246.537.6.24.2003"
+																		codeSystemName="Hilmo - Terveydenhuollon erikoisalat"
+																		displayName="Astrologia">
+																		<translation>
+																			<qualifier>
+																				<name code="1.2" codeSystem="1.2.246.537.6.12.999.2003"
+																					displayName="Virkanimike" />
+																				<value>
+																					<originalText>Tohtori</originalText>
+																				</value>
+																			</qualifier>
+																			<qualifier>
+																				<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003"
+																					displayName="Oppiarvo" />
+																				<value>
+																					<originalText>Med Dr</originalText>
+																				</value>
+																			</qualifier>
+																		</translation>
+																	</code>
+																	<assignedPerson>
+																		<name>
+																			<given>Vilhelmiina Adelmiina</given>
+																			<family>Heinänenä</family>
+																		</name>
+																	</assignedPerson>
+																	<representedOrganization>
+																		<id root="1.2.246.10.1602257.10.0" />
+																		<name>Lääkärikeskus Oy</name>
+																		<telecom value="tel:050123123123123" />
+																		<addr>
+																			<streetAddressLine>Hatanpäänvaltatie 1</streetAddressLine>
+																			<postalCode>12340</postalCode>
+																			<city>Testikaupunki</city>
+																		</addr>
+																	</representedOrganization>
+																</assignedAuthor>
+															</author>
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="24" codeSystem="1.2.246.537.6.12.2002.126"
+																		codeSystemName="Lääkityslista" displayName="Lääkemuoto" />
+																	<value xsi:type="ST">tabletti</value>
+																</observation>
+															</entryRelationship>
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="128" codeSystem="1.2.246.537.6.12.2002.126"
+																		codeSystemName="Lääkityslista" displayName="säilytysastia" />
+																	<value xsi:type="SC">läpipaino-pakkaus</value>
+																</observation>
+															</entryRelationship>
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="164" codeSystem="1.2.246.537.6.12.2002.126"
+																		codeSystemName="Lääkityslista" displayName="Valmisteen laji" />
+																	<value code="1" codeSystem="1.2.246.537.5.604"
+																		codeSystemName="THL - Valmisteen laji" displayName="Myyntiluvallinen lääkevalmiste"
+																		xsi:type="CD" />
+																</observation>
+															</entryRelationship>
+															<reference typeCode="SPRT">
+																<externalDocument>
+																	<id root="1.2.246.10.11473059.93.2009.13059642055024695" />
+																	<code code="1" codeSystem="1.2.246.537.5.40105.2006"
+																		codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys" />
+																	<setId root="1.2.246.10.11473059.93.2009.13059642055024695" />
+																</externalDocument>
+															</reference>
+														</supply>
+													</entryRelationship>
+												</substanceAdministration>
+											</component>
+										</organizer>
+									</entry>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="4" codeSystem="1.2.246.537.6.12.2002.126"
+												codeSystemName="Lääkityslista" displayName="Lääkkeen vaikuttava aine" />
+											<statusCode code="completed" />
+											<component>
+												<substanceAdministration classCode="SBADM"
+													moodCode="EVN">
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+																<code codeSystem="1.2.246.537.6.32.2007"
+																	codeSystemName="Lääkelaitos - ATC Luokitus"
+																	codeSystemVersion="2007.023" />
+																<name>enalapriilimaleaatti</name>
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+												</substanceAdministration>
+											</component>
+											<component>
+												<substanceAdministration classCode="SBADM"
+													moodCode="EVN">
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+																<code codeSystem="1.2.246.537.6.32.2007"
+																	codeSystemName="Lääkelaitos - ATC Luokitus"
+																	codeSystemVersion="2007.023" />
+																<name>hydroklooritiatsidi</name>
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+												</substanceAdministration>
+											</component>
+										</organizer>
+									</entry>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="32" codeSystem="1.2.246.537.6.12.2002.126"
+												codeSystemName="Lääkityslista" displayName="Annososio ja jatko-osiot" />
+											<statusCode code="completed" />
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="87" codeSystem="1.2.246.537.6.12.2002.126"
+														codeSystemName="Lääkityslista" displayName="Annostelu tekstimuodossa" />
+													<value value="true" xsi:type="BL" />
+												</observation>
+											</component>
+											<component>
+												<substanceAdministration classCode="SBADM"
+													moodCode="EVN">
+													<text>1 tabletti aamuisin.</text>
+													<effectiveTime operator="A" xsi:type="PIVL_TS">
+													</effectiveTime>
+													<doseQuantity />
+													<maxDoseQuantity>
+														<numerator />
+														<denominator />
+													</maxDoseQuantity>
+													<consumable nullFlavor="NI">
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+												</substanceAdministration>
+											</component>
+										</organizer>
+									</entry>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="88" codeSystem="1.2.246.537.6.12.2002.126"
+												codeSystemName="Lääkityslista" displayName="Lääkityksen muut tiedot" />
+											<statusCode code="completed" />
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="58" codeSystem="1.2.246.537.6.12.2002.126"
+														codeSystemName="Lääkityslista" displayName="Käyttötarkoitus tekstinä" />
+													<value xsi:type="ST">Verenpainelääke.</value>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="67" codeSystem="1.2.246.537.6.12.2002.126"
+														codeSystemName="Lääkityslista" displayName="Hoitolaji" />
+													<value code="S" codeSystem="1.2.246.537.5.40101.2006"
+														codeSystemName="Hoitolaji" displayName="Sairauden hoito"
+														xsi:type="CE" />
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="68" codeSystem="1.2.246.537.6.12.2002.126"
+														codeSystemName="Lääkityslista" displayName="pysyvä lääkitys" />
+													<value value="true" xsi:type="BL" />
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="169" codeSystem="1.2.246.537.6.12.2002.126"
+														codeSystemName="Lääkityslista" displayName="THL - Reseptin laji" />
+													<value code="1" codeSystem="1.2.246.537.6.605.2014"
+														codeSystemName="THL - Reseptin laji" displayName="Resepti"
+														xsi:type="CE" />
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="212" codeSystem="1.2.246.537.6.12.2002.126"
+														codeSystemName="Lääkityslista" displayName="Apteekissa tallennettu lääkemääräys" />
+													<value code="2" codeSystem="1.2.246.537.5.40303.201501"
+														codeSystemName="Sähköinen lääkemääräys - Apteekissa tallennettu lääkemääräys"
+														displayName="Puhelinresepti" xsi:type="CE" />
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="213" codeSystem="1.2.246.537.6.12.2002.126"
+														codeSystemName="Lääkityslista"
+														displayName="Apteekissa tallennetun lääkemääräyksen perustelu" />
+													<value code="3" codeSystem="1.2.246.537.5.40302.201501"
+														codeSystemName="Sähköinen lääkemääräys - Apteekissa tallennetun lääkemääräyksen perustelu"
+														displayName="Muu syy" xsi:type="CE">
+														<originalText>Muun syyn perusteluteksti</originalText>
+													</value>
+												</observation>
+											</component>
+										</organizer>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

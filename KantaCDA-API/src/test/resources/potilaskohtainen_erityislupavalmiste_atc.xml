@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:hl7fi="urn:hl7finland" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" moodCode="EVN">
+	<realmCode code="FI"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.2.246.777.11.2016.2"/>
+	<id root="1.2.246.537.25.1.9991.93.2016.1122.112940"/>
+	<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys"/>
+	<title>Lääkemääräys</title>
+	<effectiveTime value="20161122112940"/>
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="Luottamuksellisuus" displayName="Terveydenhuollon salassapidettävä"/>
+	<languageCode code="fi"/>
+	<setId root="1.2.246.537.25.1.9991.93.2016.1122.112940"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole classCode="PAT">
+			<id extension="131072-971B" root="1.2.246.21"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Markku</given>
+					<given>Kalervo</given>
+					<given qualifier="CL">Markku</given>
+					<family>Yhteistesti-Kantanen</family>
+				</name>
+				<administrativeGenderCode code="1" codeSystem="1.2.246.537.5.1.1997" codeSystemName="AR/YDIN - Sukupuoli 1997" displayName="Mies"/>
+				<birthTime value="19721013"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author contextControlCode="OP" typeCode="AUT">
+		<functionCode code="LAL" codeSystem="1.2.246.537.5.40006.2003" codeSystemName="Ammattihenkilön rooli" displayName="Lääkityksen aloittanut henkilö"/>
+		<time nullFlavor="NI" value="20161122112940"/>
+		<assignedAuthor>
+			<id extension="100602" root="1.2.246.537.25"/>
+			<id extension="01098701616" root="1.2.246.537.26"/>
+			<code code="86182-510" codeSystem="1.2.246.537.6.148.2011" codeSystemName="Valvira - Koulutusluokitus" displayName="erikoislääkäri lastenpsykiatria">
+				<translation>
+					<qualifier>
+						<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" displayName="Oppiarvo"/>
+						<value>
+							<originalText>Lääkäri</originalText>
+						</value>
+					</qualifier>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+						<value code="001" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu lääkäri"/>
+					</qualifier>
+				</translation>
+			</code>
+			<assignedPerson>
+				<name>
+					<given>Kauko</given>
+					<family>Hukka</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.10.1373239.10.1000001"/>
+				<name>A-klinikka, Porin Perusturvakeskus</name>
+				<telecom use="DIR" value="tel:026216230"/>
+				<addr>
+					<streetAddressLine>Veturitallinkatu 4</streetAddressLine>
+					<postalCode>28120</postalCode>
+					<city>PORI</city>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<author contextControlCode="OP" typeCode="AUT">
+		<functionCode code="KIR" codeSystem="1.2.246.537.5.40006.2003" codeSystemName="Ammattihenkilön rooli" displayName="Merkinnän kirjaaja"/>
+		<time nullFlavor="NI"/>
+		<assignedAuthor>
+			<id extension="00698700481" root="1.2.246.537.26"/>
+			<code>
+				<translation>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+						<value code="006" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="006 proviisori, provisor"/>
+					</qualifier>
+				</translation>
+			</code>
+			<assignedPerson>
+				<name>
+					<given>Uno</given>
+					<family>Lähdekivi Tes</family>
+					<suffix>006 proviisori, provisor</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.556.10.32"/>
+				<name>Kelan MAXX apteekki</name>
+				<telecom use="DIR" value="tel:09-85678800"/>
+				<addr>
+					<streetAddressLine>Strömbergintie 4 E</streetAddressLine>
+					<postalCode>00380</postalCode>
+					<city> HELSINKI</city>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.246.10.2462460.19.1"/>
+				<name>Kansaneläkelaitos</name>
+				<addr use="PST">
+					<postBox>PL 450</postBox>
+					<city>Helsinki</city>
+					<postalCode>00101</postalCode>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<componentOf>
+		<encompassingEncounter>
+			<id nullFlavor="NI"/>
+			<effectiveTime value="20161122112940"/>
+			<location>
+				<healthCareFacility>
+					<id root="1.2.246.10.1373239.10.1000001"/>
+					<location>
+						<name>A-klinikka, Porin Perusturvakeskus</name>
+						<addr>
+							<streetAddressLine>Strömbergintie 4 E</streetAddressLine>
+							<postalCode>00380</postalCode>
+							<city>PORI</city>
+						</addr>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>	
+	<hl7fi:localHeader>
+		<hl7fi:declaredTime value="20140424092357"/>
+		<!-- Ohjelmistotoimittaja, asiakirjan tuottanut ohjelmisto ja sen versiotiedot. SoftwareSupport-elementin sisällön pitää olla sisällöltään ja muodoltaan samanlaiset kaikissa tietyn potilastietojärjestelmän tuottamissa asiakirjoissa (pakollinen)-->
+		<hl7fi:softwareSupport moderator="Yritys Oy" product="Potilastietojärjestelmä XXX" version="3.4">Yritys Oy Potilastietojärjestelmä XXX v. 3.4</hl7fi:softwareSupport>
+		<!-- FI 18 hl7fi:signature - asiakirjan sähköiset allekirjoitustiedot -->
+		<!-- katso allekirjoitukseen liittyvät esimerkit XML allekirjoitukseen liittyvästä soveltamisoppaasta -->
+	</hl7fi:localHeader>
+	<component>
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component>
+				<templateId root="1.2.246.777.11.2016.3"/>
+				<section ID="OID1.2.246.537.25.1.9991.93.2016.1122.112940.1" classCode="DOCSECT" moodCode="EVN">
+					<id root="1.2.246.537.25.1.9991.93.2016.1122.112940.1"/>
+					<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys"/>
+					<title>Lääkemääräys</title>
+						<component>
+							<section ID="OID1.2.246.537.25.1.9991.93.2016.1122.112940.2" classCode="DOCSECT" moodCode="EVN">
+								<id root="1.2.246.537.25.1.9991.93.2016.1122.112940.2"/>
+								<text mediaType="text/x-hl7-text+xml">
+									<paragraph>
+										<content>Kelan MAXX apteekki</content>
+									</paragraph>
+									<paragraph>
+										<content>22.11.2016</content>
+									</paragraph>
+									<paragraph>
+										<content>laillistettu lääkäri Kauko Hukka</content>
+									</paragraph>
+								</text>
+								<component>
+									<section ID="OID1.2.246.537.25.1.9991.93.2016.1122.112940.3" classCode="DOCSECT" moodCode="EVN">
+									<id root="1.2.246.537.25.1.9991.93.2016.1122.112940.3"/>
+									<text mediaType="text/x-hl7-text+xml">
+										<paragraph>
+											<content>Kauppanimi: WILZIN*</content>
+										</paragraph>
+										<paragraph>
+											<content>Annostus: ERILLISEN OHJEEN MUKAAN.</content>
+										</paragraph>
+										<paragraph>
+											<content>Pakkauskoko: 250 kaps</content>
+										</paragraph>
+									</text>
+										<entry>
+											<organizer classCode="CLUSTER" moodCode="EVN">
+												<code code="83" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevalmisteen ja pakkauksen tiedot"/>
+												<statusCode code="completed"/>
+												<component>
+													<substanceAdministration classCode="SBADM" moodCode="EVN">
+														<effectiveTime value="20161122112940"/>
+														<doseQuantity>
+															<translation>
+																<originalText>25MG</originalText>
+															</translation>
+														</doseQuantity>
+														<consumable typeCode="CSM">
+															<manufacturedProduct>
+																<manufacturedLabeledDrug classCode="MMAT">
+																	<code code="A16AX05" codeSystem="1.2.246.537.6.32" codeSystemName="Fimea - ATC Luokitus" codeSystemVersion="YAKANTA" displayName="Sinkkiasetaatti"/>
+																</manufacturedLabeledDrug>
+															</manufacturedProduct>
+														</consumable>
+														<entryRelationship typeCode="COMP">
+															<supply classCode="SPLY" moodCode="EVN">
+																<code code="1" codeSystem="1.2.246.537.5.40100.2006" codeSystemName="Määrätyn määrän esittämistapa" displayName="Pakkaus"/>
+																<repeatNumber value="4"/>
+																<independentInd value="false"/>
+																<quantity unit="kaps" value="250"/>
+																<subject>
+																	<relatedSubject classCode="PAT">
+																		<code code="131072-971B" codeSystem="1.2.246.21"/>
+																		<subject classCode="PSN" determinerCode="INSTANCE">
+																			<name>
+																				<given>Markku</given>
+																				<given>Kalervo</given>
+																				<given qualifier="CL">Markku</given>
+																				<family>Yhteistesti-Kantanen</family>
+																			</name>
+																			<birthTime value="19721013"/>
+																		</subject>
+																	</relatedSubject>
+																</subject>
+																<product typeCode="PRD">
+																	<manufacturedProduct>
+																		<manufacturedLabeledDrug classCode="MMAT">
+																			<code codeSystem="1.2.246.537.6.55" codeSystemName="VNR" codeSystemVersion="YAKANTA" nullFlavor="NI"/>
+																			<name>WILZIN*</name>
+																		</manufacturedLabeledDrug>
+																	</manufacturedProduct>
+																</product>
+																<author contextControlCode="OP" typeCode="AUT">
+																	<time value="20161122112940"/>
+																	<assignedAuthor>
+																		<id extension="100602" root="1.2.246.537.25"/>
+																		<id extension="01098701616" root="1.2.246.537.26"/>
+																		<code code="86182-510" codeSystem="1.2.246.537.6.148.2011" codeSystemName="Valvira - Koulutusluokitus" displayName="erikoislääkäri lastenpsykiatria">
+																			<translation>
+																				<qualifier>
+																					<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" displayName="Oppiarvo"/>
+																					<value>
+																						<originalText>Lääkäri</originalText>
+																					</value>
+																				</qualifier>
+																				<qualifier>
+																					<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+																					<value code="001" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu lääkäri"/>
+																				</qualifier>
+																			</translation>
+																		</code>
+																		<assignedPerson>
+																			<name>
+																				<given>Kauko</given>
+																				<family>Hukka</family>
+																			</name>
+																		</assignedPerson>
+																		<representedOrganization>
+																			<id root="1.2.246.10.1373239.10.1000001"/>
+																			<name>A-klinikka, Porin Perusturvakeskus</name>
+																			<telecom use="DIR" value="tel:026216230"/>
+																			<addr>
+																				<streetAddressLine>Veturitallinkatu 4</streetAddressLine>
+																				<postalCode>28120</postalCode>
+																				<city>PORI</city>
+																			</addr>
+																		</representedOrganization>
+																	</assignedAuthor>
+																</author>
+																<entryRelationship typeCode="COMP">
+																	<observation classCode="OBS" moodCode="EVN">
+																		<code code="124" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Apteekissa valmistettava lääke"/>
+																		<value value="false" xsi:type="BL"/>
+																	</observation>
+																</entryRelationship>
+																<entryRelationship typeCode="COMP">
+																	<observation classCode="OBS" moodCode="EVN">
+																		<code code="164" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Valmisteen laji"/>
+																		<value code="11" codeSystem="1.2.246.537.6.604.2014" codeSystemName="THL - Valmisteen laji" displayName="Potilaskohtainen erityislupavalmiste" xsi:type="CD"/>
+																	</observation>
+																</entryRelationship>
+																<entryRelationship typeCode="COMP">
+																	<observation classCode="OBS" moodCode="EVN">
+																		<code code="24" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemuoto"/>
+																		<value xsi:type="ST">KAPSELI, KOVA</value>
+																	</observation>
+																</entryRelationship>
+																<entryRelationship typeCode="COMP">
+																	<observation classCode="OBS" moodCode="EVN">
+																		<code code="125" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Pakkauskoon kerroin"/>
+																		<value value="1" xsi:type="INT"/>
+																	</observation>
+																</entryRelationship>
+																<entryRelationship typeCode="COMP">
+																	<observation classCode="OBS" moodCode="EVN">
+																		<code code="126" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Pakkauskoko tekstimuotoisena"/>
+																		<value xsi:type="ST">250 kaps</value>
+																	</observation>
+																</entryRelationship>
+																<reference typeCode="SPRT">
+																	<externalDocument moodCode="EVN">
+																		<id root="1.2.246.537.25.1.9991.93.2016.1122.112940"/>
+																		<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys"/>
+																		<setId root="1.2.246.537.25.1.9991.93.2016.1122.112940"/>
+																	</externalDocument>
+																</reference>
+															</supply>
+														</entryRelationship>
+													</substanceAdministration>
+												</component>
+											</organizer>
+										</entry>
+										<entry>
+											<organizer classCode="CLUSTER" moodCode="EVN"><code code="4" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkkeen vaikuttava aine"/>
+												<statusCode code="completed"/>
+												<component>
+													<substanceAdministration classCode="SBADM" moodCode="EVN">
+														<consumable typeCode="CSM">
+															<manufacturedProduct>
+																<manufacturedLabeledDrug classCode="MMAT">
+																	<code/>
+																	<name>SINKKIASETAATTI</name>
+																</manufacturedLabeledDrug>
+															</manufacturedProduct>
+														</consumable>
+													</substanceAdministration>
+												</component>
+											</organizer>
+										</entry>
+										<entry>
+											<organizer classCode="CLUSTER" moodCode="EVN">
+												<code code="32" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annososio ja jatko-osiot"/>
+												<statusCode code="completed"/>
+												<component>
+													<observation classCode="OBS" moodCode="EVN">
+														<code code="87" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annostelu vain tekstinä"/>
+														<value value="true" xsi:type="BL"/>
+													</observation>
+												</component>
+												<component>
+													<substanceAdministration classCode="SBADM" moodCode="EVN">
+														<text>ERILLISEN OHJEEN MUKAAN.</text>
+														<consumable typeCode="CSM">
+															<manufacturedProduct>
+																<manufacturedLabeledDrug classCode="MMAT" nullFlavor="NI"/>
+															</manufacturedProduct>
+														</consumable>
+														<entryRelationship typeCode="XCRPT">
+															<observation classCode="OBS" moodCode="EVN">
+																<code code="56" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="SIC-merkintä"/>
+																<value value="false" xsi:type="BL"/>
+															</observation>
+														</entryRelationship>
+													</substanceAdministration>
+												</component>
+											</organizer>
+										</entry>
+										<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="88" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkityksen muut tiedot"/>
+											<statusCode code="completed"/>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="58" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Käyttötarkoitus tekstinä"/>
+													<value xsi:type="ST">Wilsonin taudin hoitoon.</value>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="69" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Erillisselvitys"/>
+													<text xsi:type="ST"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="213" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Apteekissa tallennetun lääkemääräyksen perustelu"/>
+													<value code="4" codeSystem="1.2.246.537.5.40302.201501" codeSystemName="Sähköinen lääkemääräys - Apteekissa tallennetun lääkemääräyksen perustelu" displayName="Erityislupavalmiste" xsi:type="CE"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="212" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Apteekissa tallennettu lääkemääräys"/>
+													<value code="3" codeSystem="1.2.246.537.5.40303.201501" codeSystemName="Sähköinen lääkemääräys - Apteekissa tallennettu lääkemääräys" displayName="Erityislupavalmiste" xsi:type="CE"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="67" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Hoitolaji"/>
+													<value code="S" codeSystem="1.2.246.537.5.40101.2006" codeSystemName="Hoitolaji" displayName="Sairauden hoito" xsi:type="CE"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="169" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Reseptin laji"/>
+													<value code="1" codeSystem="1.2.246.537.6.605.2014" codeSystemName="THL - Reseptin laji" displayName="Resepti" xsi:type="CE"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="215" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkärinpalkkio erikoislääkärinä"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="216" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Tartuntatautilain mukainen lääke"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="132" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Huume"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="81" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevaihtokielto"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="75" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Uudistamiskielto"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="129" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Kyseessä lääkkeen käytön aloitus"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="68" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Pysyvä lääkitys"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="91" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annosjakelu"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+										</organizer>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

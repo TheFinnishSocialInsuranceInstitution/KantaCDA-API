@@ -1,0 +1,533 @@
+			<ns1:ClinicalDocument xmlns:ns1="urn:hl7-org:v3" xmlns="urn:hl7-org:v3">
+				<ns1:realmCode code="FI"/>
+				<ns1:typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+				<ns1:templateId root="1.2.246.777.11.2015.11"/>
+				<ns1:id root="1.2.246.10.8282559.93.2016.232120"/>
+				<ns1:code code="3" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen korjaus"/>
+				<ns1:title>Lääkemääräyksen korjaus</ns1:title>
+				<ns1:effectiveTime value="20160602103716"/>
+				<ns1:confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" displayName="Terveydenhuollon salassapidettävä"/>
+				<ns1:languageCode code="fi"/>
+				<ns1:setId root="1.2.246.10.8282559.93.2015.493256"/>
+				<ns1:versionNumber value="2"/>
+				<ns1:recordTarget>
+					<ns1:patientRole>
+						<ns1:id extension="XXXXXX-XX8X" root="1.2.246.21"/>
+						<ns1:patient>
+							<ns1:name>
+								<ns1:given qualifier="CL">EtuNimi</ns1:given>
+								<ns1:given>EtuNimi</ns1:given>
+								<ns1:given>EtuNimi2</ns1:given>
+								<ns1:family>SukuNimi</ns1:family>
+							</ns1:name>
+							<ns1:administrativeGenderCode code="2" codeSystem="1.2.246.537.5.1.1997" codeSystemName="AR/YDIN - Sukupuoli" displayName="Nainen"/>
+							<ns1:birthTime value="19000101"/>
+						</ns1:patient>
+					</ns1:patientRole>
+				</ns1:recordTarget>
+				<ns1:author>
+					<ns1:functionCode code="LAL" codeSystem="1.2.246.537.5.40006.2003" codeSystemName="eArkisto - tekninen CDA R2 henkilötarkennin  2009" displayName="Lääkityksen aloittanut henkilö"/>
+					<ns1:time value="20151216130532"/>
+					<ns1:assignedAuthor>
+						<ns1:id extension="385732" root="1.2.246.537.25"/>
+						<ns1:code>
+							<ns1:translation>
+								<ns1:qualifier>
+									<ns1:name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Oppiarvo"/>
+									<ns1:value nullFlavor="NA">
+										<ns1:originalText>lääkärin tutkinto</ns1:originalText>
+									</ns1:value>
+								</ns1:qualifier>
+							</ns1:translation>
+						</ns1:code>
+						<ns1:assignedPerson>
+							<ns1:name>
+								<ns1:given>Salla</ns1:given>
+								<ns1:family>Fagerudd</ns1:family>
+								<ns1:suffix>Erikoistuva lääkäri</ns1:suffix>
+							</ns1:name>
+						</ns1:assignedPerson>
+						<ns1:representedOrganization>
+							<ns1:id extension="1" root="1.2.246.10.8282559.10"/>
+							<ns1:name>Turun yliopistollinen keskussairaala</ns1:name>
+							<ns1:telecom use="PUB" value="tel:023130000"/>
+							<ns1:addr>
+								<ns1:streetAddressLine>PL 52</ns1:streetAddressLine>
+								<ns1:postalCode>20521</ns1:postalCode>
+								<ns1:city>TURKU 52</ns1:city>
+							</ns1:addr>
+						</ns1:representedOrganization>
+					</ns1:assignedAuthor>
+				</ns1:author>
+				<ns1:author>
+					<ns1:functionCode code="KOR" codeSystem="1.2.246.537.5.40006.2003" codeSystemName="eArkisto - tekninen CDA R2 henkilötarkennin  2009" displayName="Korjaaja"/>
+					<ns1:time value="20160602103716"/>
+					<ns1:assignedAuthor>
+						<ns1:id extension="332031" root="1.2.246.537.25"/>
+						<ns1:id extension="03402744134" root="1.2.246.537.26"/>
+						<ns1:code code="86113-190" codeSystem="1.2.246.537.6.148.2008" codeSystemName="Valvira - Koulutusluokitus" displayName="erikoislääkäri keuhkosairaudet ja allergologia (1999-)">
+							<ns1:translation>
+								<ns1:qualifier>
+									<ns1:name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Oppiarvo"/>
+									<ns1:value nullFlavor="NA">
+										<ns1:originalText>erik.lääk. keuhkosairaudet ja allergologia (1999-)</ns1:originalText>
+									</ns1:value>
+								</ns1:qualifier>
+								<ns1:qualifier>
+									<ns1:name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+									<ns1:value code="034" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu erikoislääkäri"/>
+								</ns1:qualifier>
+							</ns1:translation>
+						</ns1:code>
+						<ns1:assignedPerson>
+							<ns1:name>
+								<ns1:given>Päivi</ns1:given>
+								<ns1:family>Ojanen</ns1:family>
+								<ns1:suffix>Erikoislääkäri</ns1:suffix>
+							</ns1:name>
+						</ns1:assignedPerson>
+						<ns1:representedOrganization>
+							<ns1:id root="1.2.246.10.8282559.10.1"/>
+							<ns1:name>Turun yliopistollinen keskussairaala</ns1:name>
+							<ns1:telecom use="PUB" value="tel:023130000"/>
+							<ns1:addr>
+								<ns1:streetAddressLine>PL 52</ns1:streetAddressLine>
+								<ns1:postalCode>20521</ns1:postalCode>
+								<ns1:city>TURKU 52</ns1:city>
+							</ns1:addr>
+							<ns1:asOrganizationPartOf>
+								<ns1:wholeOrganization>
+									<ns1:id root="1.2.246.10.8282559.10.1"/>
+									<ns1:name>Turun yliopistollinen keskussairaala</ns1:name>
+									<ns1:telecom use="PUB" value="tel:023130000"/>
+									<ns1:addr>
+										<ns1:streetAddressLine>PL 52</ns1:streetAddressLine>
+										<ns1:postalCode>20521</ns1:postalCode>
+										<ns1:city>TURKU 52</ns1:city>
+									</ns1:addr>
+								</ns1:wholeOrganization>
+							</ns1:asOrganizationPartOf>
+						</ns1:representedOrganization>
+					</ns1:assignedAuthor>
+				</ns1:author>
+				<ns1:custodian>
+					<ns1:assignedCustodian>
+						<ns1:representedCustodianOrganization>
+							<ns1:id root="1.2.246.10.2462460.19.1"/>
+							<ns1:name>Kansaneläkelaitos</ns1:name>
+							<ns1:addr use="PST">
+								<ns1:postBox>PL 450</ns1:postBox>
+								<ns1:postalCode>00101</ns1:postalCode>
+								<ns1:city>Helsinki</ns1:city>
+							</ns1:addr>
+						</ns1:representedCustodianOrganization>
+					</ns1:assignedCustodian>
+				</ns1:custodian>
+				<ns1:relatedDocument typeCode="RPLC">
+					<ns1:parentDocument>
+						<ns1:id root="1.2.246.10.8282559.93.2015.493256"/>
+						<ns1:code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräys"/>
+						<ns1:setId root="1.2.246.10.8282559.93.2015.493256"/>
+					</ns1:parentDocument>
+				</ns1:relatedDocument>
+				<ns1:componentOf>
+					<ns1:encompassingEncounter>
+						<ns1:effectiveTime value="20151216130532"/>
+						<ns1:location>
+							<ns1:healthCareFacility>
+								<ns1:location>
+									<ns1:addr>
+										<ns1:city>Tyks,Turun yliopistollinen keskussairaala</ns1:city>
+									</ns1:addr>
+								</ns1:location>
+							</ns1:healthCareFacility>
+						</ns1:location>
+					</ns1:encompassingEncounter>
+				</ns1:componentOf>
+				<ns2:localHeader xmlns:ns2="urn:hl7finland" xmlns="urn:hl7finland">
+					<ns2:declaredTime/>
+					<ns2:softwareSupport>Uranus 8.4.4.8</ns2:softwareSupport>
+					<ns2:signatureCollection>
+						<ns2:signature ID="eres-sig">
+							<ns2:signatureDescription code="1" codeSystem="1.2.246.537.5.40127.2006" codeSystemName="KanTa-palvelut - Sähköisen allekirjoituksen tyyppi 2006" displayName="Ammattihenkilön tekemä tavanomainen allekirjoitus"/>
+							<ns2:signatureTimestamp ID="eres-sigtimestamp">2016-06-02T07:37:16Z</ns2:signatureTimestamp>
+							<ns3:Signature xmlns:ns3="http://www.w3.org/2000/09/xmldsig#" Id="cdar2fi-dsig-1" xmlns="http://www.w3.org/2000/09/xmldsig#">
+								<ns3:SignedInfo>
+									<ns3:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+									<ns3:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+									<ns3:Reference URI="#eres-sigtimestamp">
+										<ns3:Transforms>
+											<ns3:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+										</ns3:Transforms>
+										<ns3:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+										<ns3:DigestValue>9DZEGxobYdzwJyewVmn3jvaBHXk=</ns3:DigestValue>
+									</ns3:Reference>
+									<ns3:Reference URI="#OID1.2.246.10.8282559.93.2016.232120.0">
+										<ns3:Transforms>
+											<ns3:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+										</ns3:Transforms>
+										<ns3:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+										<ns3:DigestValue>MhEthYA+JprIki6jpXVFctBHjJg=</ns3:DigestValue>
+									</ns3:Reference>
+								</ns3:SignedInfo>
+								<ns3:SignatureValue>dEjnxEzBkXy2cd3e15MvcfuLY9DC3mKLRopKWihMZhdhc3y7GKLwKzUf1EyWjnxr9TqHnIx/VK+YctV8szluPoCGIWby9gCEeRzaTSRMX+jnFcoiquUTH0FO7LIm+tH/MjcmKWXzHIqnBhR66NCFiGD70RUd3ijh1tRbZjKm9xXEgXc8hbM0fc3wTsG+jfD+3x2a8pVIYOnRvuVEfELqy3GYt7G2EohY8vH7KOP7y7WJqw8t9MphH/YF6gaWj7RhlTVza5yrSd9gxl0P2XOB5fKTg/NqDyoYEu/CqCidxPhi+jJI6T7oA5jWGpGQEXb08yDdN1RAvAJ4kzsyyb+uiQ==</ns3:SignatureValue>
+								<ns3:KeyInfo>
+									<ns3:X509Data>
+										<ns3:X509Certificate>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</ns3:X509Certificate>
+									</ns3:X509Data>
+								</ns3:KeyInfo>
+							</ns3:Signature>
+						</ns2:signature>
+						<ns2:signature ID="OID1.2.246.10.8282559.93.2016.232120.20160602.103728835">
+							<ns2:signatureDescription code="4" codeSystem="1.2.246.537.5.40127.2006" codeSystemName="Sähköisen allekirjoituksen tyyppi" displayName="Järjestelmäallekirjoitus / KanTa"/>
+							<ns2:signatureTimestamp ID="ID2016.06.02.10.37.28.0835">2016-06-02T10:37:28+03:00</ns2:signatureTimestamp>
+							<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="MPS_ee78fb8a5d84-c91689a5-4c74-42dd-a854-790cf5d915e2-450ffe07e464">
+								<ds:SignedInfo>
+									<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+									<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+									<ds:Reference URI="#OID1.2.246.10.8282559.93.2016.232120.0">
+										<ds:Transforms>
+											<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+										</ds:Transforms>
+										<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+										<ds:DigestValue>MhEthYA+JprIki6jpXVFctBHjJg=</ds:DigestValue>
+									</ds:Reference>
+									<ds:Reference URI="#ID2016.06.02.10.37.28.0835">
+										<ds:Transforms>
+											<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+										</ds:Transforms>
+										<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+										<ds:DigestValue>3krU5Dfeh7Qbq5z6gVeMevlNA/w=</ds:DigestValue>
+									</ds:Reference>
+								</ds:SignedInfo>
+								<ds:SignatureValue>Kqpc335WglmHn4v7TQr0hmaBBWkysKxasmJiR/nsh4ifnTr58xTzNKWU5R951WfxC999R3CXs9dejZUvlxTjF+C8MGCSykvW4ChhSnoqJ1yr/m+R2SSsbXd6YCIEHxq5alh455u9dP6DAQLH/EbzegwF07PJJaLFMnZoXAASnHJwed8/RhQhiPGhGta9JqTgCiAcEd0VtpF8uYBZPqXVmk+Iy+hbcsISUk1cmiFPKcHFmvj9ckjeTUr8g4ar2KgSkNG9u1OftRaOX8djvHeHLmLq/0uLFU5/aU/9asB8ZapVKse8FeccwZXkeJCzcvLeNOCnOKsGpMHzVlSDd4XcmvtgXjX4zkxiwgEQ3O0Xvg2BxrEuGK/60haxsWUKy/I1WCNRvDI+MSpv47k4+RfcD9SI69/eOwrpjPVQ1QrL4PODUx6SsXCdFcaA9MQ8l3RTdjxAZSB9XuCd8t6dyiuTDfnXzEDbbws6nN4Rj3xohwfI5Z390XtoLbpYgsq+a+c+7lXQvfDtOpLYqsPcptgaFpoKhaJSj0uRINdqwnHoQrycPmNBIlRdBoxKw0Dl66S735Xe+yp+Riuys9wSLG3o7VogEdV2yrZpw6Te3X+NceV6zPeRXaXgZa2fPmaxjShVqqrz+DFmRimIUMQvl0cwY9+llEwPw04Ldqgu2P81FZs=</ds:SignatureValue>
+								<ds:KeyInfo>
+									<ds:X509Data>
+										<ds:X509Certificate>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</ds:X509Certificate>
+									</ds:X509Data>
+								</ds:KeyInfo>
+							</ds:Signature>
+						</ns2:signature>
+					</ns2:signatureCollection>
+					<ns2:sender>
+						<ns2:senderCode code="1" codeSystem="1.2.246.10.1234567.18" codeSystemName="1.2.246.10.8282559.10.1"/>
+						<ns2:senderName>shp.fi</ns2:senderName>
+					</ns2:sender>
+				</ns2:localHeader>
+				<ns1:component>
+					<ns1:structuredBody ID="OID1.2.246.10.8282559.93.2016.232120.0">
+						<ns1:component>
+							<ns1:templateId root="1.2.246.777.11.2015.12"/>
+							<ns1:section>
+								<ns1:id root="1.2.246.10.8282559.93.2016.232120.1"/>
+								<ns1:code code="3" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen korjaus"/>
+								<ns1:title>Lääkemääräyksen korjaus</ns1:title>
+								<ns1:component>
+									<ns1:section>
+										<ns1:id root="1.2.246.10.8282559.93.2016.232120.2"/>
+										<ns1:text>
+											<ns1:paragraph>Turun yliopistollinen keskussairaala</ns1:paragraph>
+											<ns1:paragraph>16.12.2015</ns1:paragraph>
+											<ns1:paragraph>Erikoistuva lääkäri Salla Fagerudd</ns1:paragraph>
+											<ns1:paragraph>Lääkemääräyksen korjaaja:</ns1:paragraph>
+											<ns1:paragraph>Turun yliopistollinen keskussairaala</ns1:paragraph>
+											<ns1:paragraph>02.06.2016</ns1:paragraph>
+											<ns1:paragraph>Erikoislääkäri Päivi Ojanen</ns1:paragraph>
+										</ns1:text>
+										<ns1:component>
+											<ns1:section>
+												<ns1:id root="1.2.246.10.8282559.93.2016.232120.3"/>
+												<ns1:text>
+													<ns1:paragraph>
+														<ns1:caption>Kauppanimi</ns1:caption>ALVESCO</ns1:paragraph>
+													<ns1:paragraph>
+														<ns1:caption>Annostus</ns1:caption>2 annosta 1-2 kertaa päivässä säännöllisesti. Hoitava astmalääke.</ns1:paragraph>
+													<ns1:paragraph>
+														<ns1:caption>Kestoaika</ns1:caption>1 vuosi</ns1:paragraph>
+												</ns1:text>
+												<ns1:entry>
+													<ns1:organizer classCode="CLUSTER" moodCode="EVN">
+														<ns1:code code="83" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevalmisteen ja pakkauksen tiedot"/>
+														<ns1:statusCode code="completed"/>
+														<ns1:component>
+															<ns1:substanceAdministration classCode="SBADM" moodCode="EVN">
+																<ns1:effectiveTime value="20151216130532" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS"/>
+																<ns1:doseQuantity>
+																	<ns1:translation>
+																		<ns1:originalText>160 mikrog/annos</ns1:originalText>
+																	</ns1:translation>
+																</ns1:doseQuantity>
+																<ns1:consumable>
+																	<ns1:manufacturedProduct>
+																		<ns1:manufacturedLabeledDrug>
+																			<ns1:code code="R03BA08" codeSystem="1.2.246.537.6.32" codeSystemName="Fimea - ATC Luokitus" codeSystemVersion="2016.012" displayName="Siklesonidi"/>
+																		</ns1:manufacturedLabeledDrug>
+																	</ns1:manufacturedProduct>
+																</ns1:consumable>
+																<ns1:entryRelationship typeCode="COMP">
+																	<ns1:supply classCode="SPLY" moodCode="EVN">
+																		<ns1:code code="3" codeSystem="1.2.246.537.5.40100.2006" codeSystemName="Sähköinen lääkemääräys - Määrätyn määrän esittämistapa 2006" displayName="Lääkehoidon kestoaika"/>
+																		<ns1:effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+																			<ns1:low value="20151216"/>
+																			<ns1:width unit="a" value="1"/>
+																		</ns1:effectiveTime>
+																		<ns1:independentInd value="false"/>
+																		<ns1:subject>
+																			<ns1:relatedSubject classCode="PAT">
+																				<ns1:code code="XXXXXX-XXXX" codeSystem="1.2.246.21"/>
+																				<ns1:subject>
+																					<ns1:name>
+																						<ns1:given qualifier="CL">EtuNimi</ns1:given>
+																						<ns1:given>EtuNimi</ns1:given>
+																						<ns1:given>EtuNimi2</ns1:given>
+																						<ns1:family>SukuNimi</ns1:family>
+																					</ns1:name>
+																					<ns1:birthTime value="19000101"/>
+																				</ns1:subject>
+																			</ns1:relatedSubject>
+																		</ns1:subject>
+																		<ns1:product>
+																			<ns1:manufacturedProduct>
+																				<ns1:manufacturedLabeledDrug>
+																					<ns1:code code="032214" codeSystem="1.2.246.537.6.55" codeSystemName="VNR" codeSystemVersion="2016.012" displayName="ALVESCO"/>
+																				</ns1:manufacturedLabeledDrug>
+																			</ns1:manufacturedProduct>
+																		</ns1:product>
+																		<ns1:author>
+																			<ns1:time value="20151216130532"/>
+																			<ns1:assignedAuthor>
+																				<ns1:id extension="385732" root="1.2.246.537.25"/>
+																				<ns1:code>
+																					<ns1:translation>
+																						<ns1:qualifier>
+																							<ns1:name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Oppiarvo"/>
+																							<ns1:value nullFlavor="NA">
+																								<ns1:originalText>lääkärin tutkinto</ns1:originalText>
+																							</ns1:value>
+																						</ns1:qualifier>
+																					</ns1:translation>
+																				</ns1:code>
+																				<ns1:assignedPerson>
+																					<ns1:name>
+																						<ns1:given>Salla</ns1:given>
+																						<ns1:family>Fagerudd</ns1:family>
+																						<ns1:suffix>Erikoistuva lääkäri</ns1:suffix>
+																					</ns1:name>
+																				</ns1:assignedPerson>
+																				<ns1:representedOrganization>
+																					<ns1:id extension="1" root="1.2.246.10.8282559.10"/>
+																					<ns1:name>Turun yliopistollinen keskussairaala</ns1:name>
+																					<ns1:telecom use="PUB" value="tel:023130000"/>
+																					<ns1:addr>
+																						<ns1:streetAddressLine>PL 52</ns1:streetAddressLine>
+																						<ns1:postalCode>20521</ns1:postalCode>
+																						<ns1:city>TURKU 52</ns1:city>
+																					</ns1:addr>
+																				</ns1:representedOrganization>
+																			</ns1:assignedAuthor>
+																		</ns1:author>
+																		<ns1:participant typeCode="HLD">
+																			<ns1:participantRole classCode="OWN">
+																				<ns1:playingEntity>
+																					<ns1:name>TAKEDA</ns1:name>
+																				</ns1:playingEntity>
+																			</ns1:participantRole>
+																		</ns1:participant>
+																		<ns1:entryRelationship typeCode="COMP">
+																			<ns1:observation classCode="OBS" moodCode="EVN">
+																				<ns1:code code="124" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Apteekissa valmistettava lääke"/>
+																				<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+																			</ns1:observation>
+																		</ns1:entryRelationship>
+																		<ns1:entryRelationship typeCode="COMP">
+																			<ns1:observation classCode="OBS" moodCode="EVN">
+																				<ns1:code code="24" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemuoto"/>
+																				<ns1:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">inhalaatiosumute, liuos</ns1:value>
+																			</ns1:observation>
+																		</ns1:entryRelationship>
+																		<ns1:entryRelationship typeCode="COMP">
+																			<ns1:observation classCode="OBS" moodCode="EVN">
+																				<ns1:code code="164" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Valmisteen laji"/>
+																				<ns1:value code="1" codeSystem="1.2.246.537.6.604.2014" codeSystemName="THL - Valmisteen laji" displayName="Myyntiluvallinen lääkevalmiste" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD"/>
+																			</ns1:observation>
+																		</ns1:entryRelationship>
+																		<ns1:reference typeCode="RPLC">
+																			<ns1:externalDocument>
+																				<ns1:id root="1.2.246.10.8282559.93.2015.493256"/>
+																				<ns1:code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräys"/>
+																				<ns1:setId root="1.2.246.10.8282559.93.2015.493256"/>
+																			</ns1:externalDocument>
+																		</ns1:reference>
+																		<ns1:reference typeCode="SPRT">
+																			<ns1:externalDocument>
+																				<ns1:id root="1.2.246.10.8282559.93.2016.232120"/>
+																				<ns1:code code="3" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen korjaus"/>
+																				<ns1:setId root="1.2.246.10.8282559.93.2015.493256"/>
+																			</ns1:externalDocument>
+																		</ns1:reference>
+																	</ns1:supply>
+																</ns1:entryRelationship>
+															</ns1:substanceAdministration>
+														</ns1:component>
+													</ns1:organizer>
+												</ns1:entry>
+												<ns1:entry>
+													<ns1:organizer classCode="CLUSTER" moodCode="EVN">
+														<ns1:code code="4" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkkeen vaikuttava aine"/>
+														<ns1:statusCode code="completed"/>
+														<ns1:component>
+															<ns1:substanceAdministration classCode="SBADM" moodCode="EVN">
+																<ns1:consumable>
+																	<ns1:manufacturedProduct>
+																		<ns1:manufacturedLabeledDrug>
+																			<ns1:code nullFlavor="NI"/>
+																			<ns1:name>siklesonidi</ns1:name>
+																		</ns1:manufacturedLabeledDrug>
+																	</ns1:manufacturedProduct>
+																</ns1:consumable>
+															</ns1:substanceAdministration>
+														</ns1:component>
+													</ns1:organizer>
+												</ns1:entry>
+												<ns1:entry>
+													<ns1:organizer classCode="CLUSTER" moodCode="EVN">
+														<ns1:code code="32" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annososio ja jatko-osiot"/>
+														<ns1:statusCode code="completed"/>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="87" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annostelu vain tekstinä"/>
+																<ns1:value value="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:substanceAdministration classCode="SBADM" moodCode="EVN">
+																<ns1:text>2 annosta 1-2 kertaa päivässä säännöllisesti. Hoitava astmalääke.</ns1:text>
+																<ns1:consumable nullFlavor="NI">
+																	<ns1:manufacturedProduct>
+																		<ns1:manufacturedLabeledDrug/>
+																	</ns1:manufacturedProduct>
+																</ns1:consumable>
+																<ns1:entryRelationship typeCode="COMP">
+																	<ns1:observation classCode="OBS" moodCode="EVN">
+																		<ns1:code code="56" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="SIC-merkintä"/>
+																		<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+																	</ns1:observation>
+																</ns1:entryRelationship>
+															</ns1:substanceAdministration>
+														</ns1:component>
+													</ns1:organizer>
+												</ns1:entry>
+												<ns1:entry>
+													<ns1:organizer classCode="CLUSTER" moodCode="EVN">
+														<ns1:code code="99" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen korjauksen muut tiedot"/>
+														<ns1:statusCode code="completed"/>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="81" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevaihtokielto"/>
+																<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="58" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Käyttötarkoitus tekstinä"/>
+																<ns1:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="91" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annosjakelu"/>
+																<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="67" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Hoitolaji"/>
+																<ns1:value code="S" codeSystem="1.2.246.537.5.40101.2006" codeSystemName="Sähköinen lääkemääräys - Hoitolaji 2006" displayName="Sairauden hoito" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="68" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Pysyvä lääkitys"/>
+																<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="129" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="kyseessä lääkkeen käytön aloitus"/>
+																<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="132" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Huume"/>
+																<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="97" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen korjauksen perustelu"/>
+																<ns1:value code="5" codeSystem="1.2.246.537.6.600.2013" codeSystemName="THL - Lääkehoidon muutoksen syy 2013" displayName="Muu syy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE"/>
+																<ns1:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Annosmuutos</ns1:value>
+																<ns1:author>
+																	<ns1:time value="20160602103716"/>
+																	<ns1:assignedAuthor>
+																		<ns1:id extension="332031" root="1.2.246.537.25"/>
+																		<ns1:id extension="03402744134" root="1.2.246.537.26"/>
+																		<ns1:code code="86113-190" codeSystem="1.2.246.537.6.148.2008" codeSystemName="Valvira - Koulutusluokitus" displayName="erikoislääkäri keuhkosairaudet ja allergologia (1999-)">
+																			<ns1:translation>
+																				<ns1:qualifier>
+																					<ns1:name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Oppiarvo"/>
+																					<ns1:value nullFlavor="NA">
+																						<ns1:originalText>erik.lääk. keuhkosairaudet ja allergologia (1999-)</ns1:originalText>
+																					</ns1:value>
+																				</ns1:qualifier>
+																				<ns1:qualifier>
+																					<ns1:name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+																					<ns1:value code="034" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu erikoislääkäri"/>
+																				</ns1:qualifier>
+																			</ns1:translation>
+																		</ns1:code>
+																		<ns1:assignedPerson>
+																			<ns1:name>
+																				<ns1:given>Päivi</ns1:given>
+																				<ns1:family>Ojanen</ns1:family>
+																				<ns1:suffix>Erikoislääkäri</ns1:suffix>
+																			</ns1:name>
+																		</ns1:assignedPerson>
+																		<ns1:representedOrganization>
+																			<ns1:id root="1.2.246.10.8282559.10.1"/>
+																			<ns1:name>Turun yliopistollinen keskussairaala</ns1:name>
+																			<ns1:telecom use="PUB" value="tel:023130000"/>
+																			<ns1:addr>
+																				<ns1:streetAddressLine>PL 52</ns1:streetAddressLine>
+																				<ns1:postalCode>20521</ns1:postalCode>
+																				<ns1:city>TURKU 52</ns1:city>
+																			</ns1:addr>
+																		</ns1:representedOrganization>
+																	</ns1:assignedAuthor>
+																</ns1:author>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="75" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="uudistamiskielto"/>
+																<ns1:value value="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="BL"/>
+															</ns1:observation>
+														</ns1:component>
+														<ns1:component>
+															<ns1:observation classCode="OBS" moodCode="EVN">
+																<ns1:code code="169" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Reseptin laji"/>
+																<ns1:value code="1" codeSystem="1.2.246.537.6.605.2014" codeSystemName="THL - Reseptin laji" displayName="Resepti" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE"/>
+															</ns1:observation>
+														</ns1:component>
+													</ns1:organizer>
+												</ns1:entry>
+											</ns1:section>
+										</ns1:component>
+									</ns1:section>
+								</ns1:component>
+							</ns1:section>
+						</ns1:component>
+					</ns1:structuredBody>
+				</ns1:component>
+			</ns1:ClinicalDocument>

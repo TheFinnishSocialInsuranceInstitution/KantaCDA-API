@@ -1,18 +1,3 @@
-<!--
-  Copyright 2020 Kansaneläkelaitos
-  
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-  use this file except in compliance with the License.  You may obtain a copy
-  of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-  License for the specific language governing permissions and limitations under
-  the License.
--->
 package fi.kela.kanta.to;
 
 import java.io.Serializable;
@@ -25,7 +10,6 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import fi.kela.kanta.cda.KantaCDAConstants.AsiakirjaVersioYhteensopivuus;
-import fi.kela.kanta.to.LeimakentatTO;
 
 public class LaakemaaraysTO extends LeimakentatTO<LaakemaaraysTO> implements Serializable {
 
@@ -110,6 +94,11 @@ public class LaakemaaraysTO extends LeimakentatTO<LaakemaaraysTO> implements Ser
     private String valuutta = "EUR";
     private Boolean laakarinpalkkioErikoislaakarina;
     private String alaikaisenKieltoKoodi;
+    private Boolean annostusTarvittaessa = Boolean.FALSE;
+    private List<AnnosTO> annokset = new ArrayList<AnnosTO>();
+	private String annostelukausiId;
+	private AnnosjaksonPituusTO annosajaksonPituus;
+	private AnnostelukaudenPituusTO annostelukaudenPituus;
 
     private String palvelutapahtumanOid;
 
@@ -126,7 +115,15 @@ public class LaakemaaraysTO extends LeimakentatTO<LaakemaaraysTO> implements Ser
     private AmmattihenkiloTO kirjaaja;
     private String apteekissaTallennettuLaakemaaraysPerustelu;
     private String apteekissaTallennettuLaakemaaraysMuuSyy;
+    private String kayttoOhjeLisatiedot;
+    
+    private Date annostelukaudenAlkupvm;
+    private Date annostelukaudenLoppupvm;
+    private KoodiTO laakkeenantoreitti;
+    private Date laakeTauollaAlkupvm;
+    private Date laakeTauollaLoppupvm;
 
+    
     public LaakemaaraysTO(boolean initialize) {
         super();
         if ( initialize ) {
@@ -157,9 +154,10 @@ public class LaakemaaraysTO extends LeimakentatTO<LaakemaaraysTO> implements Ser
         uudistamiskielto = false;
         laakarinpalkkioErikoislaakarina = false;
         tartuntatauti = false;
+   
     }
 
-    public Date getMaarayspaiva() {
+	public Date getMaarayspaiva() {
         return maarayspaiva;
     }
 
@@ -332,11 +330,6 @@ public class LaakemaaraysTO extends LeimakentatTO<LaakemaaraysTO> implements Ser
     }
 
     public void setAnnosteluPelkastaanTekstimuodossa(Boolean annosteluPelkastaanTekstimuodossa) {
-
-        // Toistaiseksi tuetaan vain tekstimuotoista
-        if ( !annosteluPelkastaanTekstimuodossa ) {
-            throw new IllegalArgumentException("Annostelu on tuettu vain tekstimuotoisena.");
-        }
         this.annosteluPelkastaanTekstimuodossa = annosteluPelkastaanTekstimuodossa;
     }
 
@@ -699,4 +692,90 @@ public class LaakemaaraysTO extends LeimakentatTO<LaakemaaraysTO> implements Ser
 	public void setAlaikaisenKieltoKoodi(String alaikaisenKieltoKoodi) {
 		this.alaikaisenKieltoKoodi = alaikaisenKieltoKoodi;
 	}
+
+	public Boolean isAnnostusTarvittaessa() {
+		return annostusTarvittaessa;
+	}
+
+	public void setAnnostusTarvittaessa(Boolean annostusTarvittaessa) {
+		this.annostusTarvittaessa = annostusTarvittaessa;
+	}
+
+	public List<AnnosTO> getAnnokset() {
+		return annokset;
+	}
+
+	public String getAnnostelukausiId() {
+		return annostelukausiId;
+	}
+
+	public void setAnnostelukausiId(String annostelukausiId) {
+		this.annostelukausiId = annostelukausiId;
+	}
+
+	public AnnosjaksonPituusTO getAnnosajaksonPituus() {
+		return annosajaksonPituus;
+	}
+
+	public void setAnnosajaksonPituus(AnnosjaksonPituusTO annosajaksonPituus) {
+		this.annosajaksonPituus = annosajaksonPituus;
+	}
+
+	public String getKayttoOhjeLisatiedot() {
+		return kayttoOhjeLisatiedot;
+	}
+
+	public void setKayttoOhjeLisatiedot(String kayttoOhjeLisatiedot) {
+		this.kayttoOhjeLisatiedot = kayttoOhjeLisatiedot;
+	}
+
+	public KoodiTO getLaakkeenantoreitti() {
+		return laakkeenantoreitti;
+	}
+
+	public void setLaakkeenantoreitti(KoodiTO laakkeenantoreitti) {
+		this.laakkeenantoreitti = laakkeenantoreitti;
+	}
+
+	public AnnostelukaudenPituusTO getAnnostelukaudenPituus() {
+		return annostelukaudenPituus;
+	}
+
+	public void setAnnostelukaudenPituus(AnnostelukaudenPituusTO annostelukaudenPituus) {
+		this.annostelukaudenPituus = annostelukaudenPituus;
+	}
+
+	public Date getAnnostelukaudenLoppupvm() {
+		return annostelukaudenLoppupvm;
+	}
+
+	public void setAnnostelukaudenLoppupvm(Date annostelukaudenLoppupvm) {
+		this.annostelukaudenLoppupvm = annostelukaudenLoppupvm;
+	}
+
+	public Date getAnnostelukaudenAlkupvm() {
+		return annostelukaudenAlkupvm;
+	}
+
+	public void setAnnostelukaudenAlkupvm(Date annostelukaudenAlkupvm) {
+		this.annostelukaudenAlkupvm = annostelukaudenAlkupvm;
+	}
+
+	public Date getLaakeTauollaAlkupvm() {
+		return laakeTauollaAlkupvm;
+	}
+
+	public void setLaakeTauollaAlkupvm(Date laakeTauollaAlkupvm) {
+		this.laakeTauollaAlkupvm = laakeTauollaAlkupvm;
+	}
+
+	public Date getLaakeTauollaLoppupvm() {
+		return laakeTauollaLoppupvm;
+	}
+
+	public void setLaakeTauollaLoppupvm(Date laakeTauollaLoppupvm) {
+		this.laakeTauollaLoppupvm = laakeTauollaLoppupvm;
+	}
+	
+	
 }

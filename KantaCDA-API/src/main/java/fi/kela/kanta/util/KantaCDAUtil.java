@@ -1,18 +1,3 @@
-<!--
-  Copyright 2020 Kansaneläkelaitos
-  
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-  use this file except in compliance with the License.  You may obtain a copy
-  of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-  License for the specific language governing permissions and limitations under
-  the License.
--->
 package fi.kela.kanta.util;
 
 import java.io.FileNotFoundException;
@@ -30,11 +15,14 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import fi.kela.kanta.to.LaakemaaraysTO;
+
 /**
  * KantaCDAUtils Apumetodien kaatoluokka
  */
 public class KantaCDAUtil {
     private static final Object iterLock = new Object();
+    private static final String VALMISTEEN_LAJI_APTEEKISSA_VALMISTETTAVA = "7";
 
     private KantaCDAUtil() {
     }
@@ -174,4 +162,24 @@ public class KantaCDAUtil {
 		}
 		return tunnus.matches(Y_TUNNUS_EXPR);
     }
+    
+    /**
+     * Päättelee valmisteen lajin perusteella onko kyseessä apteekissa valmistettava lääke.
+     * Jos valmisteen laji = 7, palautuu true, muuten false.
+     * 
+     * @param laakemaarays
+     * @return 
+     */
+    public static boolean onkoApteekissaValmistettava(LaakemaaraysTO laakemaarays) {
+		if (laakemaarays != null && laakemaarays.getValmiste() != null
+				&& laakemaarays.getValmiste().getYksilointitiedot() != null) {
+			if (VALMISTEEN_LAJI_APTEEKISSA_VALMISTETTAVA
+					.equals(laakemaarays.getValmiste().getYksilointitiedot().getValmisteenLaji())) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 }

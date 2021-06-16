@@ -1,0 +1,257 @@
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:ns2="urn:hl7finland" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA_Fi.xsd">
+	<realmCode code="FI"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.2.246.777.11.2016.9"/>
+	<id root="1.2.246.537.25.1.30411.93.2017.104.112232"/>
+	<code code="8" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Uusimispyyntö"/>
+	<title>Uusimispyyntö</title>
+	<effectiveTime value="20170104102244"/>
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="KanTa-palvelut - Asiakirjan luottamuksellisuus" displayName="Terveydenhuollon salassapidettävä"/>
+	<languageCode code="fi"/>
+	<setId root="1.2.246.537.25.1.30411.93.2017.104.112232"/>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="091072-971S" root="1.2.246.21"/>
+			<patient>
+				<name>
+					<family>YHTEISTESTI-KANTANEN</family>
+					<given>Leevi</given>
+					<given>Mikael</given>
+					<given qualifier="CL">Leevi</given>
+                </name>
+				<administrativeGenderCode code="1" codeSystem="1.2.246.537.5.1.1997" codeSystemName="AR/YDIN - Sukupuoli" displayName="Mies"/>
+				<birthTime value="19721009"/>
+            </patient>
+        </patientRole>
+    </recordTarget>
+	<author typeCode="AUT">
+		<functionCode codeSystem="1.2.246.537.5.40006.2003" codeSystemName="eArkisto - tekninen CDA R2 henkilötarkennin" nullFlavor="NI"/>
+		<time value="20170104102108"/>
+		<assignedAuthor>
+			<id extension="030411" root="1.2.246.537.25"/>
+			<id extension="00198702425" root="1.2.246.537.26"/>
+			<code code="46111" codeSystem="1.2.246.537.6.148.2008" codeSystemName="Valvira - Koulutusluokitus" displayName="sairaanhoitajan tutkinto">
+				<translation>
+					<qualifier>
+						<name code="1.2" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - Tekninen CDA R2 rakennekoodisto" displayName="Virkanimike"/>
+						<value>
+							<originalText>Ammattioikeus</originalText>
+                        </value>
+                    </qualifier>
+					<qualifier>
+						<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - Tekninen CDA R2 rakennekoodisto" displayName="Oppiarvo"/>
+						<value>
+							<originalText>laillistettu lääkäri</originalText>
+                        </value>
+                    </qualifier>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+						<value code="001" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu lääkäri"/>
+                    </qualifier>
+                </translation>
+            </code>
+			<assignedPerson>
+				<name>
+					<family>Ketonen Tes</family>
+					<given>Nils</given>
+					<given>Birger</given>
+					<given>Reinhold</given>
+					<given qualifier="CL">Nils</given>
+                </name>
+            </assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.537.28.198702425"/>
+				<name>Ketonen Tes Nils Birger Reinhold</name>
+				<telecom use="DIR" value="tel:040-1234567"/>
+				<telecom value="mailto:teemu@fim.fi"/>
+				<addr>
+					<streetAddressLine>Kelakatu 10 B 1</streetAddressLine>
+					<postalCode>00090</postalCode>
+					<city>Helsinki</city>
+                </addr>
+				<asOrganizationPartOf>
+					<wholeOrganization>
+						<id root="1.2.246.537.28.198702425"/>
+						<name>Ketonen Tes Nils Birger Reinhold</name>
+						<telecom use="DIR" value="tel:040-1234567"/>
+						<telecom value="mailto:teemu@fim.fi"/>
+						<addr>
+							<streetAddressLine>Kelakatu 10 B 1</streetAddressLine>
+							<postalCode>00090</postalCode>
+							<city>Helsinki</city>
+                        </addr>
+                    </wholeOrganization>
+                </asOrganizationPartOf>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.246.10.2462460.19.1"/>
+				<name>Kansaneläkelaitos</name>
+				<addr use="PST">
+					<postBox>PL 450</postBox>
+					<postalCode>00101</postalCode>
+					<city>Helsinki</city>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+	<informationRecipient>
+		<intendedRecipient>
+			<receivedOrganization>
+				<id root="1.2.246.537.28.198702425"/>
+				<name>Ketonen Tes Nils Birger Reinhold</name>
+            </receivedOrganization>
+        </intendedRecipient>
+    </informationRecipient>
+	<relatedDocument typeCode="APND">
+		<parentDocument>
+			<id root="1.2.246.537.25.1.30411.93.2016.1108.21411"/>
+			<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys" xsi:type="CE"/>
+			<setId root="1.2.246.537.25.1.30411.93.2016.1108.21411"/>
+        </parentDocument>
+    </relatedDocument>
+	<componentOf>
+		<encompassingEncounter>
+			<effectiveTime value="20170104102244"/>
+			<location>
+				<healthCareFacility>
+					<id root="1.2.246.537.28.198702425"/>
+					<location>
+						<name>Ketonen Tes Nils Birger Reinhold</name>
+						<addr>
+							<streetAddressLine>Kelakatu 10 B 1</streetAddressLine>
+							<postalCode>00090</postalCode>
+							<city>Helsinki</city>
+                        </addr>
+                    </location>
+					<serviceProviderOrganization>
+						<id root="1.2.246.537.28.198702425"/>
+						<name>Ketonen Tes Nils Birger Reinhold</name>
+						<addr>
+							<streetAddressLine>Kelakatu 10 B 1</streetAddressLine>
+							<postalCode>00090</postalCode>
+							<city>Helsinki</city>
+                        </addr>
+                    </serviceProviderOrganization>
+                </healthCareFacility>
+            </location>
+        </encompassingEncounter>
+    </componentOf>
+	<ns2:localHeader>
+		<ns2:softwareSupport moderator="Kansaneläkelaitos" product="KELAIN" version="0.0.1">Kelain</ns2:softwareSupport>
+    </ns2:localHeader>
+	<component>
+		<structuredBody>
+			<component>
+				<templateId root="1.2.246.777.11.2016.10"/>
+				<section ID="OID1.2.246.537.25.1.30411.93.2017.104.112244.1">
+					<id root="1.2.246.537.25.1.30411.93.2017.104.112244.1"/>
+					<code code="8" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Uusimispyyntö"/>
+					<title>Uusimispyyntö</title>
+					<component>
+						<section ID="OID1.2.246.537.25.1.30411.93.2017.104.112244.2">
+							<id root="1.2.246.537.25.1.30411.93.2017.104.112244.2"/>
+							<text>
+								<paragraph>
+									<content>Uusimispyynnön luonti aika: 4.1.2017 10:22</content>
+                                </paragraph>
+								<paragraph>
+									<content>Uusija: Ketonen Tes, Nils Birger Reinhold</content>
+                                </paragraph>
+								<paragraph>
+									<content>Uusittavan valmisteen nimi: ATORVASTATIN RATIOPHARM</content>
+                                </paragraph>
+								<paragraph>
+									<content>Uusittavan lääkemääräyksen tekijä: Ketonen Tes, Nils Birger Reinhold</content>
+                                </paragraph>
+                            </text>
+							<component>
+								<section ID="OID1.2.246.537.25.1.30411.93.2017.104.112244.3">
+									<id root="1.2.246.537.25.1.30411.93.2017.104.112244.3"/>
+									<entry>
+										<act classCode="ACT" moodCode="RQO">
+											<code code="8" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Uusimispyyntö"/>
+											<subject typeCode="SBJ">
+												<relatedSubject classCode="PAT">
+													<code code="091072-971S" codeSystem="1.2.246.21"/>
+													<subject classCode="PSN">
+														<name>
+															<family>YHTEISTESTI-KANTANEN</family>
+															<given>Leevi</given>
+															<given>Mikael</given>
+															<given qualifier="CL">Leevi</given>
+                                                        </name>
+														<birthTime value="19721009"/>
+                                                    </subject>
+                                                </relatedSubject>
+                                            </subject>
+											<participant typeCode="DIR">
+												<participantRole classCode="ROL">
+													<addr>
+														<streetAddressLine>Kelakatu 10 B 1</streetAddressLine>
+														<postalCode>00090</postalCode>
+														<city>Helsinki</city>
+                                                    </addr>
+													<telecom use="DIR" value="tel:040-1234567"/>
+													<playingEntity/>
+													<scopingEntity classCode="ORG">
+														<id root="1.2.246.537.28.198702425"/>
+														<desc>Ketonen Tes Nils Birger Reinhold</desc>
+                                                    </scopingEntity>
+                                                </participantRole>
+                                            </participant>
+                                            
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="113" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Uusimispyynnön kirjaajan antama viesti"/>
+													<value xsi:type="ST"/>
+                                                </observation>
+                                            </entryRelationship>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="120" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Uusimispyynnön suostumustyyppi"/>
+													<value code="3" codeSystem="1.2.246.537.5.40119.2006" codeSystemName="Sähköinen lääkemääräys - Suostumustyypit" displayName="Suullinen pyyntö" xsi:type="CE"/>
+                                                </observation>
+                                            </entryRelationship>
+                                        </act>
+                                    </entry>
+									<entry>
+										<substanceAdministration classCode="SBADM" moodCode="EVN">
+											<effectiveTime value="20161108200351"/>
+											<consumable>
+												<manufacturedProduct>
+													<manufacturedLabeledDrug>
+														<name>ATORVASTATIN RATIOPHARM</name>
+                                                    </manufacturedLabeledDrug>
+                                                </manufacturedProduct>
+                                            </consumable>
+											<author>
+												<time/>
+												<assignedAuthor>
+													<id extension="030411" root="1.2.246.537.25.1"/>
+													<assignedPerson>
+														<name>
+															<family>Ketonen Tes</family>
+															<given>Nils</given>
+															<given>Birger</given>
+															<given>Reinhold</given>
+															<given qualifier="CL">Nils</given>
+                                                        </name>
+                                                    </assignedPerson>
+                                                </assignedAuthor>
+                                            </author>
+                                        </substanceAdministration>
+                                    </entry>
+                                </section>
+                            </component>
+                        </section>
+                    </component>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hl7fi="urn:hl7finland" xmlns:xs="http://www.w3.org/2001/XMLSchema" moodCode="EVN" xmlns="urn:hl7-org:v3">
+	<realmCode code="FI" />
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<templateId root="1.2.246.777.11.2015.11" />
+	<id root="1.2.246.537.25.1.9991.93.2016.803.92422" />
+	<code code="6" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräyksen varaus" />
+	<title>Lääkemääräyksen varaus</title>
+	<effectiveTime value="20160803092422" />
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="Luottamuksellisuus" displayName="Salassapidettävä" />
+	<languageCode code="fi" />
+	<setId root="1.2.246.537.25.1.9991.93.2016.803.92422" />
+	<versionNumber value="1" />
+	<recordTarget>
+		<patientRole classCode="PAT">
+			<id root="1.2.246.21" extension="050775-0251" />
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Toni</given>
+					<given qualifier="CL">Toni</given>
+					<given>Sakari</given>
+					<family>Jöttanen</family>
+				</name>
+				<administrativeGenderCode code="1" codeSystem="1.2.246.537.5.1.1997" codeSystemName="AR/YDIN - Sukupuoli 1997" displayName="Mies" />
+				<birthTime value="19750705" />
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<time />
+		<assignedAuthor>
+			<id root="1.2.246.537.26" extension="00698700481" />
+			<code>
+				<translation>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus" />
+						<value code="006" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet" displayName="laillistettu proviisori" />
+					</qualifier>
+				</translation>
+			</code>
+			<assignedPerson>
+				<name>
+					<given>Uno</given>
+					<family>Lähdekivi Tes</family>
+					<suffix>006 proviisori, provisor</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.556.10.32" />
+				<name>Kelan MAXX apteekki</name>
+				<telecom value="tel:09-85678800" use="DIR" />
+				<addr>
+					<streetAddressLine>Strömbergintie 4 E</streetAddressLine>
+					<postalCode>00380</postalCode>
+					<city> HELSINKI</city>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.246.10.2462460.19.1" />
+				<name>Kansaneläkelaitos</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<relatedDocument typeCode="APND">
+		<parentDocument>
+			<id root="1.2.246.537.25.1.30411.93.2016.803.91445" />
+			<code code="1" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräys" />
+			<setId root="1.2.246.537.25.1.30411.93.2016.803.91445" />
+		</parentDocument>
+	</relatedDocument>
+	<componentOf>
+		<encompassingEncounter>
+			<effectiveTime value="20160803092422" />
+			<location>
+				<healthCareFacility>
+					<id root="1.2.246.556.10.32" />
+					<location>
+						<name>Kelan MAXX apteekki</name>
+						<addr>
+							<streetAddressLine>Strömbergintie 4 E</streetAddressLine>
+							<postalCode>00380</postalCode>
+							<city> HELSINKI</city>
+						</addr>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<hl7fi:localHeader><hl7fi:softwareSupport product="MAXX labra v. 1.3.0.0" /></hl7fi:localHeader>
+	<component>
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component><templateId root="1.2.246.777.11.2014.30" />
+				<section ID="OID1.2.246.537.25.1.9991.93.2016.803.92422.1" classCode="DOCSECT" moodCode="EVN">
+					<id root="1.2.246.537.25.1.9991.93.2016.803.92422.1" />
+					<code code="6" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Reseptisanoman tyyppi" displayName="Lääkemääräyksen varaus" />
+					<title>Lääkemääräyksen varaus</title>
+					<component>
+						<section ID="OID1.2.246.537.25.1.9991.93.2016.803.92422.2" classCode="DOCSECT" moodCode="EVN">
+							<id root="1.2.246.537.25.1.9991.93.2016.803.92422.2" />
+							<text mediaType="text/x-hl7-text+xml">
+								<paragraph>
+									<content>Kelan MAXX apteekki</content>
+								</paragraph>
+								<paragraph>
+									<content>3.8.2016</content>
+								</paragraph>
+								<paragraph>
+									<content>006 proviisori, provisor Uno Lähdekivi Tes</content>
+								</paragraph>
+							</text>
+							<component>
+								<section ID="OID1.2.246.537.25.1.9991.93.2016.803.92422.3" classCode="DOCSECT" moodCode="EVN">
+									<id root="1.2.246.537.25.1.9991.93.2016.803.92422.3" />
+									<text mediaType="text/x-hl7-text+xml">
+										<paragraph>
+											<content>Kauppanimi: </content>
+										</paragraph>
+										<paragraph>
+											<content>Annostus: </content>
+										</paragraph>
+										<paragraph>
+											<content>Pakkauskoko: 0 </content>
+										</paragraph>
+										<paragraph>
+											<content>Toimitettu: Kelan MAXX apteekki 3.8.2016 </content>
+										</paragraph>
+										<paragraph>
+											<content>Jäljellä toimituksen jälkeen: 0</content>
+										</paragraph>
+									</text>
+									<entry>
+										<act classCode="ACT" moodCode="RQO">
+											<code code="6" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="reseptisanoman tyyppi" displayName="Lääkemääräyksen varaus" />
+											<text>Varauksen syy on salainen ehkä.</text>
+											<statusCode code="completed" />
+											<effectiveTime value="20160803092422" />
+										</act>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<realmCode code="FI"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<templateId root="1.2.246.777.11.2015.1"/>
+	<id root="1.2.246.10.15719974.93001.2015.128"/>
+	<code code="2" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen mitätöinti"/>
+	<title>Lääkemääräyksen mitätöinti</title>
+	<effectiveTime value="20150526112919"/>
+	<confidentialityCode code="5" codeSystem="1.2.246.777.5.99902.2006" codeSystemName="KanTa-palvelut - Asiakirjan luottamuksellisuus 2008" displayName="Terveydenhuollon salassapidettävä"/>
+	<languageCode code="fi"/>
+	<setId root="1.2.246.10.15719974.93001.2015.125"/>
+	<versionNumber value="3"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="101070-971W" root="1.2.246.21"/>
+			<patient>
+				<name>
+					<given>Joonas</given>
+					<given>Viljami</given>
+					<given qualifier="CL">Joonas</given>
+					<family>Jalava</family>
+				</name>
+				<administrativeGenderCode code="1" codeSystem="1.2.246.537.5.1.1997" codeSystemName="AR/YDIN - Sukupuoli 1997" displayName="Mies"/>
+				<birthTime value="19701010"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<functionCode code="LAL" codeSystem="1.2.246.537.5.40006.2003" codeSystemName="eArkisto - tekninen CDA R2 henkilötarkennin  2009" displayName="Lääkityksen aloittanut henkilö"/>
+		<time value="20150526103037"/>
+		<assignedAuthor>
+			<id extension="100438" root="1.2.246.537.25"/>
+			<id extension="03498700172" root="1.2.246.537.26"/>
+			<code code="86115-160" codeSystem="1.2.246.537.6.148.2008" codeSystemName="Valvira-Koulutusluokitus 2008" displayName="erikoislääkäri iho- ja sukupuolitaudit">
+				<translation>
+					<qualifier>
+						<name code="1.2" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Terveydenhuollon ammattihenkilön virkanimike"/>
+						<value nullFlavor="NI">
+							<originalText>Erikoislääkäri</originalText>
+						</value>
+					</qualifier>
+					<qualifier>
+						<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Terveydenhuollon ammattihenkilön oppiarvo"/>
+						<value nullFlavor="NI">
+							<originalText>erikoislääkäri iho- ja sukupuolitaudit</originalText>
+						</value>
+					</qualifier>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+						<value code="034" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet 2008" displayName="laillistettu erikoislääkäri"/>
+					</qualifier>
+				</translation>
+			</code>
+			<assignedPerson>
+				<name>
+					<given>Ida</given>
+					<given>Dorothea</given>
+					<family>Hyvärinen Tes</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.10.18277112.10.0"/>
+				<name>Silmäasema Fennica Oy</name>
+				<telecom use="DIR" value="tel:0207122350"/>
+				<addr>
+					<streetAddressLine>Atomitie 5 A 3. krs.</streetAddressLine>
+					<postalCode>00370</postalCode>
+					<city>Helsinki</city>
+				</addr>
+				<asOrganizationPartOf>
+					<wholeOrganization>
+						<id root="1.2.246.10.18277112.10.0"/>
+						<name>Silmäasema Fennica Oy</name>
+						<telecom use="DIR" value="tel:0207122350"/>
+						<addr>
+							<streetAddressLine>Atomitie 5 A 3. krs.</streetAddressLine>
+							<postalCode>00370</postalCode>
+							<city>Helsinki</city>
+						</addr>
+					</wholeOrganization>
+				</asOrganizationPartOf>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<author>
+		<functionCode code="MIT" codeSystem="1.2.246.537.5.40006.2003" codeSystemName="eArkisto - tekninen CDA R2 henkilötarkennin  2009" displayName="Mitätöijä"/>
+		<time value="20150526112658"/>
+		<assignedAuthor>
+			<id extension="032458" root="1.2.246.537.25"/>
+			<id extension="00098705619" root="1.2.246.537.26"/>
+			<code code="76111" codeSystem="1.2.246.537.6.148.2008" codeSystemName="Valvira-Koulutusluokitus 2008" displayName="lääkärin tutkinto">
+				<translation>
+					<qualifier>
+						<name code="1.2" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Terveydenhuollon ammattihenkilön virkanimike"/>
+						<value nullFlavor="NI">
+							<originalText>Yleislääkäri</originalText>
+						</value>
+					</qualifier>
+					<qualifier>
+						<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Terveydenhuollon ammattihenkilön oppiarvo"/>
+						<value nullFlavor="NI">
+							<originalText>lääkärin tutkinto</originalText>
+						</value>
+					</qualifier>
+					<qualifier>
+						<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+						<value code="031" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet 2008" displayName="laillistettu yleislääkäri"/>
+					</qualifier>
+				</translation>
+			</code>
+			<assignedPerson>
+				<name>
+					<given>Oiva</given>
+					<given>Veikko</given>
+					<given>Antero</given>
+					<family>Viljanen Tes</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="1.2.246.10.18277112.10.0"/>
+				<name>Silmäasema Fennica Oy</name>
+				<telecom use="DIR" value="tel:0207122350"/>
+				<addr>
+					<streetAddressLine>Atomitie 5 A 3. krs.</streetAddressLine>
+					<postalCode>00370</postalCode>
+					<city>Helsinki</city>
+				</addr>
+				<asOrganizationPartOf>
+					<wholeOrganization>
+						<id root="1.2.246.10.18277112.10.0"/>
+						<name>Silmäasema Fennica Oy</name>
+						<telecom use="DIR" value="tel:0207122350"/>
+						<addr>
+							<streetAddressLine>Atomitie 5 A 3. krs.</streetAddressLine>
+							<postalCode>00370</postalCode>
+							<city>Helsinki</city>
+						</addr>
+					</wholeOrganization>
+				</asOrganizationPartOf>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="1.2.246.10.2462460.19.1"/>
+				<name>Kansaneläkelaitos</name>
+				<addr use="PST">
+					<postalCode>00101</postalCode>
+					<city>Helsinki</city>
+					<postBox>PL 450</postBox>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<relatedDocument typeCode="RPLC">
+		<parentDocument>
+			<id root="1.2.246.10.15719974.93001.2015.127"/>
+			<code code="3" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen korjaus"/>
+			<setId root="1.2.246.10.15719974.93001.2015.125"/>
+		</parentDocument>
+	</relatedDocument>
+	<componentOf>
+		<encompassingEncounter>
+			<id root="1.2.246.10.15719974.14.2015.39"/>
+			<effectiveTime value="20150526112232"/>
+			<location>
+				<healthCareFacility>
+					<id root="1.2.246.10.18277112.10.0"/>
+					<location>
+						<name>Silmäasema Fennica Oy</name>
+						<addr>
+							<streetAddressLine>Atomitie 5 A 3. krs.</streetAddressLine>
+							<postalCode>00370</postalCode>
+							<city>Helsinki</city>
+						</addr>
+					</location>
+					<serviceProviderOrganization>
+						<id root="1.2.246.10.18277112.10.0"/>
+						<name>Silmäasema Fennica Oy</name>
+						<addr>
+							<streetAddressLine>Atomitie 5 A 3. krs.</streetAddressLine>
+							<postalCode>00370</postalCode>
+							<city>Helsinki</city>
+						</addr>
+					</serviceProviderOrganization>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<hl7fi:localHeader xmlns:hl7fi="urn:hl7finland">
+		<hl7fi:softwareSupport product="eRA 1.1.0.2"/>
+		<hl7fi:signatureCollection>
+			<hl7fi:signature ID="CDASignatureID_20150526113016">
+				<hl7fi:signatureDescription code="2" codeSystem="1.2.246.537.5.40127.2006" codeSystemName="KanTa-palvelut - Sähköisen allekirjoituksen tyyppi 2006" displayName="Ammattihenkilön tekemä moniallekirjoitus"/>
+				<hl7fi:signatureTimestamp ID="TSID_20150526113016">2015-05-26T11:30:16Z</hl7fi:signatureTimestamp>
+				<hl7fi:multipleDocumentSignature ID="MultiDocumentID">
+					<hl7fi:Ref OID="1.2.246.10.15719974.93001.2015.128" hash="VLLlRG9p4HOOhdsYsKdihTlzEm8="/>
+					<hl7fi:Ref OID="1.2.246.10.15719974.93001.2015.129" hash="XOtVn/9EXdAnlGdrtwsahkE7eBU="/>
+				</hl7fi:multipleDocumentSignature>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="XMLSignatureID_20150526113016">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+						<ds:Reference URI="#TSID_20150526113016">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/TR/1999/REC-xslt-19991116">
+									<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+										<xsl:template match="*|@*|comment()">
+											<xsl:copy>
+												<xsl:apply-templates select="*|@*|text()|comment()"/>
+											</xsl:copy>
+										</xsl:template>
+										<xsl:template match="text()">
+											<xsl:value-of select="normalize-space(.)"/>
+										</xsl:template>
+									</xsl:stylesheet>
+								</ds:Transform>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+							<ds:DigestValue>6hyQZyXr1i4VXxT/tIkpqD1Y5Ok=</ds:DigestValue>
+						</ds:Reference>
+						<ds:Reference URI="#MultiDocumentID">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/TR/1999/REC-xslt-19991116">
+									<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+										<xsl:template match="*|@*|comment()">
+											<xsl:copy>
+												<xsl:apply-templates select="*|@*|text()|comment()"/>
+											</xsl:copy>
+										</xsl:template>
+										<xsl:template match="text()">
+											<xsl:value-of select="normalize-space(.)"/>
+										</xsl:template>
+									</xsl:stylesheet>
+								</ds:Transform>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+							<ds:DigestValue>ysdFcW3G16vks6PC5CLIrVKQIRo=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>Ugf1O1swjwH2uUmb2KPUkk0vBalQaO+HPPK9kkIV3BoKy2ka719mGhXtFd3/4Q6/sDsTNRGoN/UqLpvPajTup8QBePJT9MGEmFjXqL+J5S3nvAkYJrkLZiSWchxFAcbZz2tvFmFjTQswA+b+PQ2EBfMvCpA5gkJYN93rpKas7ATZ9iWtLQ6AUTkCnH2PmtzdoDmP7O3loA+fVLK1P3HOFVLiwrRO3rst6db1b8fA7M1OsDuWwM5amtqzikRixc5tgPlcbZVpmJGNwkdu7IA6myiL7JheQUP6oki/4fKz80lVeOo6uKYY39mdnhNGHJWRmwg5SNDJK5ZUiTotxeAXsQ==</ds:SignatureValue>
+					<ds:KeyInfo>
+						<ds:X509Data>
+							<ds:X509Certificate>MIIGezCCBWOgAwIBAgIEEeHMXzANBgkqhkiG9w0BAQUFADCBqTELMAkGA1UEBhMCRkkxEDAOBgNVBAgTB0ZpbmxhbmQxIzAhBgNVBAoTGlZhZXN0b3Jla2lzdGVyaWtlc2t1cyBURVNUMTAwLgYDVQQLEydUZXJ2ZXlkZW5odW9sbG9uIHRlc3RpYW1tYXR0aXZhcm1lbnRlZXQxMTAvBgNVBAMTKFZSSyBURVNUIENBIGZvciBIZWFsdGhjYXJlIFByb2Zlc3Npb25hbHMwHhcNMTMwOTA5MTAxMjE0WhcNMTgwODI4MjE1OTU5WjCBpDELMAkGA1UEBhMCRkkxDzANBgNVBEETBjAzMjQ1ODEgMB4GA1UEDAwXMDAxIGzDpMOka8OkcmksIGzDpGthcmUxFDASBgNVBAUTCzAwMDk4NzA1NjE5MQ0wCwYDVQQqEwRPaXZhMRUwEwYDVQQEEwxWaWxqYW5lbiBUZXMxJjAkBgNVBAMTHVZpbGphbmVuIFRlcyBPaXZhIDAwMDk4NzA1NjE5MIIBIDANBgkqhkiG9w0BAQEFAAOCAQ0AMIIBCAKCAQEA4NAml8UDmJsKngdalvLMx5BeF/Zn3gkzihRGOb/AKvQVBY4+ENHUcfS1hgH+GylTIHGEYS747HeIQhtdXIcXdFpzIl3JG8neLPkfZYlshhnSyBV52pjUm3wUKFFUTQ0Y0A014BCkbXdK0fHUZE8NxD0odf58MPxSD/RYBdHW1808W56Mrod8y20rh5YeIwn2XVAISYImmsoHh79gCtMQO44vdXE337xfKvkhIoDK/QUH82bgcuP8I69/TPwNaADi8VYnqufReruXLyh/F/en9ocu8hD5alTyvjBtdwvLbab3ksMam8R9rO+feOtVOIYgWWZ3PKin6Qp3dsflapnKuwIBA6OCAq4wggKqMAwGA1UdEwEB/wQCMAAwgc0GA1UdIASBxTCBwjCBvwYJKoF2hAVjCgcBMIGxMIGFBggrBgEFBQcCAjB5GndWYXJtZW5uZXBvbGl0aWlra2Egb24gc2FhdGF2aWxsYSAtIENlcnRpZmlrYXQgcG9saWN5IGZpbm5zIC0gQ2VydGlmaWNhdGUgcG9saWN5IGlzIGF2YWlsYWJsZSBodHRwOi8vd3d3LmZpbmVpZC5maS9jcHM5OTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5maW5laWQuZmkvY3BzOTkvMEEGCCsGAQUFBwEBBDUwMzAxBggrBgEFBQcwAoYlaHR0cDovL3Byb3h5LmZpbmVpZC5maS9jYS92cmt0aGNwLmNydDAYBggrBgEFBQcBAwQMMAowCAYGBACORgEBMA4GA1UdDwEB/wQEAwIGQDAfBgNVHSMEGDAWgBT+wASqL6Z6TFIeVH+vS+RaOCK83TCCARsGA1UdHwSCARIwggEOMC2gK6AphidodHRwOi8vcHJveHkuZmluZWlkLmZpL2NybC92cmt0aGNwYy5jcmwwgdyggdmggdaGgdNsZGFwOi8vbGRhcC5maW5laWQuZmk6Mzg5L2NuJTNkVlJLJTIwVEVTVCUyMENBJTIwZm9yJTIwSGVhbHRoY2FyZSUyMFByb2Zlc3Npb25hbHMsb3UlM2RUZXJ2ZXlkZW5odW9sbG9uJTIwdGVzdGlhbW1hdHRpdmFybWVudGVldCxvJTNkVmFlc3RvcmVraXN0ZXJpa2Vza3VzJTIwVEVTVCxkbWROYW1lJTNkRklORUlELGMlM2RGST9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0MB0GA1UdDgQWBBQ9BWwd/VAtYtIWHclWCGYnXY97PDANBgkqhkiG9w0BAQUFAAOCAQEA1SoE6KaI9JPI9Z6aEM6T5ZiJLZKZ2Gcum9ytqhCDWBbQoZkrFLJWkar9vGAYOdyjfeyWseeMgcXSeELAKOKOSrXrVvwGKFW7yx1nBJg7w/Rs9nTpn9Vq5SQL7tHaaGU19+h2xWqOJmhYcYAwSrgqTQsE8oI5uejHgyoOzU0t6uQFkYqk148LWDF9NCwJCsJSwKTg9R1kvsBLnSaD0V505XH6cBh+58V89fMCEMboNVNXLdQGzADVS5EhU4zmj7UE8iAVX+PHa2YTEOln7je+/QIvI2w6vDTJpdJSleQ5wN/J+zVDgFP8fewphvT2yMkZxhWnMaiLHZwKx0lxd53G6w==</ds:X509Certificate>
+						</ds:X509Data>
+					</ds:KeyInfo>
+				</ds:Signature>
+			</hl7fi:signature>
+			<hl7fi:signature ID="OID1.2.246.10.15719974.93001.2015.128.20150526.113017206">
+				<hl7fi:signatureDescription code="4" codeSystem="1.2.246.537.5.40127.2006" codeSystemName="Sähköisen allekirjoituksen tyyppi" displayName="Järjestelmäallekirjoitus / KanTa"/>
+				<hl7fi:signatureTimestamp ID="ID2015.05.26.11.30.17.0206">2015-05-26T11:30:17+03:00</hl7fi:signatureTimestamp>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="MPS_ee78fb8a5d84-f60c5a67-b3b6-4237-b47a-d63b3856bf3b-6d89dbc8e36c">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+						<ds:Reference URI="#structuredbody1">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+							<ds:DigestValue>VLLlRG9p4HOOhdsYsKdihTlzEm8=</ds:DigestValue>
+						</ds:Reference>
+						<ds:Reference URI="#ID2015.05.26.11.30.17.0206">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+							<ds:DigestValue>su7Qoe4Bn858RbMZG//OKeybomg=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>EVtaJiPcjZzoAcIMX1C9DIKk6FrEEe5hkoOWY0bfYYayzzkRYZ4KhZYtyAQ8ZgWabq1mse2g4jxJvI/UyuFw519zMs/pbYnpL7agYv3dHJ8/Cgj63Xnlxv7SNXNDvozjpTycdWY8GDT/DnWIGn5xUF7ddVh0U0jx/k3sExRbswVqNAKL4pgxLxD+XhR3qEocn4NUejYA/M3ZBRJWnZWT+5QjaQeKP5UdxMMJulRXip02zzeqoIYR5Jxk9PByLOxsmIQ+KdNYYsqW9jTOTJOxr8v61aea6zYLQOUjPYGha21Hm0pkye+uCwSuQEgoe6Z33TKVPC/AcGv05wVXSexLPQ==</ds:SignatureValue>
+					<ds:KeyInfo>
+						<ds:X509Data>
+							<ds:X509Certificate>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</ds:X509Certificate>
+						</ds:X509Data>
+					</ds:KeyInfo>
+				</ds:Signature>
+			</hl7fi:signature>
+		</hl7fi:signatureCollection>
+	</hl7fi:localHeader>
+	<component>
+		<structuredBody ID="structuredbody1">
+			<component>
+				<templateId root="1.2.246.777.11.2015.2"/>
+				<section ID="OID1.2.246.10.15719974.93001.2015.128.1">
+					<id root="1.2.246.10.15719974.93001.2015.128.1"/>
+					<code code="2" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen mitätöinti"/>
+					<title>Lääkemääräyksen mitätöinti</title>
+					<component>
+						<section>
+							<id root="1.2.246.10.15719974.93001.2015.128.2"/>
+							<title>Lääkemääräyksen mitätöinnin tiedot</title>
+							<text>
+								<paragraph>
+									<content>Silmäasema Fennica Oy</content>
+								</paragraph>
+								<paragraph>
+									<content>26.05.2015</content>
+								</paragraph>
+								<paragraph>
+									<content>Hyvärinen Tes, Ida Dorothea</content>
+								</paragraph>
+								<paragraph>
+									<content>Lääkemääräyksen mitätöijä</content>
+								</paragraph>
+								<paragraph>
+									<content>Silmäasema Fennica Oy</content>
+								</paragraph>
+								<paragraph>
+									<content>26.05.2015</content>
+								</paragraph>
+								<paragraph>
+									<content>Viljanen Tes, Oiva Veikko Antero</content>
+								</paragraph>
+							</text>
+							<component>
+								<section>
+									<id root="1.2.246.10.15719974.93001.2015.128.3"/>
+									<text>
+										<paragraph>
+											<content>RENITEC COMP 20/12,5 mg</content>
+										</paragraph>
+										<paragraph>
+											<content>Annostus: 2 tablettia aamuisin.</content>
+										</paragraph>
+										<paragraph>
+											<content>Kokonaismäärä: 400 fol</content>
+										</paragraph>
+									</text>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="83" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevalmisteen ja pakkauksen tiedot" xsi:type="CE"/>
+											<statusCode code="completed"/>
+											<component>
+												<substanceAdministration classCode="SBADM" moodCode="EVN">
+													<effectiveTime value="20150526112232"/>
+													<doseQuantity>
+														<translation>
+															<originalText>20/12,5 mg</originalText>
+														</translation>
+													</doseQuantity>
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+																<code code="C09BA02" codeSystem="1.2.246.537.6.32" codeSystemName="Fimea - ATC Luokitus" codeSystemVersion="2015.010" displayName="Enalapriili ja diureetit"/>
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+													<entryRelationship typeCode="COMP">
+														<supply classCode="SPLY" moodCode="EVN">
+															<code code="2" codeSystem="1.2.246.537.5.40100.2006" codeSystemName="Sähköinen lääkemääräys - Määrätyn määrän esittämistapa 2006" displayName="Kokonaismäärä"/>
+															<independentInd value="false"/>
+															<quantity unit="fol" value="400"/>
+															<subject typeCode="SBJ">
+																<relatedSubject classCode="PAT">
+																	<code code="101070-971W" codeSystem="1.2.246.21"/>
+																	<subject classCode="PSN">
+																		<name>
+																			<given>Joonas</given>
+																			<given>Viljami</given>
+																			<given qualifier="CL">Joonas</given>
+																			<family>Jalava</family>
+																		</name>
+																		<birthTime value="19701010"/>
+																	</subject>
+																</relatedSubject>
+															</subject>
+															<product>
+																<manufacturedProduct>
+																	<manufacturedLabeledDrug>
+																		<code code="446385" codeSystem="1.2.246.537.6.55" codeSystemName="VNR" codeSystemVersion="2015.010" displayName="RENITEC COMP"/>
+																	</manufacturedLabeledDrug>
+																</manufacturedProduct>
+															</product>
+															<author>
+																<time value="20150526103037"/>
+																<assignedAuthor>
+																	<id extension="100438" root="1.2.246.537.25"/>
+																	<id extension="03498700172" root="1.2.246.537.26"/>
+																	<code code="86115-160" codeSystem="1.2.246.537.6.148.2008" codeSystemName="Valvira-Koulutusluokitus 2008" displayName="erikoislääkäri iho- ja sukupuolitaudit">
+																		<translation>
+																			<qualifier>
+																				<name code="1.2" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Terveydenhuollon ammattihenkilön virkanimike"/>
+																				<value nullFlavor="NI">
+																					<originalText>Erikoislääkäri</originalText>
+																				</value>
+																			</qualifier>
+																			<qualifier>
+																				<name code="1.3" codeSystem="1.2.246.537.6.12.999.2003" codeSystemName="KanTa-palvelut - tekninen CDA R2 rakennekoodisto 2003" displayName="Terveydenhuollon ammattihenkilön oppiarvo"/>
+																				<value nullFlavor="NI">
+																					<originalText>erikoislääkäri iho- ja sukupuolitaudit</originalText>
+																				</value>
+																			</qualifier>
+																			<qualifier>
+																				<name code="151" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Ammattioikeus"/>
+																				<value code="034" codeSystem="1.2.246.537.6.140.2008" codeSystemName="Valvira - Ammattioikeudet 2008" displayName="laillistettu erikoislääkäri"/>
+																			</qualifier>
+																		</translation>
+																	</code>
+																	<assignedPerson>
+																		<name>
+																			<given>Ida</given>
+																			<given>Dorothea</given>
+																			<family>Hyvärinen Tes</family>
+																		</name>
+																	</assignedPerson>
+																	<representedOrganization>
+																		<id root="1.2.246.10.18277112.10.0"/>
+																		<name>Silmäasema Fennica Oy</name>
+																		<telecom use="DIR" value="tel:0207122350"/>
+																		<addr>
+																			<streetAddressLine>Atomitie 5 A 3. krs.</streetAddressLine>
+																			<postalCode>00370</postalCode>
+																			<city>Helsinki</city>
+																		</addr>
+																	</representedOrganization>
+																</assignedAuthor>
+															</author>
+															<participant typeCode="HLD">
+																<participantRole classCode="OWN">
+																	<playingEntity>
+																		<name>MSD</name>
+																	</playingEntity>
+																</participantRole>
+															</participant>
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="128" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Säilytysastia"/>
+																	<value xsi:type="SC">läpipainopakkaus</value>
+																</observation>
+															</entryRelationship>
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="164" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Valmisteen laji"/>
+																	<value code="1" codeSystem="1.2.246.537.6.604.2014" codeSystemName="THL  Valmisteen laji  2014" displayName="Myyntiluvallinen lääkevalmiste" xsi:type="CD"/>
+																</observation>
+															</entryRelationship>
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="24" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemuoto"/>
+																	<value xsi:type="ST">tabletti</value>
+																</observation>
+															</entryRelationship>
+															<entryRelationship typeCode="COMP">
+																<observation classCode="OBS" moodCode="EVN">
+																	<code code="124" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Apteekissa valmistettavan lääkkeen osoitin"/>
+																	<value value="false" xsi:type="BL"/>
+																</observation>
+															</entryRelationship>
+															<reference typeCode="SPRT">
+																<externalDocument>
+																	<id root="1.2.246.10.15719974.93001.2015.128"/>
+																	<code code="2" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen mitätöinti"/>
+																	<setId root="1.2.246.10.15719974.93001.2015.125"/>
+																</externalDocument>
+															</reference>
+															<reference typeCode="RPLC">
+																<externalDocument>
+																	<id root="1.2.246.10.15719974.93001.2015.127"/>
+																	<code code="3" codeSystem="1.2.246.537.5.40105.2006" codeSystemName="Sähköinen lääkemääräys - Reseptisanoman tyyppi 2006" displayName="Lääkemääräyksen korjaus"/>
+																	<setId root="1.2.246.10.15719974.93001.2015.125"/>
+																</externalDocument>
+															</reference>
+														</supply>
+													</entryRelationship>
+												</substanceAdministration>
+											</component>
+										</organizer>
+									</entry>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="4" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkkeen vaikuttavat ainesosat" xsi:type="CE"/>
+											<statusCode code="completed"/>
+											<component>
+												<substanceAdministration classCode="SBADM" moodCode="EVN">
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+																<code codeSystem="1.2.246.537.6.32" codeSystemName="Fimea - ATC Luokitus" codeSystemVersion="2015.010" nullFlavor="NI"/>
+																<name>enalapriilimaleaatti</name>
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+												</substanceAdministration>
+											</component>
+											<component>
+												<substanceAdministration classCode="SBADM" moodCode="EVN">
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug>
+																<code codeSystem="1.2.246.537.6.32" codeSystemName="Fimea - ATC Luokitus" codeSystemVersion="2015.010" nullFlavor="NI"/>
+																<name>hydroklooritiatsidi</name>
+															</manufacturedLabeledDrug>
+														</manufacturedProduct>
+													</consumable>
+												</substanceAdministration>
+											</component>
+										</organizer>
+									</entry>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="10" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkkeen muut ainesosat" xsi:type="CE"/>
+											<statusCode code="completed"/>
+										</organizer>
+									</entry>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="32" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annososio ja jatko-osiot" xsi:type="CE"/>
+											<statusCode code="completed"/>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="87" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annostelu vain tekstinä"/>
+													<value value="true" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<substanceAdministration classCode="SBADM" moodCode="EVN">
+													<text>2 tablettia aamuisin.</text>
+													<consumable>
+														<manufacturedProduct>
+															<manufacturedLabeledDrug nullFlavor="NI"/>
+														</manufacturedProduct>
+													</consumable>
+													<entryRelationship typeCode="COMP">
+														<observation classCode="OBS" moodCode="EVN">
+															<code code="56" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="SIC-merkintä"/>
+															<value value="false" xsi:type="BL"/>
+														</observation>
+													</entryRelationship>
+												</substanceAdministration>
+											</component>
+										</organizer>
+									</entry>
+									<entry>
+										<organizer classCode="CLUSTER" moodCode="EVN">
+											<code code="98" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen mitätöinnin muut tiedot" xsi:type="CE"/>
+											<statusCode code="completed"/>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="81" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkevaihtokielto"/>
+													<value value="true" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="58" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Käyttötarkoitus tekstinä"/>
+													<value xsi:type="ST">Verenpainelääke.</value>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="91" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Annosjakelu"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="67" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Hoitolaji"/>
+													<value code="S" codeSystem="1.2.246.537.5.40101.2006" codeSystemName="Sähköinen lääkemääräys - Hoitolaji 2006" displayName="Sairauden hoito" xsi:type="CE"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="132" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Huume"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="68" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Pysyvä lääkitys"/>
+													<value value="true" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="129" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Kyseessä lääkkeen käytön aloitus"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="169" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Reseptin laji"/>
+													<value code="3" codeSystem="1.2.246.537.6.605.2014" codeSystemName="THL - Reseptin laji 2014" displayName="Ulkomaanresepti" xsi:type="CE"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="75" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Uudistamiskielto"/>
+													<value value="false" xsi:type="BL"/>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="95" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen mitätöinnin syy"/>
+													<value code="3" codeSystem="1.2.246.537.6.600.2013" codeSystemName="THL - Lääkehoidon muutoksen syy 2013" displayName="Lääkkeen haittavaikutus" xsi:type="CE"/>
+													<value xsi:type="ST">lääkeaineallergia</value>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="96" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen mitätöinnin tyyppi"/>
+													<value code="1" codeSystem="1.2.246.537.5.40103.2006" codeSystemName="Sähköinen lääkemääräys - Lääkemääräyksen mitätöinnin tyyppi 2006" displayName="Hoidollinen syy" xsi:type="CD">
+														<qualifier>
+															<name code="96.1" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen mitätöinnin osapuoli"/>
+															<value code="1" codeSystem="1.2.246.537.5.40102.2006" codeSystemName="Sähköinen lääkemääräys - Lääkemääräyksen mitätöinnin osapuoli 2006" displayName="Lääkäri"/>
+														</qualifier>
+														<qualifier>
+															<name code="96.2" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen mitätöinnin suostumus"/>
+															<value code="1" codeSystem="1.2.246.537.5.40119.2006" codeSystemName="Sähköinen lääkemääräys - Suostumustyypit 2006" displayName="Suullinen suostumus"/>
+														</qualifier>
+													</value>
+												</observation>
+											</component>
+											<component>
+												<observation classCode="OBS" moodCode="EVN">
+													<code code="97" codeSystem="1.2.246.537.6.12.2002.126" codeSystemName="Lääkityslista" displayName="Lääkemääräyksen korjauksen perustelu"/>
+													<value code="4" codeSystem="1.2.246.537.6.600.2013" codeSystemName="THL - Lääkehoidon muutoksen syy 2013" displayName="Muu lääkkeen muutos" xsi:type="CE"/>
+													<author>
+														<time nullFlavor="UNK"/>
+														<assignedAuthor>
+															<id nullFlavor="NI"/>
+															<assignedPerson>
+																<name>
+																	<given>Oiva</given>
+																	<given>Veikko</given>
+																	<given>Antero</given>
+																	<family>Viljanen Tes</family>
+																</name>
+															</assignedPerson>
+														</assignedAuthor>
+													</author>
+												</observation>
+											</component>
+										</organizer>
+									</entry>
+								</section>
+							</component>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

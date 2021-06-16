@@ -1,28 +1,13 @@
-<!--
-  Copyright 2020 Kansaneläkelaitos
-  
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-  use this file except in compliance with the License.  You may obtain a copy
-  of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-  License for the specific language governing permissions and limitations under
-  the License.
--->
 package fi.kela.kanta.cda;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
-
 import javax.xml.bind.JAXBException;
-
+import org.apache.commons.lang.StringUtils;
 import org.hl7.v3.ANY;
 import org.hl7.v3.ActClassSupply;
 import org.hl7.v3.BL;
@@ -32,6 +17,7 @@ import org.hl7.v3.ED;
 import org.hl7.v3.INT;
 import org.hl7.v3.IVLPQ;
 import org.hl7.v3.IVLTS;
+import org.hl7.v3.IVXBPQ;
 import org.hl7.v3.MO;
 import org.hl7.v3.PN;
 import org.hl7.v3.POCDMT000040ClinicalDocument;
@@ -65,6 +51,8 @@ import org.hl7.v3.XDocumentSubstanceMood;
 
 import fi.kela.kanta.cda.validation.Validoija;
 import fi.kela.kanta.to.AmmattihenkiloTO;
+import fi.kela.kanta.to.AnnosTO;
+import fi.kela.kanta.to.JaksonPituusTO;
 import fi.kela.kanta.to.LaakemaaraysTO;
 import fi.kela.kanta.to.LeimakentatTO;
 import fi.kela.kanta.to.MuuAinesosaTO;
@@ -157,7 +145,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
      * @return true jos vaikuttavat aineet tulee lisätä muuten false
      */
     protected boolean lisataankoVaikuttavatAineet(LaakemaaraysTO laakemaarays) {
-        if ( laakemaarays.isApteekissaValmistettavaLaake() ) {
+        if ( KantaCDAUtil.onkoApteekissaValmistettava(laakemaarays) ) {
             return true;
         }
         if ( !onkoNullTaiTyhja(laakemaarays.getValmiste().getYksilointitiedot().getKauppanimi()) ) {
@@ -568,17 +556,15 @@ public abstract class ReseptiKasaaja extends Kasaaja {
         annostusohjeComp.setSubstanceAdministration(of.createPOCDMT000040SubstanceAdministration());
         annostusohjeComp.getSubstanceAdministration().getClassCodes().add(TEXT_SBADM);
         annostusohjeComp.getSubstanceAdministration().setMoodCode(XDocumentSubstanceMood.EVN);
+        CD ao = of.createCD();
+        fetchAttributes(KantaCDAConstants.Laakityslista.TEKSTIMUOTOINEN_ANNOSTUSOHJE, ao);
+        annostusohjeComp.getSubstanceAdministration().setCode(ao);
         annostusohjeComp.getSubstanceAdministration().setText(of.createED());
         annostusohjeComp.getSubstanceAdministration().getText().getContent()
                 .add(KantaCDAUtil.poistaKontrolliMerkit(laakemaarays.getAnnostusohje()));
-        annostusohjeComp.getSubstanceAdministration().setConsumable(of.createPOCDMT000040Consumable());
-        annostusohjeComp.getSubstanceAdministration().getConsumable()
-                .setManufacturedProduct(of.createPOCDMT000040ManufacturedProduct());
-        annostusohjeComp.getSubstanceAdministration().getConsumable().getManufacturedProduct()
-                .setManufacturedLabeledDrug(of.createPOCDMT000040LabeledDrug());
-        annostusohjeComp.getSubstanceAdministration().getConsumable().getManufacturedProduct()
-                .getManufacturedLabeledDrug().getNullFlavors().add("NI");
-
+        
+        annostusohjeComp.getSubstanceAdministration().setConsumable(luoTyhjaConsumable());
+        
         // SIC merkintä
         annostusohjeComp.getSubstanceAdministration().getEntryRelationships()
                 .add(of.createPOCDMT000040EntryRelationship());
@@ -591,9 +577,281 @@ public abstract class ReseptiKasaaja extends Kasaaja {
         asetaObservation(KantaCDAConstants.Laakityslista.SIC_MERKINTA, sicValue,
                 annostusohjeComp.getSubstanceAdministration().getEntryRelationships().get(0).getObservation());
         entry.getOrganizer().getComponents().add(annostusohjeComp);
+              
+        if (!laakemaarays.isAnnosteluPelkastaanTekstimuodossa()) {
+	        //lääkkeenantoreitti ja käyttöohjeen lisätieto
+        	POCDMT000040Component4 lisatiedot = luoAnnostuksenLisatiedotComponent(laakemaarays);
+        	
+        	if (lisatiedot != null) {
+        		entry.getOrganizer().getComponents().add(luoAnnostuksenLisatiedotComponent(laakemaarays));
+        	}
+        	
+	       // Annostelukausi
+        	POCDMT000040Component4 annostelukausi = luoAnnostelukausiComponent(laakemaarays);
+        	
+        	if (annostelukausi != null) {
+        		entry.getOrganizer().getComponents().add(luoAnnostelukausiComponent(laakemaarays));
+        	}
+        }
+        
         return entry;
     }
 
+    /**
+     * 
+     */
+    protected POCDMT000040Component4 luoAnnostuksenLisatiedotComponent(LaakemaaraysTO laakemaarays) {
+    	POCDMT000040Component4 lisatiedotComp = null;
+    	
+    	if (laakemaarays.getLaakkeenantoreitti() != null || 
+    			StringUtils.isNotEmpty(laakemaarays.getKayttoOhjeLisatiedot())) {
+	        lisatiedotComp = of.createPOCDMT000040Component4();
+	        lisatiedotComp.setSubstanceAdministration(of.createPOCDMT000040SubstanceAdministration());
+	        lisatiedotComp.getSubstanceAdministration().getClassCodes().add(TEXT_SBADM);
+	        lisatiedotComp.getSubstanceAdministration().setMoodCode(XDocumentSubstanceMood.EVN);
+	        CD lisatiedot = of.createCD();
+	        fetchAttributes(KantaCDAConstants.Laakityslista.ANNOSTUKSEN_LISATIEDOT_CODE, lisatiedot);
+	        lisatiedot.setCode(KantaCDAConstants.Laakityslista.ANNOSTUKSEN_LISATIEDOT_CODE);
+	        lisatiedotComp.getSubstanceAdministration().setCode(lisatiedot);
+	        
+	        // Lääkkeenantoreitti
+	        if (laakemaarays.getLaakkeenantoreitti() != null) {
+		        CE antoreitti = of.createCE();
+		        antoreitti.setCode(laakemaarays.getLaakkeenantoreitti().getTunniste());
+		        antoreitti.setDisplayName(laakemaarays.getLaakkeenantoreitti().getLyhytNimi());
+		        fetchAttributes("laakkeenantoreitti", antoreitti);
+		        lisatiedotComp.getSubstanceAdministration().setRouteCode(antoreitti);
+	        }
+	        
+	        lisatiedotComp.getSubstanceAdministration().setConsumable(luoTyhjaConsumable());
+	        
+	        // Käyttöohjeen lisätiedot
+	    	if (StringUtils.isNotEmpty(laakemaarays.getKayttoOhjeLisatiedot())) {
+		        lisatiedotComp.getSubstanceAdministration().getEntryRelationships()
+		                .add(of.createPOCDMT000040EntryRelationship());
+		        lisatiedotComp.getSubstanceAdministration().getEntryRelationships().get(0)
+		                .setTypeCode(XActRelationshipEntryRelationship.COMP);
+		        lisatiedotComp.getSubstanceAdministration().getEntryRelationships().get(0)
+		                .setObservation(of.createPOCDMT000040Observation());
+		        ST lisatieto = of.createST();
+		        lisatieto.getContent().add(KantaCDAUtil.poistaKontrolliMerkit(laakemaarays.getKayttoOhjeLisatiedot()));
+		        asetaObservation(KantaCDAConstants.Laakityslista.KAYTTOOHJEEN_LISATIETO_CODE, lisatieto,
+		        		lisatiedotComp.getSubstanceAdministration().getEntryRelationships().get(0).getObservation());
+	    	}
+	    }
+        
+        return lisatiedotComp;        
+    }
+    
+    /**
+     * 
+     */
+    protected POCDMT000040Component4 luoAnnostelukausiComponent(LaakemaaraysTO laakemaarays) {       
+		POCDMT000040Component4 annosteluComp = of.createPOCDMT000040Component4();
+		annosteluComp.setSubstanceAdministration(of.createPOCDMT000040SubstanceAdministration());
+		annosteluComp.getSubstanceAdministration().getClassCodes().add(TEXT_SBADM);
+		annosteluComp.getSubstanceAdministration().setMoodCode(XDocumentSubstanceMood.EVN);
+		annosteluComp.getSubstanceAdministration().getIds().add(of.createII());
+		// TODO: pitäisikö olla uniikki ID jokaiselle
+		fetchAttributes(KantaCDAConstants.Laakityslista.ANNOSTELUKAUSI_ID,
+				annosteluComp.getSubstanceAdministration().getIds().get(0));
+		CD code = of.createCD();
+		fetchAttributes(KantaCDAConstants.Laakityslista.ANNOSTELUKAUSI_CODE, code);
+		annosteluComp.getSubstanceAdministration().setCode(code);
+		annosteluComp.getSubstanceAdministration().getEffectiveTimes().add(luoAnnostelukaudenAika(laakemaarays));
+		annosteluComp.getSubstanceAdministration().setConsumable(luoTyhjaConsumable());
+		annosteluComp.getSubstanceAdministration().getEntryRelationships().add(luoJaksonPituus(
+				laakemaarays.getAnnostelukaudenPituus(), KantaCDAConstants.Laakityslista.ANNOSTELUKAUDEN_KESTO_CODE));
+		annosteluComp.getSubstanceAdministration().getEntryRelationships().add(luoLaakeTauolla(laakemaarays));
+		annosteluComp.getSubstanceAdministration().getEntryRelationships().add(luoTarvittaessaEntry(
+				KantaCDAConstants.Laakityslista.ANNOSTUS_TARVITTAESSA_CODE, laakemaarays.isAnnostusTarvittaessa()));
+		annosteluComp.getSubstanceAdministration().getEntryRelationships()
+				.add(luoJaksonPituus(laakemaarays.getAnnosajaksonPituus(), KantaCDAConstants.Laakityslista.ANNOSJAKSON_PITUUS_CODE));
+		annosteluComp.getSubstanceAdministration().getEntryRelationships().addAll(luoAnnokset(laakemaarays));
+		return annosteluComp;
+    }
+    
+    protected List<POCDMT000040EntryRelationship> luoAnnokset(LaakemaaraysTO laakemaarays) {
+
+		List<POCDMT000040EntryRelationship> annokset = new ArrayList<>();
+		int i = 0;
+    	for(AnnosTO annosTO : laakemaarays.getAnnokset()) {		
+			annokset.add(luoAnnos(annosTO, ++i));
+    	}
+
+    	return annokset;
+    }
+    
+	protected POCDMT000040EntryRelationship luoAnnos(AnnosTO annosTO, int orderNumber) {
+		POCDMT000040EntryRelationship annosEntry = of.createPOCDMT000040EntryRelationship();
+		annosEntry.setTypeCode(XActRelationshipEntryRelationship.COMP);
+		POCDMT000040SubstanceAdministration sa = of.createPOCDMT000040SubstanceAdministration();
+		annosEntry.setSubstanceAdministration(sa);
+		sa.getClassCodes().add(TEXT_SBADM);
+		sa.setMoodCode(XDocumentSubstanceMood.EVN);
+		sa.getIds().add(of.createII());
+		fetchRootAttributes(KantaCDAConstants.Laakityslista.ANNOS_ID, sa.getIds().get(0), String.valueOf(orderNumber));
+		CD code = of.createCD();
+		fetchAttributes(KantaCDAConstants.Laakityslista.ANNOKSET_CODE, code);
+		sa.setCode(code);
+
+		IVLPQ doseQ = of.createIVLPQ();
+
+		if (annosTO.getVakioAnnos() != null) {
+			PQ center = of.createPQ();
+			center.setUnit("1");
+			center.setValue(String.valueOf(annosTO.getVakioAnnos()));
+			doseQ.setCenter(center);
+			sa.setDoseQuantity(doseQ);
+		} else if (annosTO.getHighAnnos() != null){
+			IVXBPQ lowValue = of.createIVXBPQ();
+			lowValue.setUnit("1");
+			lowValue.setValue(String.valueOf(annosTO.getLowAnnos()));
+			doseQ.setLow(lowValue);
+
+			IVXBPQ highValue = of.createIVXBPQ();
+			highValue.setUnit("1");
+			highValue.setValue(String.valueOf(annosTO.getHighAnnos()));
+			doseQ.setHigh(highValue);
+			sa.setDoseQuantity(doseQ);
+		} else if (annosTO.getVakioFysAnnos() != null) {
+			PQ center = of.createPQ();
+			center.setUnit(String.valueOf(annosTO.getFysYksikko()));
+			center.setValue(String.valueOf(annosTO.getVakioFysAnnos()));
+			doseQ.setCenter(center);
+			sa.getEntryRelationships().add(luoFysikaalinenAnnos(doseQ));
+		} else if (annosTO.getHighFysAnnos() != null) {
+			IVXBPQ lowValue = of.createIVXBPQ();
+			lowValue.setUnit(String.valueOf(annosTO.getFysYksikko()));
+			lowValue.setValue(String.valueOf(annosTO.getLowFysAnnos()));
+			doseQ.setLow(lowValue);
+
+			IVXBPQ highValue = of.createIVXBPQ();
+			highValue.setUnit(String.valueOf(annosTO.getFysYksikko()));
+			highValue.setValue(String.valueOf(annosTO.getHighFysAnnos()));
+			doseQ.setHigh(highValue);
+			sa.getEntryRelationships().add(luoFysikaalinenAnnos(doseQ));
+		}
+
+        if (annosTO.getAnnosyksikko() != null) {
+	        CE yksikko = of.createCE();
+	        yksikko.setCode(annosTO.getAnnosyksikko().getTunniste());
+	        yksikko.setDisplayName(annosTO.getAnnosyksikko().getLyhytNimi());
+	        fetchAttributes("annosyksikko", yksikko);
+			sa.setAdministrationUnitCode(yksikko);
+        }
+
+		sa.setConsumable(luoTyhjaConsumable());
+		sa.getEntryRelationships().add(luoTarvittaessaEntry(KantaCDAConstants.Laakityslista.ANNOS_TARVITTAESSA_CODE,
+				annosTO.getAnnosTarvittaessa()));
+
+		if (annosTO.getAnnosaika() != null) {
+			ST value = of.createST();
+			value.getContent().add(getTimeFormat().format(annosTO.getAnnosaika()));
+			sa.getEntryRelationships().add(luoValueEntry(KantaCDAConstants.Laakityslista.ANNOSAIKA_CODE, value));
+		}
+
+		if (annosTO.getAnnosajankohta() != null) {
+			CE ajankohta = of.createCE();
+			ajankohta.setCode(annosTO.getAnnosajankohta().getTunniste());
+			ajankohta.setDisplayName(annosTO.getAnnosajankohta().getLyhytNimi());
+			fetchAttributes("annosyksikko", ajankohta);
+			sa.getEntryRelationships().add(luoValueEntry(KantaCDAConstants.Laakityslista.ANNOSAJANKOHTA_CODE, ajankohta));
+		}
+
+		if (annosTO.getAnnosjaksonPaiva() != null) {
+			CE ajankohta = of.createCE();
+			ajankohta.setCode(annosTO.getAnnosjaksonPaiva().getTunniste());
+			ajankohta.setDisplayName(annosTO.getAnnosjaksonPaiva().getLyhytNimi());
+			fetchAttributes("annosjaksonpaiva", ajankohta);
+			sa.getEntryRelationships().add(luoValueEntry(KantaCDAConstants.Laakityslista.ANNOSJAKSON_PAIVA_CODE, ajankohta));
+		}
+
+		return annosEntry;
+	}
+
+	protected CE luoCodedValue(String value, String attributesKey) {
+		CE ce = of.createCE();
+		fetchAttributes(attributesKey + "." + value, ce);
+		ce.setCode(value);
+		return ce;
+	}
+
+	protected POCDMT000040EntryRelationship luoValueEntry(String code, ANY value) {
+		POCDMT000040EntryRelationship tarvittaessaEntry = of.createPOCDMT000040EntryRelationship();
+		tarvittaessaEntry.setTypeCode(XActRelationshipEntryRelationship.COMP);
+		tarvittaessaEntry.setObservation(of.createPOCDMT000040Observation());
+		asetaObservation(code, value, tarvittaessaEntry.getObservation());
+		return tarvittaessaEntry;
+	}
+    
+	protected POCDMT000040EntryRelationship luoFysikaalinenAnnos(IVLPQ dose) {
+		POCDMT000040EntryRelationship fysAnnosEntry = of.createPOCDMT000040EntryRelationship();
+		fysAnnosEntry.setTypeCode(XActRelationshipEntryRelationship.COMP);
+		POCDMT000040SubstanceAdministration sa = of.createPOCDMT000040SubstanceAdministration();
+
+		fysAnnosEntry.setSubstanceAdministration(sa);
+		sa.getClassCodes().add(TEXT_SBADM);
+		sa.setMoodCode(XDocumentSubstanceMood.EVN);
+		CD fysCode = of.createCD();
+		fetchAttributes(KantaCDAConstants.Laakityslista.FYS_ANNOKSET_CODE, fysCode);
+		sa.setCode(fysCode);
+		sa.setDoseQuantity(dose);
+		sa.setConsumable(luoTyhjaConsumable());
+
+		return fysAnnosEntry;
+	}
+    
+	protected POCDMT000040EntryRelationship luoJaksonPituus(JaksonPituusTO to, String code) {
+		POCDMT000040EntryRelationship entry = null;
+		if (to != null) {
+			entry = of.createPOCDMT000040EntryRelationship();
+			entry.setTypeCode(XActRelationshipEntryRelationship.COMP);
+			entry.setObservation(of.createPOCDMT000040Observation());
+
+			IVLPQ value = of.createIVLPQ();
+			if (to.getVakio() != null) {
+				PQ width = of.createPQ();
+				width.setUnit(to.getYksikko());
+				width.setValue(to.getVakio().toString());
+				value.setWidth(width);
+			} else {
+				IVXBPQ low = of.createIVXBPQ();
+				low.setUnit(to.getYksikko());
+				low.setValue(to.getLow().toString());
+				value.setLow(low);
+				IVXBPQ high = of.createIVXBPQ();
+				high.setUnit(to.getYksikko());
+				high.setValue(to.getHigh().toString());
+				value.setHigh(high);
+			}
+
+			asetaObservation(code, value, entry.getObservation());
+		}
+
+		return entry;
+	}
+
+    /**
+     * 
+     */
+    protected POCDMT000040EntryRelationship luoTarvittaessaEntry(String code, boolean isTarvittaessa) {
+		BL tarvittaessaBL = of.createBL();
+		tarvittaessaBL.setValue(isTarvittaessa);
+		return luoValueEntry(code, tarvittaessaBL);
+	}
+    
+    /**
+     * 
+     */
+	protected POCDMT000040Consumable luoTyhjaConsumable() {
+		POCDMT000040Consumable c = of.createPOCDMT000040Consumable();
+		c.setManufacturedProduct(of.createPOCDMT000040ManufacturedProduct());
+		c.getManufacturedProduct().setManufacturedLabeledDrug(of.createPOCDMT000040LabeledDrug());
+		c.getManufacturedProduct().getManufacturedLabeledDrug().getNullFlavors().add("NI");
+		return c;
+	}
+    
     /**
      * Luo lääkemääräyksen muut ainesosat osion. luo entry/organizer rakenteen johon lisätään seuraavat tiedot: muun
      * ainesosan vahvuus/määrä, muun ainesosan vahvuuden/määrän yksikkö, muun ainesosan vahvuus/määärä tekstimuotoisena,
@@ -615,7 +873,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
         entry.getOrganizer().setStatusCode(of.createCS());
         entry.getOrganizer().getStatusCode().setCode(TEXT_COMPLETED);
 
-        if ( laakemaarays.isApteekissaValmistettavaLaake() && null != laakemaarays.getApteekissaValmistettavaLaake() ) {
+        if (null != laakemaarays.getApteekissaValmistettavaLaake() ) {
             for (MuuAinesosaTO ainesosa : laakemaarays.getApteekissaValmistettavaLaake().getMuutAinesosat()) {
                 entry.getOrganizer().getComponents()
                         .add(luoVaikuttavaAine(String.valueOf(ainesosa.getAinesosanMaaraValue()),
@@ -649,7 +907,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
 
         entry.getOrganizer().setStatusCode(of.createCS());
         entry.getOrganizer().getStatusCode().setCode(TEXT_COMPLETED);
-        if ( laakemaarays.isApteekissaValmistettavaLaake() && null != laakemaarays.getApteekissaValmistettavaLaake() ) {
+        if (null != laakemaarays.getApteekissaValmistettavaLaake() ) {
             for (VaikuttavaAinesosaTO ainesosa : laakemaarays.getApteekissaValmistettavaLaake()
                     .getVaikuttavatAinesosat()) {
                 entry.getOrganizer().getComponents()
@@ -799,7 +1057,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
         substanceAdministration.setMoodCode(XDocumentSubstanceMood.EVN);
 
         // Valmistusohje
-        if ( laakemaarays.isApteekissaValmistettavaLaake() ) {
+        if ( laakemaarays.getApteekissaValmistettavaLaake() != null) {
             substanceAdministration.setText(of.createED());
             substanceAdministration.getText().getContent()
                     .add(laakemaarays.getApteekissaValmistettavaLaake().getValmistusohje());
@@ -880,14 +1138,15 @@ public abstract class ReseptiKasaaja extends Kasaaja {
         supply.getParticipants().addAll(luoTyonantajaJaVakuutuslaitos(laakemaarays));
 
         // Apteekissa valmistettavan lääkkeen osoitin
-        POCDMT000040EntryRelationship aptValmistettava = of.createPOCDMT000040EntryRelationship();
-        aptValmistettava.setTypeCode(XActRelationshipEntryRelationship.COMP);
-        aptValmistettava.setObservation(of.createPOCDMT000040Observation());
-        BL aptValmistettavaValue = of.createBL();
-        aptValmistettavaValue.setValue(laakemaarays.isApteekissaValmistettavaLaake());
-        asetaObservation(KantaCDAConstants.Laakityslista.APTEEKISSA_VALMISTETTAVAN_LAAKKEEN_OSOITIN,
-                aptValmistettavaValue, aptValmistettava.getObservation());
-        supply.getEntryRelationships().add(aptValmistettava);
+        // **** Poistettu määrittelyversiossa 4.0 ***
+//        POCDMT000040EntryRelationship aptValmistettava = of.createPOCDMT000040EntryRelationship();
+//        aptValmistettava.setTypeCode(XActRelationshipEntryRelationship.COMP);
+//        aptValmistettava.setObservation(of.createPOCDMT000040Observation());
+//        BL aptValmistettavaValue = of.createBL();
+//        aptValmistettavaValue.setValue(laakemaarays.isApteekissaValmistettavaLaake());
+//        asetaObservation(KantaCDAConstants.Laakityslista.APTEEKISSA_VALMISTETTAVAN_LAAKKEEN_OSOITIN,
+//                aptValmistettavaValue, aptValmistettava.getObservation());
+//        supply.getEntryRelationships().add(aptValmistettava);
 
         // pakkauskoon kerroin (Pakollinen jos reseptin tyyppi on 1 ja tieto löytyy lääketietokannasta)
         // pakkauskoko tekstimuodossa (Pakollinen jos reseptin tyyppi on 1)
@@ -1381,7 +1640,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
                 .add(laakemaarays.getValmiste().getYksilointitiedot().getVahvuus());
 
         // TODO: voiko olla apteekissa valmistettava ilman että on määrätty vaikuttavan aineen nimellä ja valmisteella??
-        if ( laakemaarays.isApteekissaValmistettavaLaake() && null != laakemaarays.getApteekissaValmistettavaLaake()
+        if (  null != laakemaarays.getApteekissaValmistettavaLaake()
                 && !onkoNullTaiTyhja(laakemaarays.getApteekissaValmistettavaLaake().getValmistusohje()) ) {
             PQR valmistusOhje = of.createPQR();
             valmistusOhje.setOriginalText(of.createED());
@@ -1411,7 +1670,7 @@ public abstract class ReseptiKasaaja extends Kasaaja {
         else {
             // Kauppanimi (jos kauppanimellä || apteekissa valmistettava)
             String kauppanimi = laakemaarays.getValmiste().getYksilointitiedot().getKauppanimi();
-            if ( laakemaarays.isApteekissaValmistettavaLaake() ) {
+            if ( laakemaarays.getApteekissaValmistettavaLaake() != null ) {
                 kauppanimi = "Apteekissa valmistettava lääke";
             }
             if ( !onkoNullTaiTyhja(laakemaarays.getLaaketietokannanUlkopuolinenValmiste()) ) {
@@ -1576,4 +1835,49 @@ public abstract class ReseptiKasaaja extends Kasaaja {
         }
         return teksti.toString();
     }
+    
+    protected IVLTS luoAnnostelukaudenAika(LaakemaaraysTO laakemaarays) {
+		if (laakemaarays == null || (laakemaarays.getAnnostelukaudenAlkupvm() == null
+				&& laakemaarays.getAnnostelukaudenLoppupvm() == null)) {
+			return null;
+		}
+
+		IVLTS aika = of.createIVLTS();
+
+		if (laakemaarays.getAnnostelukaudenAlkupvm() != null) {
+			aika.setLow(of.createIVXBTS());
+			aika.getLow().setValue(getShortDateFormat().format(laakemaarays.getAnnostelukaudenAlkupvm()));
+		}
+
+		if (laakemaarays.getAnnostelukaudenLoppupvm() != null) {
+			aika.setHigh(of.createIVXBTS());
+			aika.getHigh().setValue(getShortDateFormat().format(laakemaarays.getAnnostelukaudenLoppupvm()));
+		}
+
+		return aika;
+     }
+ 
+    protected POCDMT000040EntryRelationship luoLaakeTauolla(LaakemaaraysTO laakemaarays) {
+    	if (laakemaarays == null || laakemaarays.getLaakeTauollaAlkupvm() == null || StringUtils.isEmpty(code)) {
+    		return null;
+    	}
+    	
+		POCDMT000040EntryRelationship entry = of.createPOCDMT000040EntryRelationship();
+		entry.setTypeCode(XActRelationshipEntryRelationship.COMP);
+		entry.setObservation(of.createPOCDMT000040Observation());	
+        IVLTS aika = of.createIVLTS();
+        aika.setLow(of.createIVXBTS());
+        aika.getLow().setValue(getShortDateFormat().format(laakemaarays.getLaakeTauollaAlkupvm()));
+        
+        if (laakemaarays.getLaakeTauollaLoppupvm() != null) {
+        	aika.setHigh(of.createIVXBTS());
+        	aika.getHigh().setValue(getShortDateFormat().format(laakemaarays.getLaakeTauollaLoppupvm()));
+        }
+        
+        entry.getObservation().setEffectiveTime(aika);      
+        asetaObservation(KantaCDAConstants.Laakityslista.LAAKE_TAUOLLA_CODE, null, entry.getObservation());
+
+		return entry;
+     }
+
 }

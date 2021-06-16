@@ -88,6 +88,7 @@ public class ReseptinUudenValidoija extends LaakemaaraysValidoija {
                         "Laakemaarayksen uudistamiskiellon perustelu cannot be null or empty.");
             }
         }
+        validoiRakenteinenAnnostus(getAlkuperainenLaakemaarays());
     }
 
 }

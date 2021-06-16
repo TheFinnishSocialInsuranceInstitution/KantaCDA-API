@@ -1,19 +1,3 @@
-<!--
-  Copyright 2020 Kansaneläkelaitos
-  
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-  use this file except in compliance with the License.  You may obtain a copy
-  of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-  License for the specific language governing permissions and limitations under
-  the License.
--->
-
 package fi.kela.kanta.cda;
 
 public final class KantaCDAConstants {
@@ -30,6 +14,7 @@ public final class KantaCDAConstants {
         public static final String VAIKUTTAVAT_AINESOSAT = "4";
         public static final String MUUT_AINESOSAT = "10";
         public static final String LAAKEMUOTO = "24";
+        public static final String TEKSTIMUOTOINEN_ANNOSTUSOHJE = "29";
         public static final String SYOTTOKOODI = "30";
         public static final String ANNOSOSIO_JA_JATKOOSIOT = "32";
         public static final String SIC_MERKINTA = "56";
@@ -135,7 +120,21 @@ public final class KantaCDAConstants {
         public static final String LAAKARINPALKKIO = "214";
         public static final String LAAKARINPALKKIO_ERIKOISLAAKARINA = "215";
         public static final String TARTUNTATAUTILAIN_MUKAINEN_LAAKE = "216";
-
+        public static final String ANNOSTELUKAUSI_CODE = "230";
+        public static final String ANNOSTELUKAUSI_ID = "annostelukausiId";
+        public static final String KAYTTOOHJEEN_LISATIETO_CODE = "234";
+        public static final String ANNOSTELUKAUDEN_KESTO_CODE = "235";
+        public static final String LAAKE_TAUOLLA_CODE = "236";
+        public static final String ANNOSTUS_TARVITTAESSA_CODE = "237";
+		public static final String ANNOSJAKSON_PITUUS_CODE = "238";
+        public static final String ANNOKSET_CODE = "239";
+        public static final String ANNOS_ID = "annosId";
+		public static final String ANNOSAIKA_CODE = "240";
+        public static final String FYS_ANNOKSET_CODE = "241";
+        public static final String ANNOS_TARVITTAESSA_CODE = "243";
+		public static final String ANNOSAJANKOHTA_CODE = "244";
+		public static final String ANNOSJAKSON_PAIVA_CODE = "245";
+		public static final String ANNOSTUKSEN_LISATIEDOT_CODE = "250";
     }
     
     public final static class OstopalvelunValtuutus {
